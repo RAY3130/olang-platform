@@ -1,12 +1,22 @@
-# Render 完整功能部署（方案 B）
+# 部署 OLANG 平台
 
-这个方案保留 Express、SQLite、产品助手、询盘和后台。GitHub 只存代码，Render 负责运行；最终链接是：
+终点都是 `https://<service-name>.onrender.com/en-gb/`（不是 `github.io`，因为 GitHub Pages 不能运行 Node 服务）。
 
-```text
-https://<service-name>.onrender.com/en-gb/
+## 方案 A：全自动（推荐，一条命令跑完）
+
+```bash
+cp deploy/.deploy.env.example deploy/.deploy.env   # 只需填 GH_TOKEN 与 RENDER_API_KEY
+bash deploy/auto_deploy.sh
 ```
 
-不是 `github.io`，因为 GitHub Pages 不能运行 Node 服务。
+脚本会依次完成：预检 → `git init/commit` → 建 GitHub 仓库 → 推送 → 建 Render 服务 → 挂磁盘 → 触发部署 → 轮询状态 → 8 项冒烟验证 → 写 `deploy/report.json`。
+
+- 给 AI Agent 用的自包含执行提示词：**`deploy/AUTO-DEPLOY.md`**（整段复制即可）
+- 令牌申请：GitHub `https://github.com/settings/tokens/new`（勾 `repo`）、Render `https://dashboard.render.com/u/settings#api-keys`
+- 只有“创建令牌”需要人工，其余全自动；脚本可重复执行，已存在的仓库/服务会复用
+- 默认 `RENDER_PLAN=free`（零成本、会休眠、数据不持久）；要数据不丢改成 `starter`（约 $7/月，需绑卡）
+
+## 方案 B：手动（Dashboard 操作，作为兜底）
 
 ## 1. 上传代码到 GitHub
 

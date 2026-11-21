@@ -136,7 +136,7 @@ curl -s -X POST https://<你的域名>/api/assistant -H 'Content-Type: applicati
 | 推送被拒（non-fast-forward） | 远端已有其他提交 | **停止**，报告远端地址，等用户确认；不要 force push |
 | Render 402 | 未绑支付方式且计划为 starter | 自动降级 free 已内置；若仍报错，把 `RENDER_PLAN=free` 写进 `.deploy.env` 重跑 |
 | Render 400/409 建服务 | 服务名被占用 | 脚本会自动加后缀重试；两次仍失败则改 `SERVICE_NAME` |
-| Render 404 拉不到仓库 | 仓库私有且 Render 未授权 GitHub App | 把 `REPO_VISIBILITY` 改为 `public` 重跑 |
+| Render 404 拉不到仓库 | 仓库私有，或 Render 工作区未安装 GitHub App | 先把 `REPO_VISIBILITY` 改为 `public` 重跑；仍失败则需在 Render 后台安装一次 GitHub App（这是唯一可能需要的点击操作，装好后可永久自动） |
 | `build_failed` 且日志含 `npm ci` | lock 文件与 package.json 不一致 | 报告具体报错行，**不要**擅自改 lock，交用户决定 |
 | `build_failed` 且日志含 `NODE_VERSION` | Node 版本不可用 | 把环境变量 `NODE_VERSION` 改为 `22`（脚本默认已是 22） |
 | `build_failed` 且日志含 `no open ports` | 未监听 `process.env.PORT` | 报告此事实；当前 `server.js` 已正确读取，若出现说明代码被改动 |

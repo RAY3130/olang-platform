@@ -132,9 +132,13 @@ if [ "$MODE" = "check" ]; then
   else
     ok "无超过 50MB 的文件"
   fi
-  FILES="$(find "$APP_DIR" -path "$APP_DIR/node_modules" -prune -o -path "$APP_DIR/.git" -prune -o -type f -print 2>/dev/null | wc -l)"
-  SIZE="$(du -sm "$APP_DIR" 2>/dev/null | cut -f1)"
-  info "待提交文件约 ${FILES} 个，目录总大小约 ${SIZE}MB（含 node_modules）"
+  if [ -d "$APP_DIR/.git" ]; then
+    info "已跟踪文件：$(git -C "$APP_DIR" ls-files | wc -l) 个；待提交变更：$(git -C "$APP_DIR" status --porcelain | wc -l) 项"
+    info ".git 体积：$(du -sh "$APP_DIR/.git" 2>/dev/null | cut -f1)"
+  else
+    FILES="$(find "$APP_DIR" -path "$APP_DIR/node_modules" -prune -o -type f -print 2>/dev/null | wc -l)"
+    info "尚未初始化 git；预计提交约 ${FILES} 个文件（不含 node_modules）"
+  fi
   if [ -z "$GH_TOKEN" ] || [ -z "$RENDER_API_KEY" ]; then
     warn "缺少 GH_TOKEN 或 RENDER_API_KEY —— 仅能执行本地检查"
     printf '\n结论：本地检查完成，尚不可自动部署。补齐凭据后再运行：bash deploy/auto_deploy.sh\n'
@@ -214,8 +218,9 @@ git branch -M "$BRANCH" 2>/dev/null || true
 if git ls-files --error-unmatch .env >/dev/null 2>&1; then
   die ".env 已被纳入版本控制，请执行 git rm --cached .env 后重试"
 fi
-TRACKED_SIZE="$(git count-objects -vH | awk -F': ' '/size-pack/{print $2}')"
-info "已跟踪文件数：$(git ls-files | wc -l)，仓库体积：${TRACKED_SIZE:-未知}"
+TRACKED_COUNT="$(git ls-files | wc -l)"
+GIT_SIZE="$(du -sh .git 2>/dev/null | cut -f1)"
+info "已跟踪文件数：$TRACKED_COUNT，.git 体积：${GIT_SIZE:-未知}"
 
 # ---------------------------------------------------------------- 4 GitHub 建仓
 step "4/7 GitHub 建仓"
@@ -309,6 +314,7 @@ if [ -z "$ADMIN_PASSWORD" ]; then
 fi
 
 SERVICE_ID=""
+CREATED_NEW=0
 http GET "$RENDER_API/services?name=$SERVICE_NAME&limit=50" "Bearer $RENDER_API_KEY"
 if [ "$HTTP_CODE" = "200" ]; then
   SERVICE_ID="$(printf '%s' "$HTTP_BODY" | python3 -c '
@@ -331,6 +337,7 @@ else
     http POST "$RENDER_API/services" "Bearer $RENDER_API_KEY" "$(render_json service)"
     if [ "$HTTP_CODE" = "201" ]; then
       SERVICE_ID="$(printf '%s' "$HTTP_BODY" | jget service.id)"
+      CREATED_NEW=1
       ok "已创建服务：$SERVICE_ID（plan=$RENDER_PLAN, region=$RENDER_REGION）"
       break
     fi
@@ -360,9 +367,14 @@ BASE_URL="${ACTUAL_URL%/}"
 ok "站点地址：$BASE_URL"
 
 if [ "$BASE_URL" != "$SITE_URL" ]; then
-  info "实际地址与预测不同，回写 SITE_URL 环境变量"
-  http PUT "$RENDER_API/services/$SERVICE_ID/env-vars" "Bearer $RENDER_API_KEY" "$(render_json env)"
-  [ "$HTTP_CODE" = "200" ] && ok "SITE_URL 已更新" || warn "SITE_URL 更新失败（HTTP $HTTP_CODE），将回退使用 RENDER_EXTERNAL_URL"
+  if [ "$CREATED_NEW" = "1" ]; then
+    info "实际地址与预测不同，回写 SITE_URL 环境变量"
+    http PUT "$RENDER_API/services/$SERVICE_ID/env-vars" "Bearer $RENDER_API_KEY" "$(render_json env)"
+    [ "$HTTP_CODE" = "200" ] && ok "SITE_URL 已更新" || warn "SITE_URL 更新失败（HTTP $HTTP_CODE），将回退使用 RENDER_EXTERNAL_URL"
+  else
+    warn "复用了已有服务，跳过环境变量改写（避免覆盖你已配置的 SMTP 等变量）"
+    warn "如 canonical 地址不对，请在 Render Dashboard 手动设置 SITE_URL=$BASE_URL"
+  fi
 fi
 
 if [ "$RENDER_PLAN" != "free" ]; then
@@ -427,10 +439,11 @@ for i in $(seq 1 30); do
   sleep 5
 done
 
-probe() { # probe path expected
-  local path="$1" expect="${2:-200}" code
+probe() { # probe path 期望状态码（可逗号分隔，如 "200,302"）
+  local path="$1" expect="${2:-200}" code hit=0
   code=$(curl -s -o /dev/null -w '%{http_code}' -m 25 "$BASE$path" 2>/dev/null)
-  if [ "$code" = "$expect" ]; then
+  case ",$expect," in *",$code,"*) hit=1 ;; esac
+  if [ "$hit" = "1" ]; then
     ok "$path -> $code"
     add_check "$path" "pass" "$code"
   else
@@ -443,7 +456,8 @@ probe "/healthz"
 probe "/en-gb/"
 probe "/de-de/"
 probe "/ja-jp/"
-probe "/admin"
+probe "/admin" "302,200"
+probe "/admin/login" "200"
 probe "/en-gb/inquiry"
 probe "/en-gb/products/robe-hook-ol-1204"
 probe "/robots.txt"

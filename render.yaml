@@ -9,8 +9,9 @@ services:
     startCommand: node server.js
     healthCheckPath: /healthz
     envVars:
+      # 与本地实测环境一致（package.json 要求 >=22.13）；写主版本号避免具体小版本在 Render 不可用
       - key: NODE_VERSION
-        value: 24.21.0
+        value: "22"
       - key: NODE_ENV
         value: production
       - key: HOST
