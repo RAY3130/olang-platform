@@ -240,13 +240,15 @@ else
 fi
 
 git remote remove origin >/dev/null 2>&1 || true
-git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GH_OWNER}/${REPO_NAME}.git"
-if ! git -c credential.helper= push -u origin "$BRANCH"; then
-  git remote set-url origin "https://github.com/${GH_OWNER}/${REPO_NAME}.git"
+git remote add origin "https://github.com/${GH_OWNER}/${REPO_NAME}.git"
+# 用一次性 HTTP 头携带凭据，避免令牌出现在远程 URL、.git/config 或推送日志中
+AUTH_B64="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\r\n')"
+if ! git -c http.extraHeader="Authorization: Basic $AUTH_B64" -c credential.helper= push -u origin "$BRANCH"; then
+  unset AUTH_B64
   die "推送失败。若远端已有其他提交，请人工确认后处理（脚本不会强制覆盖）"
 fi
-git remote set-url origin "https://github.com/${GH_OWNER}/${REPO_NAME}.git"
-ok "代码已推送（远端地址已清除令牌）"
+unset AUTH_B64
+ok "代码已推送（令牌未写入仓库配置）"
 
 # 确认远端可读，再交给 Render 拉取
 for _ in 1 2 3 4 5; do
@@ -509,15 +511,14 @@ fi
 PASS_COUNT=$(awk -F'\t' '$2=="pass"' "$CHECKS" 2>/dev/null | wc -l)
 FAIL_COUNT=$(awk -F'\t' '$2=="fail"' "$CHECKS" 2>/dev/null | wc -l)
 
-printf '%s\n' "$ADMIN_PASSWORD" > /dev/null
-cat > "$SCRIPT_DIR/.admin-credentials.local.txt" <<EOF
-OLANG 后台管理员（仅本机保存，勿提交、勿外发）
-URL:      $BASE/admin
-用户名:   $ADMIN_USERNAME
-密码:     $ADMIN_PASSWORD
-生成时间: $(date '+%Y-%m-%d %H:%M:%S')
-提示:     首次部署后可在后台修改密码；如需重置，用 ADMIN_INITIAL_PASSWORD 重新部署或运行 npm run admin:reset
-EOF
+{
+  printf 'OLANG 后台管理员（仅本机保存，勿提交、勿外发）\n'
+  printf 'URL:      %s/admin\n' "$BASE"
+  printf '用户名:   %s\n' "$ADMIN_USERNAME"
+  printf '密码:     %s\n' "$ADMIN_PASSWORD"
+  printf '生成时间: %s\n' "$(date '+%Y-%m-%d %H:%M:%S')"
+  printf '提示:     首次部署后可在后台修改密码；如需重置，运行 npm run admin:reset\n'
+} > "$SCRIPT_DIR/.admin-credentials.local.txt"
 
 python3 - "$SCRIPT_DIR/report.json" "$REPO_HTML_URL" "$SERVICE_ID" "$BASE" "$DEPLOY_ID" \
   "$DEPLOY_STATUS" "$RENDER_PLAN" "$BRANCH" "$COMMIT_SHA" "$CHECKS" >> "$LOG_FILE" <<'PY'
