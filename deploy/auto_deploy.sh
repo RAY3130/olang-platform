@@ -297,7 +297,7 @@ import json, sys
 mode, name, owner, repo, branch, plan, region, admin_user, admin_pwd, site = sys.argv[1:11]
 data_dir = "/tmp/data" if plan == "free" else "/var/data"
 env = [
-    {"key": "NODE_VERSION", "value": "22"},
+    {"key": "NODE_VERSION", "value": "24"},
     {"key": "NODE_ENV", "value": "production"},
     {"key": "HOST", "value": "0.0.0.0"},
     {"key": "SITE_MODE", "value": "production"},
@@ -322,15 +322,17 @@ else:
         "branch": branch,
         "autoDeployTrigger": "commit",
         "rootDir": "",
-        "envVars": env,
         "serviceDetails": {
             "env": "node",
             "plan": plan,
             "region": region,
-            "buildCommand": "npm ci --omit=dev",
-            "startCommand": "node server.js",
+            "envSpecificDetails": {
+                "buildCommand": "npm ci --omit=dev",
+                "startCommand": "node server.js",
+            },
             "healthCheckPath": "/healthz",
             "numInstances": 1,
+            "envVars": env,
         },
     }))
 PY
