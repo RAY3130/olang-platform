@@ -1,62 +1,93 @@
-# 部署 OLANG 平台
+# Render 完整功能部署（方案 B）
 
-终点都是 `https://<service-name>.onrender.com/en-gb/`（不是 `github.io`，因为 GitHub Pages 不能运行 Node 服务）。
+GitHub 只存代码，Render 运行 Node、SQLite、产品助手和询盘后台。最终链接：
 
-## 方案 A：全自动（推荐，一条命令跑完）
-
-```bash
-cp deploy/.deploy.env.example deploy/.deploy.env   # 只需填 GH_TOKEN 与 RENDER_API_KEY
-bash deploy/auto_deploy.sh
+```text
+https://<service-name>.onrender.com/en-gb/
 ```
 
-脚本会依次完成：预检 → `git init/commit` → 建 GitHub 仓库 → 推送 → 建 Render 服务 → 挂磁盘 → 触发部署 → 轮询状态 → 8 项冒烟验证 → 写 `deploy/report.json`。
+不是 `github.io`；GitHub Pages 不能运行 Node/SQLite。
 
-- 给 AI Agent 用的自包含执行提示词：**`deploy/AUTO-DEPLOY.md`**（整段复制即可）
-- 令牌申请：GitHub `https://github.com/settings/tokens/new`（勾 `repo`）、Render `https://dashboard.render.com/u/settings#api-keys`
-- 只有“创建令牌”需要人工，其余全自动；脚本可重复执行，已存在的仓库/服务会复用
-- 默认 `RENDER_PLAN=free`（零成本、会休眠、数据不持久）；要数据不丢改成 `starter`（约 $7/月，需绑卡）
+---
 
-## 方案 B：手动（Dashboard 操作，作为兜底）
+## 第 1 步：安装 Git 并上传代码
 
-## 1. 上传代码到 GitHub
+当前电脑没有 Git。打开 PowerShell，执行：
 
-项目当前没有安装 Git/gh。最简单的方法是用 **GitHub Desktop**：
+```powershell
+winget install --id Git.Git -e --source winget
+```
 
-1. 安装 GitHub Desktop：<https://desktop.github.com/>
-2. 登录 GitHub。
-3. `File → Add Local Repository`，选择：
-   `C:\Users\53688\Desktop\international finance\智能贸易\olang-intl\platform`
-4. 确认 `.env`、`storage/`、`node_modules/` 没有被勾选（`.gitignore` 已经排除）。
-5. 点击 **Publish repository**。
-   - 名称建议：`olang-platform`
-   - 取消勾选 Private（Render 需要能读取；公开仓库最省事）
-6. 发布后，仓库根目录应该能看到：
-   `render.yaml`、`package.json`、`server.js`、`public/`、`src/`
+安装完成后关闭 PowerShell，重新打开，确认：
 
-如果仓库根目录是 `olang-intl` 而不是 `platform`，Render 的 Root Directory 要填 `platform`；本仓库建议直接把 `platform` 作为根目录。
+```powershell
+git --version
+```
 
-## 2. 在 Render 创建服务
+然后进入项目目录：
 
-1. 登录 <https://render.com/>，连接 GitHub。
-2. 点击 **New → Blueprint**。
-3. 选择刚发布的 `olang-platform` 仓库。
-4. Render 会读取 `render.yaml`，创建：
-   - Node Web Service
-   - `/var/data` 持久磁盘（1 GB）
-   - `/healthz` 健康检查
-5. 在环境变量提示中设置：
-   - `ADMIN_INITIAL_PASSWORD`：设置一个强密码，至少 12 位
-   - 其他变量已由 `render.yaml` 填好
-6. 点击 **Deploy**。
+```powershell
+cd "C:\Users\53688\Desktop\international finance\智能贸易\olang-intl\platform"
+```
 
-首次部署会：
+初始化并提交：
 
-- 安装生产依赖
-- 首次启动时自动建表
-- 自动写入演示数据
-- 在 `/var/data` 创建 SQLite 数据库和上传目录
+```powershell
+git init
+git add .
+git commit -m "Initial OLANG website"
+git branch -M main
+```
 
-## 3. 验证
+连接你刚创建的 GitHub 仓库。你的仓库地址按截图是：
+
+```powershell
+git remote add origin https://github.com/RAY3130/-.git
+```
+
+> 如果已经在 GitHub 设置里把仓库改名成 `olang-platform`，把地址换成：
+> `https://github.com/RAY3130/olang-platform.git`
+
+远端目前只有一个自动生成的 README。首次推送直接覆盖它即可：
+
+```powershell
+git push -u origin main --force
+```
+
+第一次会弹出 GitHub 登录窗口，按提示在浏览器授权即可。
+
+推送完成后刷新 GitHub 页面，应该能看到：
+
+```text
+render.yaml
+package.json
+server.js
+src/
+public/
+```
+
+而不是只有 README。
+
+---
+
+## 第 2 步：在 Render 部署
+
+1. 打开 https://render.com/
+2. 用 GitHub 登录并授权。
+3. 点击 **New → Blueprint**。
+4. 选择仓库 `RAY3130/-`（或改名后的 `olang-platform`）。
+5. Render 读取 `render.yaml`，创建免费 Web Service。
+6. 在环境变量提示里设置：
+   ```text
+   ADMIN_INITIAL_PASSWORD=至少12位的强密码
+   ```
+7. 点击 **Deploy**。
+
+等待日志出现：
+
+```text
+OLANG platform listening on http://0.0.0.0:...
+```
 
 部署完成后打开：
 
@@ -64,21 +95,107 @@ bash deploy/auto_deploy.sh
 https://<service-name>.onrender.com/en-gb/
 https://<service-name>.onrender.com/de-de/
 https://<service-name>.onrender.com/ja-jp/
-https://<service-name>.onrender.com/admin
 ```
 
-管理员账号：
+后台：
 
 ```text
+https://<service-name>.onrender.com/admin
 用户名：admin
-密码：你在 Render 设置的 ADMIN_INITIAL_PASSWORD
+密码：你设置的 ADMIN_INITIAL_PASSWORD
 ```
 
-产品助手、询价表单和后台都使用同一个 Node 服务，不需要额外配置。
+---
 
-## 4. 邮件（可选）
+## 免费版的限制
 
-默认 `EMAIL_TRANSPORT=outbox`：询盘会保存到数据库，但不会真的发邮件。要发邮件，在 Render 的 Environment 中增加：
+当前 `render.yaml` 使用 `plan: free`，方便先拿到链接、不需要付费磁盘。
+
+- 免费实例长时间无访问会休眠，第一次打开可能要等几十秒
+- 重新部署/重启后，SQLite 和上传文件会重置
+- 页面、助手、询盘、后台功能都能运行，但数据不长期保留
+
+如果只是给老师/同学打开看，这已经够用。
+
+---
+
+## 升级为持久化（需要付费）
+
+确认网站能打开后，如果询盘和后台数据需要保留：
+
+1. Render → 你的 Service → Settings → Instance Type，升级为 **Starter** 或更高。
+2. 添加 Persistent Disk：
+   ```text
+   Name: olang-data
+   Mount Path: /var/data
+   Size: 1 GB
+   ```
+3. 修改环境变量：
+   ```dotenv
+   DB_PATH=/var/data/olang.sqlite
+   UPLOAD_DIR=/var/data/uploads
+   ```
+4. 重新部署。
+
+或者把 `render.yaml` 改成：
+
+```yaml
+plan: starter
+# ...
+envVars:
+  - key: DB_PATH
+    value: /var/data/olang.sqlite
+  - key: UPLOAD_DIR
+    value: /var/data/uploads
+disk:
+  name: olang-data
+  mountPath: /var/data
+  sizeGB: 1
+```
+
+---
+
+## 常见问题
+
+### 1. `git push` 报 `rejected (fetch first)`
+
+远端 README 和本地提交历史不一致。当前仓库只有 README，可以直接：
+
+```powershell
+git push -u origin main --force
+```
+
+### 2. Render 显示 `no such file render.yaml`
+
+说明 GitHub 仓库根目录不是 `platform`。检查仓库首页是否直接能看到 `render.yaml`；如果代码在 `platform/` 子目录，Render 的 Root Directory 填 `platform`。
+
+### 3. Render 构建失败
+
+把 Render 的 Build Log 发给我，重点看：
+
+```text
+npm ci
+node:sqlite
+Cannot find module
+```
+
+### 4. 页面能开但助手/表单 404
+
+检查日志里是否启动的是 `node server.js`，以及服务是否只有一个实例。
+
+### 5. 服务名被占用
+
+修改 `render.yaml`：
+
+```yaml
+name: olang-platform-demo
+```
+
+或 Render 创建时改名，链接会随之变化。
+
+### 6. 邮件不发送
+
+默认 `EMAIL_TRANSPORT=outbox`，询盘会入库但不发邮件。需要 SMTP 时在 Render Environment 添加：
 
 ```dotenv
 EMAIL_TRANSPORT=smtp
@@ -91,25 +208,3 @@ MAIL_FROM=OLANG Website <no-reply@your-domain.com>
 INQUIRY_NOTIFICATION_EMAIL=you@your-domain.com
 INQUIRY_REPLY_TO=you@your-domain.com
 ```
-
-## 5. 自定义域名（可选）
-
-Render → Service → Settings → Custom Domains，添加域名并按提示配置 DNS；然后在 Environment 中设置：
-
-```dotenv
-SITE_URL=https://你的域名
-```
-
-不设置也可以：代码会使用 Render 自动注入的 `RENDER_EXTERNAL_URL` 作为 canonical 地址。
-
-## 6. 重要限制
-
-- **只运行 1 个实例**：SQLite 不适合多实例同时写。
-- **持久磁盘是付费能力**：免费 Web Service 没有持久磁盘，重启/重新部署会丢 SQLite 和上传文件。
-- 数据库和上传文件在 Render 磁盘 `/var/data`；需要定期用 Render Shell 执行：
-  ```bash
-  npm run backup:full
-  ```
-  并把 `storage/backups/` 下载保存。
-- 如果服务名 `olang-platform` 已被占用，Render 会让你改名；`render.yaml` 中的 `name` 也可以改。
-- 如果不想用 GitHub，仍可以用 Render 的 Docker 部署，但同样需要一个 Git 仓库或镜像仓库。

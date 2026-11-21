@@ -2,16 +2,15 @@ services:
   - type: web
     name: olang-platform
     runtime: node
-    plan: starter
+    plan: free
     region: singapore
     autoDeploy: true
     buildCommand: npm ci --omit=dev
     startCommand: node server.js
     healthCheckPath: /healthz
     envVars:
-      # 与本地实测环境一致（package.json 要求 >=22.13）；写主版本号避免具体小版本在 Render 不可用
       - key: NODE_VERSION
-        value: "22"
+        value: 24.21.0
       - key: NODE_ENV
         value: production
       - key: HOST
@@ -21,9 +20,9 @@ services:
       - key: ALLOW_SEARCH_INDEXING
         value: "1"
       - key: DB_PATH
-        value: /var/data/olang.sqlite
+        value: ./storage/olang.sqlite
       - key: UPLOAD_DIR
-        value: /var/data/uploads
+        value: ./storage/uploads
       - key: TRUST_PROXY
         value: "1"
       - key: SESSION_COOKIE_SECURE
@@ -34,7 +33,3 @@ services:
         sync: false
       - key: EMAIL_TRANSPORT
         value: outbox
-    disk:
-      name: olang-data
-      mountPath: /var/data
-      sizeGB: 1
