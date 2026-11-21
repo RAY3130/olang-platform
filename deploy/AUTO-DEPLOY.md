@@ -40,17 +40,22 @@
 
 ### 第 0 步：判断凭据是否就绪
 
-检查 `platform/deploy/.deploy.env` 是否存在，且 `GH_TOKEN`、`RENDER_API_KEY` 是否都非空。
+依次检查两处（脚本会自动合并，项目级覆盖用户级）：
 
-- **若缺失**：不要继续，不要自己想办法。向用户输出下面这段（原样，不要改写），然后结束本轮：
+1. **用户级长期凭据**：`C:\Users\53688\.workbuddy\deploy\credentials.env`
+2. 项目级覆盖：`platform/deploy/.deploy.env`
 
-  > 我已经把部署流程全部脚本化了，现在只差两个令牌（AI 无法代替你登录账号）：
-  > 1) GitHub 令牌：https://github.com/settings/tokens/new → Note 填 `olang-deploy` → 勾选 `repo` → 生成后复制 `ghp_...`
-  > 2) Render Key：https://dashboard.render.com/u/settings#api-keys → Create API Key → 复制 `rnd_...`
-  > 把这两个值告诉我，或自己填入 `platform/deploy/.deploy.env`（把 `.deploy.env.example` 复制一份改名即可）。
-  > 填好后回我一句“继续”，我会自动完成建仓、推送、部署和验证。
+只要 `GH_TOKEN` 有值即可继续；`RENDER_API_KEY` 仅在首次创建 Render 服务时需要（已有服务 push 即自动部署）。
 
-- **若齐全**：继续第 1 步。
+- **若两处都没有**：不要继续，不要自己想办法。向用户输出下面这段（原样，不要改写），然后结束本轮：
+
+  > 长期权限已经配置好了，只差把令牌填进用户级凭据文件：
+  > `C:\Users\53688\.workbuddy\deploy\credentials.env`
+  > 1) GitHub 令牌：https://github.com/settings/personal-access-tokens/new → Resource owner 选自己 → Repository access 选 **All repositories** → 权限勾 Contents RW、**Administration RW**、Workflows RW → 生成 `github_pat_...`
+  > 2) Render Key（仅新建服务需要）：https://dashboard.render.com/u/settings#api-keys → 复制 `rnd_...`
+  > 填好后回我一句"继续"，我会自动完成建仓、推送、部署和验证。这份凭据今后所有项目共用，不用再配第二次。
+
+- **若有值**：继续第 1 步。**不要再输出"我无法登录 GitHub/Render"这类话**，也不要再索要授权。
 
 ### 第 1 步：本地预检（不联网）
 

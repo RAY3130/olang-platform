@@ -54,7 +54,32 @@ load_env() {
     [ -n "$k" ] && export "$k=$v"
   done < "$f"
 }
+
+load_env_soft() { # 只补空变量：用户级长期凭据作为回退，不覆盖项目级配置
+  local f="$1" line k v current
+  [ -f "$f" ] || return 0
+  while IFS= read -r line || [ -n "$line" ]; do
+    line="${line%$'\r'}"
+    case "$line" in ''|'#'*) continue ;; esac
+    case "$line" in *=*) ;; *) continue ;; esac
+    k="${line%%=*}"; v="${line#*=}"
+    k="$(printf '%s' "$k" | tr -d '[:space:]')"
+    case "$k" in [A-Za-z_][A-Za-z0-9_]*) ;; *) continue ;; esac
+    case "$v" in \"*\") v="${v%\"}"; v="${v#\"}" ;; \'*\') v="${v%\'}"; v="${v#\'}" ;; esac
+    current="$(printenv "$k" 2>/dev/null || true)"
+    [ -z "$current" ] && export "$k=$v"
+  done < "$f"
+}
 load_env "$ENV_FILE"
+
+# 回退到用户级长期凭据：一次配置，今后所有项目共用
+USER_CRED="${HOME:-/c/Users/53688}/.workbuddy/deploy/credentials.env"
+[ -f "$USER_CRED" ] || USER_CRED="/c/Users/53688/.workbuddy/deploy/credentials.env"
+USER_CRED_USED=""
+if [ -f "$USER_CRED" ]; then
+  load_env_soft "$USER_CRED"
+  USER_CRED_USED="$USER_CRED"
+fi
 
 GH_TOKEN="${GH_TOKEN:-}"
 RENDER_API_KEY="${RENDER_API_KEY:-}"
@@ -112,6 +137,7 @@ add_check() { printf '%s\t%s\t%s\n' "$1" "$2" "$3" >> "$CHECKS"; }
 
 # ---------------------------------------------------------------- 1 预检
 step "1/7 预检"
+[ -n "$USER_CRED_USED" ] && info "长期凭据：$USER_CRED_USED（项目文件可留空）"
 for t in git curl python3; do
   command -v "$t" >/dev/null 2>&1 || die "缺少命令：$t"
   ok "$t 可用"
