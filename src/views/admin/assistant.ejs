@@ -1,0 +1,64 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Customer assistance</p><h2>Product assistant knowledge and questions</h2></div>
+  <div class="admin-actions"><a class="btn btn-ghost btn-small" href="/admin/faqs">Manage FAQs</a><a class="btn btn-ghost btn-small" href="/admin/products">Manage products</a></div>
+</div>
+
+<div class="admin-flash <%= llmConfigured ? 'admin-flash-ok' : 'admin-flash-error' %>">
+  <strong>Answer mode: <%= mode %>.</strong>
+  <% if (llmConfigured) { %>
+  A server-side language model is configured. Answers are grounded in the retrieved product/FAQ record; the API key is not exposed to the browser.
+  <% } else { %>
+  No external language model is configured. The assistant uses approved product and FAQ retrieval with a deterministic fallback. Configure ASSISTANT_LLM_ENABLED, ASSISTANT_BASE_URL, ASSISTANT_MODEL and ASSISTANT_API_KEY on the server to enable a grounded language-model reply. Do not describe the rule-based mode as a fully conversational LLM.
+  <% } %>
+</div>
+
+<div class="admin-kpis">
+  <div class="admin-kpi"><span>Published products</span><strong><%= productCount %></strong><small>retrievable by SKU/name</small></div>
+  <div class="admin-kpi"><span>Published FAQs</span><strong><%= faqCount %></strong><small>retrievable by question</small></div>
+  <div class="admin-kpi"><span>Questions logged</span><strong><%= top.reduce(function (sum, row) { return sum + row.count; }, 0) %></strong><small>redacted text only</small></div>
+  <div class="admin-kpi"><span>Unanswered</span><strong><%= unansweredRows.length %></strong><small>recent fallback questions</small></div>
+</div>
+
+<section class="admin-panel">
+  <div class="admin-section-title"><h2>Most frequent questions</h2><span class="admin-meta">Redacted, aggregated</span></div>
+  <% if (top.length) { %>
+  <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Question</th><th>Matched</th><th>Reference</th><th>Answered</th><th>Count</th></tr></thead><tbody>
+    <% top.forEach(function (row) { %><tr><td><%= row.question_redacted %></td><td><%= row.matched_type || '—' %></td><td><%= row.matched_ref || '—' %></td><td><%= row.answered ? 'Yes' : 'No' %></td><td><%= row.count %></td></tr><% }); %>
+  </tbody></table></div>
+  <% } else { %><div class="admin-empty">No assistant questions recorded yet.</div><% } %>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-section-title"><h2>Recent unanswered questions</h2><span class="admin-meta">Add a product value or FAQ where appropriate</span></div>
+  <% if (unansweredRows.length) { %>
+  <ul class="admin-list"><% unansweredRows.forEach(function (row) { %><li><strong><%= row.question_redacted %></strong> <span class="admin-meta"><%= row.market || '—' %> · <%= row.locale || '—' %> · <%= row.created_at.slice(0, 16).replace('T', ' ') %></span></li><% }); %></ul>
+  <% } else { %><div class="admin-empty">No unanswered fallback questions.</div><% } %>
+</section>
+
+<section class="admin-panel">
+  <h3>Answer rules</h3>
+  <p class="admin-form-note">These messages replace the default fallback and hand-off wording. Leave a field empty to use the built-in wording. They cannot override a confirmed product value and must not promise price, MOQ, lead time or certification.</p>
+  <form method="post" action="/admin/assistant" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <div class="admin-form-grid">
+      <% assistantCopy.fallback.forEach(function (row) { %>
+      <label class="full" style="grid-column:1/-1">Unanswered fallback — <%= row.locale.toUpperCase() %><textarea name="fallback_<%= row.locale %>" rows="3" maxlength="1200"><%= row.value %></textarea></label>
+      <% }); %>
+      <% assistantCopy.handoff.forEach(function (row) { %>
+      <label class="full" style="grid-column:1/-1">Human hand-off — <%= row.locale.toUpperCase() %><textarea name="handoff_<%= row.locale %>" rows="3" maxlength="1200"><%= row.value %></textarea></label>
+      <% }); %>
+    </div>
+    <button class="btn btn-primary btn-small" type="submit">Save answer rules</button>
+  </form>
+</section>
+
+<section class="admin-panel">
+  <h3>Grounding rules</h3>
+  <ul class="admin-list">
+    <li>The assistant may answer from published product records, approved translations and published FAQs.</li>
+    <li>It must not invent dimensions, material grade, MOQ, lead time, price, stock, certification, client or project claims.</li>
+    <li>When a field is <code class="admin-code">available_on_request</code> or <code class="admin-code">pending_verification</code>, the answer must say it needs confirmation and offer the inquiry route.</li>
+    <li>When a language-model key is configured, the server passes only the approved retrieval context and a redacted question. No customer contact data is sent.</li>
+    <li>Product or FAQ edits take effect immediately because the assistant queries the same database.</li>
+  </ul>
+</section>

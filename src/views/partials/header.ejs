@@ -1,0 +1,91 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="<%= urlFor('') %>">
+      <span class="brand-ring" aria-hidden="true"></span>
+      <span class="brand-word">OLANG</span>
+      <span class="brand-sub"><%= t('common.brandSub') %></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="<%= navLabels.menu %>" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="<%= t('common.mainNavigation') %>" data-nav>
+      <a class="nav-item" href="<%= urlFor('') %>"><%= navLabels.home %></a>
+      <div class="nav-item has-sub">
+        <details class="nav-sub">
+          <summary><%= navLabels.products %></summary>
+          <div class="nav-menu nav-menu-wide">
+            <div>
+              <a href="<%= urlFor('products') %>"><strong><%= navLabels.range %></strong></a>
+              <a href="<%= urlFor('selector') %>"><%= pc.selectorCta %></a>
+              <span class="nav-menu-label"><%= navLabels.byCategory %></span>
+              <% categories.forEach(function (cat) { %>
+              <a href="<%= urlFor('products/category/' + cat.slug) %>"><%= cat.name %></a>
+              <% }); %>
+            </div>
+            <div>
+              <span class="nav-menu-label"><%= navLabels.bySeries %></span>
+              <a href="<%= urlFor('series') %>"><strong><%= t('common.series') %></strong></a>
+              <% ['1200 Series','1700 Series','6600 Series','7200 Series','7300 Series','7600 Series','9000 Series','Engineering Hardware'].forEach(function (series) { %>
+              <a href="<%= urlFor('series/' + seriesSlug(series)) %>"><%= localizedSeries(series) %></a>
+              <% }); %>
+              <a href="<%= urlFor('wholesale') %>"><%= navLabels.trade %></a>
+              <a href="<%= urlFor('inquiry') %>"><%= navLabels.inquiry %></a>
+            </div>
+          </div>
+        </details>
+      </div>
+      <a class="nav-item" href="<%= urlFor('projects') %>"><%= navLabels.projects %></a>
+      <div class="nav-item has-sub">
+        <details class="nav-sub">
+          <summary><%= navLabels.customization %></summary>
+          <div class="nav-menu">
+            <a href="<%= urlFor('customization') %>"><strong><%= navLabels.customization %></strong></a>
+            <a href="<%= urlFor('customization') %>#process"><%= navLabels.process %></a>
+            <a href="<%= urlFor('oem') %>"><%= t('pages.oem.scopeKicker') %></a>
+          </div>
+        </details>
+      </div>
+      <div class="nav-item has-sub">
+        <details class="nav-sub">
+          <summary><%= navLabels.manufacturing %></summary>
+          <div class="nav-menu">
+            <a href="<%= urlFor('about/factory') %>"><%= navLabels.factory %></a>
+            <a href="<%= urlFor('about/quality') %>"><%= navLabels.quality %></a>
+            <a href="<%= urlFor('about/honor') %>"><%= navLabels.honor %></a>
+          </div>
+        </details>
+      </div>
+      <div class="nav-item has-sub">
+        <details class="nav-sub">
+          <summary><%= navLabels.about %></summary>
+          <div class="nav-menu">
+            <a href="<%= urlFor('about') %>"><%= navLabels.company %></a>
+            <a href="<%= urlFor('about/culture') %>"><%= navLabels.culture %></a>
+            <a href="<%= urlFor('about/development') %>"><%= navLabels.development %></a>
+            <a href="<%= urlFor('about/honor') %>"><%= navLabels.honor %></a>
+          </div>
+        </details>
+      </div>
+      <a class="nav-item" href="<%= urlFor('resources') %>"><%= navLabels.resources %></a>
+      <a class="nav-item" href="<%= urlFor('news') %>"><%= navLabels.news %></a>
+      <a class="nav-item" href="<%= urlFor('contact') %>"><%= navLabels.contact %></a>
+      <a class="nav-list-link nav-item" href="<%= urlFor('inquiry') %>">
+        <span class="nav-list-icon" aria-hidden="true">▤</span><span class="nav-list-text"><%= navLabels.inquiry %></span>
+        <span data-inquiry-count>0</span>
+      </a>
+      <a class="nav-cta" href="<%= urlFor('contact') %>?type=general"><%= navLabels.quote %></a>
+    </nav>
+  </div>
+  <div class="wrap market-row">
+    <span class="market-label"><%= navLabels.edition %></span>
+    <nav class="market-switch" aria-label="<%= t('common.marketSwitch') %>">
+      <% alternateLinks.forEach(function (alt) { %>
+      <a href="<%= alt.url %>" class="<%= alt.code === market.code ? 'active' : '' %>" hreflang="<%= alt.hreflang %>" lang="<%= alt.htmlLang %>" data-market-switch="<%= alt.code %>" data-locale-target="<%= alt.locale %>"<%= alt.code === market.code ? ' aria-current="page"' : '' %>>
+        <span><%= alt.short %></span>
+        <small title="<%= localizedMarketName(alt.code) %>"><%= languageName(alt.locale) %></small>
+      </a>
+      <% }); %>
+    </nav>
+    <span class="market-row-note"><%= market.unitsLabel || t('common.unitMm') %> · <%= navLabels.language %>: <%= languageName(locale) %></span>
+  </div>
+</header>

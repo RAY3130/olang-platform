@@ -1,0 +1,44 @@
+<section class="page-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.kicker %></p>
+    <h1><%= copy.title %></h1>
+    <p class="lede"><%= copy.saved %></p>
+    <div class="reference-block">
+      <span><%= copy.referenceLabel %></span>
+      <strong data-reference="<%= inquiry.reference %>"><%= inquiry.reference %></strong>
+      <button type="button" class="link-button" data-copy-reference><%= copy.copyReference %></button>
+    </div>
+    <div class="status-message">
+      <% if (emailStatus === 'sent') { %><%= copy.emailSent %>
+      <% } else if (emailStatus === 'queued' || emailStatus === 'pending') { %><%= copy.emailQueued %>
+      <% } else if (emailStatus === 'failed') { %><%= copy.emailFailed %>
+      <% } else { %><%= copy.emailNotConfigured %><% } %>
+    </div>
+    <% if (copy.demoNotice) { %><div class="notice-box"><%= copy.demoNotice %></div><% } %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap detail-two-col">
+    <div>
+      <h2><%= copy.nextTitle %></h2>
+      <ul class="clean-list"><% copy.nextPoints.forEach(function (point) { %><li><%= point %></li><% }); %></ul>
+      <p class="small-note"><%= t('forms.successNoPromise') %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= urlFor('products') %>"><%= t('common.browseProducts') %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('contact') %>"><%= t('common.contact') %></a>
+      </div>
+    </div>
+    <div class="note-card">
+      <h2><%= copy.products %></h2>
+      <p class="small-note"><%= t('choices.inquiryTypes.' + inquiry.type) %> · <%= formatDate(inquiry.created_at, locale) %></p>
+      <% if (inquiry.items.length) { %>
+      <ul class="clean-list">
+        <% inquiry.items.forEach(function (item) { %><li><strong><%= item.sku %></strong> · <%= item.product_name %> · <%= item.quantity %></li><% }); %>
+      </ul>
+      <% } else { %>
+      <p><%= t('common.toBeConfirmed') %></p>
+      <% } %>
+    </div>
+  </div>
+</section>

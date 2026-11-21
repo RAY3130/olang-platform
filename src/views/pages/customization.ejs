@@ -1,0 +1,297 @@
+<section class="page-hero customization-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= cc.kicker %></p>
+      <h1><%= cc.title %></h1>
+      <p class="lede"><%= cc.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#customizer"><%= cc.start %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('projects') %>"><%= t('footer.projects') %></a>
+      </div>
+      <p class="small-note"><%= cc.demoNote %></p>
+    </div>
+    <div class="customization-hero-visual">
+      <img src="/images/products/official/cards/OL-1209.jpg" alt="OLANG OL-1209 official product photograph" width="900" height="900">
+      <div class="hero-note"><span>OL-1209 · <%= localizedSeries('1200 Series') %></span><small><%= t('photo.captionPhoto') %></small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div><p class="eyebrow"><%= cc.kicker %></p><h2><%= cc.servicesTitle %></h2></div>
+      <span class="tag"><%= t('common.customizable') %></span>
+    </div>
+    <div class="capability-grid">
+      <% cc.services.forEach(function (service, index) { %>
+      <article class="capability-card"><span>0<%= index + 1 %></span><h3><%= service.title %></h3><p><%= service.text %></p></article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('pages.oem.processKicker') %></p>
+      <h2><%= cc.processTitle %></h2>
+      <p class="section-lede"><%= cc.processLede %></p>
+    </div>
+    <div class="custom-process">
+      <% cc.process.forEach(function (stage) { %>
+      <article class="custom-process-step">
+        <span class="custom-process-number"><%= stage.number %></span>
+        <h3><%= stage.title %></h3>
+        <dl>
+          <div><dt><%= cc.clientProvides %></dt><dd><%= stage.client %></dd></div>
+          <div><dt><%= cc.olangReviews %></dt><dd><%= stage.olang %></dd></div>
+          <div><dt><%= cc.confirmBeforeNext %></dt><dd><%= stage.confirm %></dd></div>
+        </dl>
+      </article>
+      <% }); %>
+    </div>
+    <p class="source-note"><%= t('pages.oem.noCapacityClaim') %></p>
+  </div>
+</section>
+
+<section class="section" id="customizer">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div>
+        <p class="eyebrow"><%= cc.kicker %></p>
+        <h2><%= t('pages.oem.wizardTitle') %></h2>
+        <p class="section-lede"><%= t('pages.oem.wizardLede') %></p>
+      </div>
+      <div class="wizard-progress-label"><span data-wizard-current>1</span> / 6</div>
+    </div>
+
+    <form class="customizer-form" id="customizer-form" method="post" action="/api/customization" enctype="multipart/form-data" novalidate data-customizer-form data-max-products="10" data-start-step="<%= initialStep || 1 %>"
+      data-empty-label="<%= cc.selectedEmpty %>"
+      data-summary-type="<%= cc.successType %>"
+      data-summary-products="<%= cc.successProducts %>"
+      data-summary-custom="<%= cc.customTitle %>"
+      data-summary-buyer="<%= cc.buyerTitle %>"
+      data-summary-files="<%= cc.successFiles %>"
+      data-msg-type="<%= cc.typeRequired %>"
+      data-msg-products="<%= cc.selectedRequired %>"
+      data-msg-custom="<%= cc.requiredStep %>"
+      data-msg-contact="<%= cc.contactRequired %>"
+      data-msg-consent="<%= cc.consentRequired %>"
+      data-msg-error="<%= cc.formError %>"
+      data-msg-files="<%= cc.filesHelp %>"
+      data-msg-max="<%= cc.selectedRequired %>">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="form_stamp" value="<%= formStamp %>">
+      <input type="hidden" name="market" value="<%= market.code %>">
+      <input type="hidden" name="locale" value="<%= locale %>">
+      <input type="hidden" name="return_to" value="<%= currentPath %>">
+      <input type="hidden" name="source_path" value="<%= currentPath %>">
+      <div class="hp-field" aria-hidden="true"><label>Company website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <% if (errorCode) { %>
+      <div class="form-alert" role="alert"><strong><%= cc.formError %></strong><span><%= t('forms.errors.' + errorCode) %></span></div>
+      <% } %>
+      <div class="form-alert" data-customizer-alert role="alert" hidden></div>
+
+      <div class="wizard-progress" aria-hidden="true">
+        <ol>
+          <% cc.steps.forEach(function (label, index) { %>
+          <li class="<%= index === 0 ? 'is-active' : '' %>" data-wizard-indicator="<%= index + 1 %>"><span><%= index + 1 %></span><small><%= label %></small></li>
+          <% }); %>
+        </ol>
+      </div>
+
+      <div class="wizard-steps">
+        <fieldset class="wizard-step is-active" data-wizard-step="1">
+          <legend><span>01</span><%= cc.steps[0] %></legend>
+          <p class="step-help"><%= cc.stepHelp[0] %></p>
+          <% if (project) { %>
+          <div class="notice-box project-prefill"><strong><%= project.title %></strong><span><%= project.location || '' %></span><small><%= cc.projectPrefill %></small></div>
+          <input type="hidden" name="project_reference" value="<%= project.slug %>">
+          <% } %>
+          <div class="customer-type-grid">
+            <% ['wholesale','hotel','oem','architect','other'].forEach(function (type) { %>
+            <label class="customer-type-card">
+              <input type="radio" name="customer_type" value="<%= type %>"<%= type === (initialAudience || 'wholesale') ? ' checked' : '' %>>
+              <span class="customer-type-body">
+                <strong><%= cc.customerTypes[type].title %></strong>
+                <small><%= cc.customerTypes[type].text %></small>
+              </span>
+            </label>
+            <% }); %>
+          </div>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="2">
+          <legend><span>02</span><%= cc.steps[1] %></legend>
+          <p class="step-help"><%= cc.stepHelp[1] %></p>
+          <div class="product-picker-tools">
+            <label class="search-field"><span><%= t('common.search') %></span><input type="search" placeholder="<%= cc.searchPlaceholder %>" data-product-search autocomplete="off"></label>
+            <label><span><%= t('common.category') %></span>
+              <select data-product-category>
+                <option value=""><%= cc.allCategories %></option>
+                <% categories.forEach(function (category) { %><option value="<%= category.key %>"><%= category.name %></option><% }); %>
+              </select>
+            </label>
+            <label><span><%= t('common.series') %></span>
+              <select data-product-series>
+                <option value=""><%= cc.allSeries %></option>
+                <% series.forEach(function (row) { %><option value="<%= row.series %>"><%= localizedSeries(row.series) %> (<%= row.count %>)</option><% }); %>
+              </select>
+            </label>
+          </div>
+          <div class="custom-product-list" role="group" aria-label="<%= cc.productsTitle %>">
+            <% products.forEach(function (product) { %>
+            <%
+              let pickerColors = [];
+              try { pickerColors = JSON.parse(product.colors_json || '[]'); } catch (_) { pickerColors = []; }
+            %>
+            <div class="custom-product-row" data-custom-product data-sku="<%= product.sku %>" data-category="<%= product.category_key %>" data-series="<%= product.series || '' %>" data-search="<%= [product.sku, product.name, product.category_name, product.series || ''].join(' ').toLowerCase() %>">
+              <label class="custom-product-check">
+                <input type="checkbox" name="product_sku" value="<%= product.sku %>"<%= selectedSku === product.sku ? ' checked' : '' %> data-product-check>
+                <span class="custom-product-thumb"><img src="/images/products/official/cards/<%= product.sku %>.jpg" alt="" width="64" height="64" loading="lazy"></span>
+                <span><strong><%= product.name %></strong><small><%= product.sku %> · <%= product.category_name %><%= product.series ? ' · ' + localizedSeries(product.series) : '' %></small></span>
+              </label>
+              <label><span class="sr-only"><%= cc.productQuantity %></span><input type="number" name="qty_<%= product.sku %>" min="1" max="10000000" inputmode="numeric" placeholder="<%= cc.productQuantity %>" data-product-qty></label>
+              <label><span class="sr-only"><%= cc.productFinish %></span>
+                <select name="finish_<%= product.sku %>" data-product-finish>
+                  <option value=""><%= cc.productFinish %></option>
+                  <% pickerColors.forEach(function (color) { %><option value="<%= color.name %>"><%= color.name %></option><% }); %>
+                  <option value="Other / to be discussed"><%= t('common.toBeConfirmed') %></option>
+                </select>
+              </label>
+            </div>
+            <% }); %>
+          </div>
+          <div class="selected-products" data-selected-products>
+            <h3><%= cc.selectedTitle %></h3>
+            <div class="selected-products-list" data-selected-list><p class="small-note"><%= cc.selectedEmpty %></p></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="3">
+          <legend><span>03</span><%= cc.steps[2] %></legend>
+          <p class="step-help"><%= cc.stepHelp[2] %></p>
+          <div class="custom-option-grid">
+            <% ['material','finish','size','design','structure','branding','other'].forEach(function (key) { %>
+            <div class="custom-option-card">
+              <label class="custom-option-check">
+                <input type="checkbox" name="custom_<%= key %>" value="1" data-custom-option>
+                <span><strong><%= cc.custom[key].title %></strong><small><%= cc.custom[key].text %></small></span>
+              </label>
+              <label class="full">
+                <span class="sr-only"><%= cc.custom[key].title %></span>
+                <textarea name="<%= key === 'size' ? 'target_dimensions' : key + '_' + (key === 'design' ? 'notes' : key === 'structure' ? 'notes' : key === 'branding' ? 'notes' : key === 'other' ? 'requirements' : 'requirements') %>" rows="2" maxlength="1200" placeholder="<%= cc.custom[key].placeholder %>"></textarea>
+              </label>
+            </div>
+            <% }); %>
+          </div>
+          <div class="upload-panel">
+            <h3><%= cc.filesTitle %></h3>
+            <p><%= cc.filesHelp %></p>
+            <label class="file-field"><span><%= t('common.optionalFiles') %></span><input type="file" name="attachments" multiple accept=".pdf,.jpg,.jpeg,.png,.dxf,.dwg,.step,.stp,.xlsx,.xls,.csv" data-file-upload></label>
+            <p class="small-note"><%= cc.fileNote %></p>
+          </div>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="4">
+          <legend><span>04</span><%= cc.steps[3] %></legend>
+          <p class="step-help"><%= cc.stepHelp[3] %></p>
+          <div data-buyer-panel="wholesale" class="buyer-panel is-active">
+            <label><span><%= cc.buyer.wholesale.sales_countries %></span><input name="sales_countries" maxlength="500" placeholder="e.g. United Kingdom, Ireland"></label>
+            <label><span><%= cc.buyer.wholesale.customer_channels %></span><input name="customer_channels" maxlength="500" placeholder="Retail, contract, e-commerce"></label>
+            <label><span><%= cc.buyer.wholesale.key_categories %></span><input name="key_categories" maxlength="500" placeholder="Towel rings, robe hooks"></label>
+            <label><span><%= cc.buyer.wholesale.estimated_quantity %></span><input name="estimated_quantity" maxlength="200" placeholder="e.g. 2,000 pcs first order"></label>
+            <label><span><%= cc.buyer.wholesale.oem_packaging %></span><select name="oem_packaging"><option value=""><%= t('common.toBeConfirmed') %></option><option value="yes">Yes</option><option value="no">No</option><option value="discuss">To discuss</option></select></label>
+            <label class="full"><span><%= cc.buyer.wholesale.partnership_intent %></span><textarea name="partnership_intent" rows="2" maxlength="1000"></textarea></label>
+          </div>
+          <div data-buyer-panel="hotel" class="buyer-panel">
+            <label><span><%= cc.buyer.hotel.project_country %></span><input name="project_country" maxlength="200"></label>
+            <label><span><%= cc.buyer.hotel.project_type %></span><select name="project_type"><option value=""><%= t('common.toBeConfirmed') %></option><option value="hotel">Hotel</option><option value="serviced-apartment">Serviced apartment</option><option value="commercial">Commercial</option><option value="residential">Residential</option><option value="other">Other</option></select></label>
+            <label><span><%= cc.buyer.hotel.project_scale %></span><input name="project_scale" maxlength="200" placeholder="Rooms, floors or GFA"></label>
+            <label><span><%= cc.buyer.hotel.bathrooms_count %></span><input name="bathrooms_count" maxlength="200"></label>
+            <label><span><%= cc.buyer.hotel.required_series %></span><input name="required_series" maxlength="300"></label>
+            <label><span><%= cc.buyer.hotel.project_deadline %></span><input name="project_deadline" type="date"></label>
+          </div>
+          <div data-buyer-panel="oem" class="buyer-panel">
+            <label><span><%= cc.buyer.oem.brand_name %></span><input name="brand_name" maxlength="200"></label>
+            <label><span><%= cc.buyer.oem.reference_products %></span><input name="reference_products" maxlength="500"></label>
+            <label><span><%= cc.buyer.oem.target_material %></span><input name="target_material" maxlength="300"></label>
+            <label><span><%= cc.buyer.oem.target_finish %></span><input name="target_finish" maxlength="300"></label>
+            <label class="full"><span><%= cc.buyer.oem.design_spec %></span><textarea name="design_spec" rows="2" maxlength="1000"></textarea></label>
+            <label class="full"><span><%= cc.buyer.oem.packaging_brand %></span><textarea name="packaging_brand" rows="2" maxlength="1000"></textarea></label>
+            <label><span><%= cc.buyer.oem.est_volume %></span><input name="est_volume" maxlength="200"></label>
+          </div>
+          <div data-buyer-panel="architect" class="buyer-panel">
+            <label><span><%= cc.buyer.architect.practice_name %></span><input name="practice_name" maxlength="200"></label>
+            <label><span><%= cc.buyer.architect.project_country %></span><input name="architect_project_country" maxlength="200"></label>
+            <label><span><%= cc.buyer.architect.design_stage %></span><input name="design_stage" maxlength="200"></label>
+            <label><span><%= cc.buyer.architect.target_completion %></span><input name="target_completion" maxlength="200"></label>
+            <label class="full"><span><%= cc.buyer.architect.target_categories %></span><input name="target_categories" maxlength="500"></label>
+            <label class="full"><span><%= cc.buyer.architect.spec_requirements %></span><textarea name="spec_requirements" rows="2" maxlength="1500"></textarea></label>
+          </div>
+          <div data-buyer-panel="other" class="buyer-panel">
+            <label><span><%= cc.buyer.other.business_type %></span><input name="business_type" maxlength="200"></label>
+            <label class="full"><span><%= cc.buyer.other.requirement_summary %></span><textarea name="requirement_summary" rows="3" maxlength="2000"></textarea></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="5">
+          <legend><span>05</span><%= cc.steps[4] %></legend>
+          <p class="step-help"><%= cc.stepHelp[4] %></p>
+          <div class="customizer-summary" data-customizer-summary aria-live="polite"></div>
+          <p class="small-note"><%= cc.reviewHelp %></p>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="6">
+          <legend><span>06</span><%= cc.steps[5] %></legend>
+          <p class="step-help"><%= cc.stepHelp[5] %></p>
+          <div class="form-grid">
+            <label><span><%= cc.fields.contact_name %> *</span><input name="contact_name" maxlength="120" autocomplete="name" required></label>
+            <label><span><%= cc.fields.company %></span><input name="company" maxlength="200" autocomplete="organization"></label>
+            <label><span><%= cc.fields.email %> *</span><input name="email" type="email" maxlength="254" autocomplete="email" required></label>
+            <label><span><%= cc.fields.phone %></span><input name="phone" type="tel" maxlength="80" autocomplete="tel"></label>
+            <label><span><%= cc.fields.country %> *</span><input name="country" maxlength="120" autocomplete="country-name" required></label>
+            <label><span><%= cc.requestType %></span>
+              <select name="request_type">
+                <option value="quote"><%= cc.requestTypes.quote %></option>
+                <option value="sample"><%= cc.requestTypes.sample %></option>
+                <option value="sales"><%= cc.requestTypes.sales %></option>
+              </select>
+            </label>
+            <label class="full"><span><%= cc.fields.message %></span><textarea name="message" rows="4" maxlength="4000"></textarea></label>
+            <label class="full checkbox-field"><input type="checkbox" name="consent" value="1" required><span><%= cc.fields.consent %> *</span></label>
+          </div>
+          <div class="submit-actions">
+            <button type="button" class="btn btn-ghost" data-wizard-back><%= cc.back %></button>
+            <button type="submit" class="btn btn-primary" data-wizard-submit><%= cc.submit %></button>
+          </div>
+          <p class="small-note"><%= cc.demoNote %></p>
+        </fieldset>
+      </div>
+
+      <div class="wizard-controls" data-wizard-controls>
+        <button type="button" class="btn btn-ghost" data-wizard-back disabled><%= cc.back %></button>
+        <button type="button" class="btn btn-primary" data-wizard-next><%= cc.next %></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow"><%= t('pages.oem.ipKicker') %></p>
+      <h2><%= t('pages.oem.ipTitle') %></h2>
+      <p><%= t('pages.oem.ipText') %></p>
+    </div>
+    <div class="note-card">
+      <h3><%= t('pages.oem.noCapacityClaim') %></h3>
+      <p><%= t('common.formSecureNote') %></p>
+      <a class="text-link" href="<%= urlFor('privacy') %>"><%= t('common.privacy') %> →</a>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/customizer.js" defer></script>

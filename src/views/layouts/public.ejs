@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="<%= htmlLang || market.htmlLang %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= pageMeta.title %></title>
+  <meta name="description" content="<%= pageMeta.description %>">
+  <meta name="robots" content="<%= pageMeta.robots %>">
+  <link rel="canonical" href="<%= pageMeta.canonical %>">
+  <% alternateLinks.forEach(function (alt) { %>
+  <link rel="alternate" hreflang="<%= alt.hreflang %>" href="<%= alt.url %>">
+  <% }); %>
+  <link rel="alternate" hreflang="x-default" href="<%= xDefault %>">
+  <meta property="og:site_name" content="OLANG">
+  <meta property="og:type" content="<%= pageMeta.ogType %>">
+  <meta property="og:title" content="<%= pageMeta.title %>">
+  <meta property="og:description" content="<%= pageMeta.description %>">
+  <meta property="og:url" content="<%= pageMeta.canonical %>">
+  <meta property="og:image" content="<%= pageMeta.ogImage %>">
+  <meta property="og:image:alt" content="<%= pageMeta.ogImageAlt %>">
+  <meta property="og:locale" content="<%= market.htmlLang.replace('-', '_') %>">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= pageMeta.title %>">
+  <meta name="twitter:description" content="<%= pageMeta.description %>">
+  <meta name="twitter:image" content="<%= pageMeta.ogImage %>">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta name="csrf-token" content="<%= csrfToken %>">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/main.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : '1' %>">
+  <script nonce="<%= nonce %>" type="application/ld+json"><%- jsonForScript({ '@context': 'https://schema.org', '@graph': jsonLd }) %></script>
+</head>
+<body class="<%= bodyClass %>" style="--market-accent:<%= market.accent %>;--market-accent-soft:<%= market.accentSoft %>" data-page-type="<%= pageType %>" data-page-category="<%= typeof categoryPage !== 'undefined' && categoryPage ? categoryPage.slug : '' %>" data-market="<%= market.code %>" data-market-prefix="<%= market.prefix %>" data-locale="<%= locale %>" data-product-sku="<%= productSku %>" data-consent="<%= analyticsConsent ? '1' : '0' %>" data-consent-known="<%= consentKnown ? '1' : '0' %>" data-csrf="<%= csrfToken %>" data-current-path="<%= currentPath %>" data-unit-system="<%= market.unitSystem %>" data-dimensions-unit="<%= market.dimensionsUnit %>" data-form-error="<%= formErrorCode || '' %>"
+  data-msg-compare-max="<%= t('pages.products.compareMax') %>"
+  data-msg-added="<%= t('pages.products.itemAdded') %>"
+  data-msg-exists="<%= t('pages.products.itemExists') %>"
+  data-msg-removed="<%= t('pages.inquiry.removed') %>"
+  data-msg-back="<%= t('common.back') %>"
+  data-msg-next="<%= t('common.next') %>"
+  data-msg-copied="<%= t('common.copied') %>"
+  data-msg-assistant-error="<%= t('assistant.error') %>"
+  data-msg-assistant-rate="<%= t('assistant.rateLimited') %>"
+  data-msg-assistant-empty="<%= t('assistant.empty') %>"
+  data-msg-assistant-no-answer="<%= t('assistant.noAnswer') %>"
+  data-msg-assistant-sources="<%= t('assistant.sources') %>"
+  data-msg-assistant-contact="<%= t('assistant.contactCta') %>"
+  data-msg-form-error="<%= t('forms.errorSummary') %>"
+  data-msg-form-start="<%= t('forms.sending') %>"
+  data-msg-no-items="<%= t('pages.inquiry.noItemsError') %>"
+  data-msg-qty-missing="<%= t('pages.inquiry.quantityMissing') %>"
+  data-msg-add-to-list="<%= t('common.addToList') %>"
+  data-msg-list-full="<%= t('pages.inquiry.maxItems') %>"
+  data-msg-clear-confirm="<%= t('pages.inquiry.confirmClear') %>"
+  data-msg-assistant-thinking="<%= t('assistant.thinking') %>"
+  data-msg-assistant-feedback="<%= t('assistant.feedbackPrompt') %>"
+  data-msg-assistant-yes="<%= t('assistant.feedbackYes') %>"
+  data-msg-assistant-no="<%= t('assistant.feedbackNo') %>"
+  data-msg-assistant-thanks="<%= t('assistant.feedbackThanks') %>"
+  data-msg-quantity-set="<%= t('assistant.quantitySetLabel') %>"
+  data-msg-assistant-product="<%= t('assistant.tellMeAbout') %>"
+  data-label-quantity="<%= t('common.quantity') %>"
+  data-label-notes="<%= t('common.notes') %>"
+  data-label-remove="<%= t('common.remove') %>">
+  <a class="skip-link" href="#main"><%= t('common.skipToContent') %></a>
+  <%- include('../partials/header') %>
+  <% if (market.code !== 'en') { %>
+  <div class="market-context-bar">
+    <div class="wrap">
+      <span class="market-context-code"><%= market.short %></span>
+      <span><%= market.unitSystem === 'imperial' ? 'inches' : 'mm' %></span>
+      <span><%= market.currencyCode %></span>
+      <span><%= languageName(locale) %></span>
+      <details class="market-compliance">
+        <summary><%= pc.complianceNote %></summary>
+        <p><%= market.compliance %></p>
+      </details>
+    </div>
+  </div>
+  <% } %>
+  <main id="main">
+    <%- body %>
+  </main>
+  <%- include('../partials/footer') %>
+  <% if (!consentKnown) { %>
+  <%- include('../partials/cookie-banner') %>
+  <% } %>
+  <%- include('../partials/assistant') %>
+  <script src="/assets/site.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : '1' %>" defer></script>
+</body>
+</html>

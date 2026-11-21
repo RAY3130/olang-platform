@@ -1,0 +1,36 @@
+<div class="assistant" data-assistant data-market="<%= market.code %>">
+  <p class="assistant-nudge" data-assistant-nudge role="status" hidden><%= t('assistant.nudge') %></p>
+  <button type="button" class="assistant-toggle" data-assistant-open
+    aria-label="<%= t('assistant.open') %>" aria-haspopup="dialog" aria-expanded="false" aria-controls="assistant-panel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.2 9.2 0 0 1-4.2-1L3 20l1.2-4.3A8.4 8.4 0 1 1 21 11.5Z"></path>
+      <path d="M8 11.5h.01M12 11.5h.01M16 11.5h.01M18.5 3.5l.5-1.5.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5Z"></path>
+    </svg>
+    <span class="assistant-label"><%= t('assistant.openShort') %></span>
+  </button>
+  <div class="assistant-backdrop" data-assistant-backdrop hidden></div>
+  <section class="assistant-panel" id="assistant-panel" data-assistant-panel role="dialog" aria-modal="true" aria-labelledby="assistant-title" tabindex="-1" hidden>
+    <div class="assistant-head">
+      <div>
+        <p class="eyebrow"><%= t('assistant.title') %></p>
+        <h2 id="assistant-title"><%= t('assistant.title') %></h2>
+      </div>
+      <button type="button" class="icon-button" data-assistant-close aria-label="<%= t('assistant.close') %>">×</button>
+    </div>
+    <p class="assistant-intro"><%= t('assistant.intro') %></p>
+    <form class="assistant-form" data-assistant-form>
+      <label class="sr-only" for="assistant-question"><%= t('assistant.title') %></label>
+      <div class="assistant-input-row">
+        <input id="assistant-question" name="question" type="text" maxlength="400" autocomplete="off" placeholder="<%= t('assistant.placeholder') %>" required>
+        <button type="submit" class="btn btn-primary"><%= t('assistant.send') %></button>
+      </div>
+    </form>
+    <div class="assistant-suggestions">
+      <% t('assistant.suggestions').forEach(function (question) { %>
+      <button type="button" class="chip" data-assistant-suggestion><%= question %></button>
+      <% }); %>
+    </div>
+    <div class="assistant-answer" data-assistant-answer aria-live="polite"></div>
+    <p class="assistant-disclaimer"><%= t('assistant.disclaimer') %> <a href="<%= urlFor('privacy') %>"><%= t('common.privacy') %></a>.</p>
+  </section>
+</div>

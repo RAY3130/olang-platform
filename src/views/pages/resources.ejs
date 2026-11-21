@@ -1,0 +1,133 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#document-request"><%= copy.requestCta %></a>
+        <a class="btn btn-ghost" href="#faq"><%= t('pages.resources.faqKicker') %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/tissue-holder-ol-1706b.jpg" alt="OL-1706B <%= t('common.product') %>" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div>
+        <p class="eyebrow"><%= copy.referenceKicker %></p>
+        <h2><%= copy.referenceTitle %></h2>
+        <p class="section-lede"><%= copy.referenceText %></p>
+      </div>
+      <span class="tag"><%= t('common.download') %></span>
+    </div>
+    <div class="download-grid">
+      <a class="download-card download-card-primary" href="<%= site.cataloguePath %>" download data-catalogue-download="catalogue" data-catalogue-location="resources">
+        <span class="document-icon" aria-hidden="true">PDF</span>
+        <strong><%= t('common.catalogueTitle') %></strong>
+        <small><%= t('common.catalogueDownload') %> · <%= Math.max(1, Math.round(site.catalogueBytes / 1024)) %> KB · <%= t('common.cataloguePages') %></small>
+      </a>
+      <a class="download-card" href="?product=OL-1204#document-request">
+        <span class="document-icon" aria-hidden="true">DOC</span>
+        <strong><%= t('common.requestDocuments') %></strong>
+        <small>OL-1204 · <%= localizedSeries('1200 Series') %></small>
+      </a>
+      <a class="download-card" href="<%= urlFor('customization') %>">
+        <span class="document-icon" aria-hidden="true">ODM</span>
+        <strong><%= t('pages.oem.kicker') %></strong>
+        <small><%= t('common.startOem') %></small>
+      </a>
+    </div>
+    <p class="small-note"><%= copy.publicNote %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <form method="get" action="<%= urlFor('resources') %>" class="filter-form">
+      <div class="filter-main">
+        <label class="search-field"><span><%= copy.searchLabel %></span><input type="search" name="q" value="<%= filters.q %>" placeholder="<%= copy.searchPlaceholder %>" maxlength="120"></label>
+        <label><span><%= copy.typeLabel %></span>
+          <select name="type">
+            <option value=""><%= copy.allTypes %></option>
+            <% Object.keys(t.dict.docTypes).forEach(function (key) { %><option value="<%= key %>"<%= filters.type === key ? ' selected' : '' %>><%= t('docTypes.' + key) %></option><% }); %>
+          </select>
+        </label>
+        <label><span><%= copy.productLabel %></span>
+          <select name="product">
+            <option value=""><%= copy.allProducts %></option>
+            <% products.forEach(function (p) { %><option value="<%= p.sku %>"<%= filters.sku === p.sku ? ' selected' : '' %>><%= p.sku %> — <%= p.name %></option><% }); %>
+          </select>
+        </label>
+      </div>
+      <div class="filter-actions">
+        <button class="btn btn-primary" type="submit"><%= t('common.apply') %></button>
+        <a class="btn btn-ghost" href="<%= urlFor('resources') %>"><%= t('common.reset') %></a>
+      </div>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="result-count"><%= documents.length === 1 ? copy.resultsOne : copy.results.replace('{count}', documents.length) %></p>
+      <p class="small-note"><%= copy.metadataNote %></p>
+    </div>
+    <p class="catalog-note"><%= copy.publicNote %></p>
+
+    <% if (documents.length) { %>
+    <div class="document-register">
+      <% documents.forEach(function (doc) { %>
+      <article class="document-row">
+        <div class="document-icon" aria-hidden="true">DOC</div>
+        <div class="document-main">
+          <p class="eyebrow"><%= documentTypeLabel(doc.doc_type) %></p>
+          <h2><%= doc.sku ? doc.sku + ' · ' + documentTypeLabel(doc.doc_type) : documentTypeLabel(doc.doc_type) %></h2>
+          <div class="document-meta">
+            <span><%= t('common.version') %>: <%= doc.version && doc.version !== 'Not published' ? doc.version : '—' %></span>
+            <span><%= t('common.languageLabel') %>: <%= languageName(String(doc.language || 'en').toLowerCase()) %></span>
+            <span><%= t('common.markets') %>: <%= doc.markets.map(function (code) { return (markets[code] && markets[code].short) || (code === 'global' ? t('common.allMarkets') : code); }).join(', ') %></span>
+            <% if (doc.sku) { %><span><%= t('common.sku') %>: <%= doc.sku %></span><% } %>
+          </div>
+        </div>
+        <div class="document-action">
+          <span class="status <%= doc.hasFile ? 'status-verified' : 'status-available_on_request' %>"><%= doc.hasFile ? copy.statusAvailable : copy.statusPending %></span>
+          <% if (doc.hasFile) { %>
+          <a class="btn btn-ghost" href="/documents/<%= doc.id %>/download"><%= t('common.download') %> ↓</a>
+          <% } else { %>
+          <a class="btn btn-ghost" href="?product=<%= encodeURIComponent(doc.sku || '') %>&type=<%= encodeURIComponent(doc.doc_type) %>#document-request" data-document-request data-sku="<%= doc.sku || '' %>" data-type="<%= doc.doc_type %>"><%= copy.requestDocument %></a>
+          <% } %>
+        </div>
+      </article>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="empty-state"><h2><%= copy.noResults %></h2><p><%= copy.noResultsHelp %></p><a class="btn btn-primary" href="<%= urlFor('resources') %>"><%= copy.allTypes %></a></div>
+    <% } %>
+  </div>
+</section>
+
+<section class="section section-soft" id="document-request">
+  <div class="wrap form-layout">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= copy.requestTitle %></h2>
+      <p class="lede"><%= copy.requestText %></p>
+      <div class="notice-box"><%= copy.metadataNote %></div>
+    </div>
+    <%- include('../partials/inquiry-form', { formType: 'document_request', prefill: prefill }) %>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.faqKicker %></p><h2><%= copy.faqTitle %></h2></div>
+    <div class="faq">
+      <% faqs.forEach(function (faq) { %>
+      <details><summary><%= faq.question %></summary><p><%= faq.answer %></p></details>
+      <% }); %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <nav class="tag-row" aria-label="<%= copy.kicker %>">
+        <a class="tag <%= !category ? 'tag-active' : '' %>" href="<%= urlFor('news') %>"><%= copy.all %></a>
+        <a class="tag <%= category === 'company' ? 'tag-active' : '' %>" href="<%= urlFor('news') %>?category=company"><%= copy.company %></a>
+        <a class="tag <%= category === 'industry' ? 'tag-active' : '' %>" href="<%= urlFor('news') %>?category=industry"><%= copy.industry %></a>
+      </nav>
+    </div>
+    <div class="page-hero-media page-hero-media-wide">
+      <img src="/images/company/production-line.jpg" alt="OLANG production line, published by OLANG" width="1400" height="933">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <% if (articles.length) { %>
+    <div class="news-grid">
+      <% articles.forEach(function (article) { %>
+      <article class="news-card">
+        <a class="news-media" href="<%= urlFor('news/' + article.slug) %>" aria-label="<%= article.title %>">
+          <% if (article.image_path) { %><img src="/<%= article.image_path.replace(/^\/+/, '') %>" alt="<%= article.title %>" width="900" height="600" loading="lazy"><% } %>
+        </a>
+        <div class="news-body">
+          <div class="news-meta"><span><%= article.category === 'company' ? copy.company : copy.industry %></span><time datetime="<%= article.published_at %>"><%= formatDate(article.published_at, locale) %></time></div>
+          <h2><a href="<%= urlFor('news/' + article.slug) %>"><%= article.title %></a></h2>
+          <p><%= article.excerpt %></p>
+          <a class="text-link" href="<%= urlFor('news/' + article.slug) %>"><%= copy.readMore %> →</a>
+        </div>
+      </article>
+      <% }); %>
+    </div>
+    <% if (pagination.pages > 1) { %>
+    <nav class="pagination" aria-label="<%= copy.kicker %>">
+      <% if (pagination.page > 1) { %><a class="btn btn-ghost" href="<%= urlFor('news') %>?<%= category ? 'category=' + category + '&' : '' %>page=<%= pagination.page - 1 %>"><%= t('common.previous') %></a><% } %>
+      <span><%= t('common.page') %> <%= pagination.page %> / <%= pagination.pages %></span>
+      <% if (pagination.page < pagination.pages) { %><a class="btn btn-ghost" href="<%= urlFor('news') %>?<%= category ? 'category=' + category + '&' : '' %>page=<%= pagination.page + 1 %>"><%= t('common.next') %></a><% } %>
+    </nav>
+    <% } %>
+    <% } else { %>
+    <div class="empty-state"><h2><%= copy.noArticles %></h2><a class="btn btn-primary" href="<%= urlFor('news') %>"><%= copy.all %></a></div>
+    <% } %>
+    <p class="source-note"><%= copy.externalNote %></p>
+  </div>
+</section>

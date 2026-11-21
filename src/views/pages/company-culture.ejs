@@ -1,0 +1,66 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %> · <%= companyCommon.culture %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= urlFor('about') %>"><%= copy.backAbout %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('contact') %>"><%= t('common.contact') %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/company/showroom.jpg" alt="OLANG bathroom hardware showroom, published by OLANG" width="1400" height="933">
+      <p class="media-caption"><%= t('common.publicSource') %> · OLANG</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="culture-grid">
+      <article class="culture-card culture-card-main">
+        <span class="card-number">01</span>
+        <p class="eyebrow"><%= copy.missionLabel %></p>
+        <h2><%= copy.missionTitle %></h2>
+        <p class="lede"><%= copy.missionText %></p>
+      </article>
+      <article class="culture-card">
+        <span class="card-number">02</span>
+        <p class="eyebrow"><%= copy.visionLabel %></p>
+        <h2><%= copy.visionTitle %></h2>
+        <p><%= copy.visionText %></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><%= copy.valuesLabel %></p>
+      <h2><%= copy.valuesTitle %></h2>
+    </div>
+    <div class="check-grid">
+      <% copy.values.forEach(function (value, index) { %>
+      <div><span>0<%= index + 1 %></span><h3><%= value.title %></h3><p><%= value.text %></p></div>
+      <% }); %>
+    </div>
+    <p class="source-note"><%= copy.sourceNote %></p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="wrap project-band">
+    <div>
+      <p class="eyebrow"><%= companyCommon.company %></p>
+      <h2><%= copy.missionTitle %></h2>
+      <p class="lede"><%= copy.missionText %></p>
+    </div>
+    <div class="evidence-card">
+      <h3><%= companyCommon.development %></h3>
+      <p><%= t('pages.about.developmentText') %></p>
+      <a class="btn btn-ghost" href="<%= urlFor('about/development') %>"><%= companyCommon.development %> →</a>
+    </div>
+  </div>
+</section>

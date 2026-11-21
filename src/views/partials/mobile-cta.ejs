@@ -1,0 +1,9 @@
+<div class="mobile-product-cta" data-mobile-cta aria-label="<%= t('product.mobileActions') %>">
+  <a class="btn btn-primary" href="#inquiry-form"><%= t('product.quoteShort') %></a>
+  <button type="button" class="btn btn-ghost" data-add-inquiry
+    data-sku="<%= product.sku %>"
+    data-name="<%= product.name %>"
+    data-url="<%= urlFor('products/' + product.slug) %>"
+    data-image="<%= product.image_path ? '/' + product.image_path.replace(/^\/+/, '') : '' %>"
+    data-category="<%= product.category_name %>"><%= t('product.addShort') %></button>
+</div>

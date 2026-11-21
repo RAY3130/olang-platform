@@ -1,0 +1,74 @@
+<section class="page-hero series-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= pc.seriesTitle %> · <%= seriesRow.count %> <%= pc.seriesModels %></p>
+      <h1><%= seriesName %></h1>
+      <p class="lede"><%= pc.seriesIntro %></p>
+      <p class="small-note"><%= pc.seriesNoNarrative %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#series-products"><%= pc.seriesViewModels %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('inquiry') %>?series=<%= encodeURIComponent(seriesRow.series) %>"><%= pc.seriesQuote %></a>
+        <a class="btn btn-text" href="<%= urlFor('customization') %>"><%= pc.customizationLink %></a>
+      </div>
+      <p class="small-note"><%= pc.localSignal %></p>
+    </div>
+    <div class="page-hero-media series-hero-media">
+      <% if (reference) { %>
+      <%- include('../partials/reference-picture', { image: reference }) %>
+      <span class="series-image-caption"><%= pc.refCaption %></span>
+      <% } else if (products[0] && products[0].image_path) { %>
+      <img src="/images/products/official/cards/<%= products[0].sku %>.jpg" alt="<%= products[0].name %> <%= products[0].sku %>" width="1800" height="900">
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="series-products">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div>
+        <p class="eyebrow"><%= pc.seriesTitle %></p>
+        <h2><%= products.length %> <%= pc.seriesModels %></h2>
+        <p class="section-lede"><%= pc.seriesIntro %></p>
+      </div>
+      <a class="btn btn-ghost" href="<%= urlFor('products') %>?series=<%= encodeURIComponent(seriesRow.series) %>"><%= pc.allProducts %> →</a>
+    </div>
+    <% if (products.length) { %>
+    <div class="product-grid">
+      <% products.forEach(function (product) { %>
+      <%- include('../partials/product-card', { product: product }) %>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="empty-state"><p><%= pc.seriesEmpty %></p></div>
+    <% } %>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div><p class="eyebrow"><%= pc.pathFinishTitle %></p><h2><%= pc.seriesFinishes %></h2><p class="section-lede"><%= pc.pathFinishText %></p></div>
+      <span class="tag"><%= seriesFinishes.length %> <%= pc.seriesFinishes %></span>
+    </div>
+    <div class="finish-wall">
+      <% seriesFinishes.forEach(function (finish) { %>
+      <a class="finish-wall-item" href="<%= urlFor('products') %>?series=<%= encodeURIComponent(seriesRow.series) %>&finish=<%= encodeURIComponent(finish.code) %>">
+        <% if (finish.chip) { %><img src="<%= finish.chip %>" alt="" width="52" height="52" loading="lazy"><% } %>
+        <span><%= finish.name %></span><small><%= finish.count %> <%= pc.seriesModels %></small>
+      </a>
+      <% }); %>
+    </div>
+    <div class="series-cta">
+      <p><%= pc.seriesIntro %></p>
+      <a class="btn btn-primary" href="<%= urlFor('inquiry') %>?series=<%= encodeURIComponent(seriesRow.series) %>"><%= pc.seriesQuote %></a>
+      <a class="text-link" href="<%= seriesHref %>#series-products"><%= pc.seriesViewModels %> →</a>
+    </div>
+  </div>
+</section>
+
+<div class="compare-bar" data-compare-bar hidden>
+  <span><strong data-compare-count>0</strong> <%= t('common.selected') %></span>
+  <a class="btn btn-primary" href="<%= urlFor('compare') %>" data-compare-link><%= t('common.compareSelected') %></a>
+  <button type="button" class="link-button" data-compare-clear><%= t('common.clear') %></button>
+</div>

@@ -1,0 +1,35 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %> · <%= companyCommon.development %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= urlFor('about') %>"><%= copy.backAbout %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('about/honor') %>"><%= companyCommon.honor %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/company/workshop.jpg" alt="OLANG production workshop, published by OLANG" width="1400" height="933">
+      <p class="media-caption"><%= t('common.publicSource') %> · OLANG</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= copy.title %></h2>
+    </div>
+    <div class="timeline timeline-wide">
+      <% copy.timeline.forEach(function (entry) { %>
+      <div>
+        <span><%= entry.year %></span>
+        <div><strong><%= entry.title %></strong><p><%= entry.text %></p></div>
+      </div>
+      <% }); %>
+    </div>
+    <p class="source-note"><%= copy.sourceNote %></p>
+  </div>
+</section>

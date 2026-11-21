@@ -1,0 +1,62 @@
+<div class="admin-toolbar">
+  <div>
+    <p class="admin-kicker">Customization request</p>
+    <h2><%= request.reference %> <span class="status-pill status-<%= request.status %>"><%= request.status %></span></h2>
+    <p class="admin-meta"><%= request.customer_type %> · <%= request.request_type %> · received <%= request.created_at.slice(0,16).replace('T',' ') %> · <%= request.market %> edition</p>
+  </div>
+  <a class="btn btn-ghost btn-small" href="/admin/customization">Back to requests</a>
+</div>
+<div class="admin-note">Demo/test record. Stored locally; not delivered to an external inbox, CRM or ERP.</div>
+
+<div class="admin-grid admin-grid-2">
+  <section class="admin-panel">
+    <h3>Contact</h3>
+    <ul class="admin-list">
+      <li><strong><%= request.contact_name %></strong> · <%= request.company || 'No company' %></li>
+      <li><a href="mailto:<%= request.email %>"><%= request.email %></a> · <%= request.phone || 'No phone' %></li>
+      <li><%= request.country %></li>
+      <li>Locale: <%= request.locale %> · Website field: <%= request.website || '—' %></li>
+      <li>Message: <%= request.message || '—' %></li>
+    </ul>
+  </section>
+  <section class="admin-panel">
+    <h3>Workflow</h3>
+    <form method="post" action="/admin/customization/<%= request.id %>/status" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <label>Status<select name="status"><% ['new','review','quoted','closed','archived'].forEach(function (status) { %><option value="<%= status %>"<%= request.status === status ? ' selected' : '' %>><%= status %></option><% }); %></select></label>
+      <label>Internal note<textarea name="internal_note" rows="3" maxlength="4000"><%= request.internal_note || '' %></textarea></label>
+      <button class="btn btn-primary btn-small" type="submit">Update request</button>
+    </form>
+  </section>
+</div>
+
+<section class="admin-panel">
+  <h3>Selected products</h3>
+  <% if (request.products.length) { %>
+  <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>SKU</th><th>Name</th><th>Category</th><th>Series</th><th>Quantity</th><th>Finish</th></tr></thead><tbody>
+    <% request.products.forEach(function (product) { %><tr><td><strong><%= product.sku %></strong></td><td><%= product.name %></td><td><%= product.category %></td><td><%= product.series || '—' %></td><td><%= product.quantity || '—' %></td><td><%= product.finish || '—' %></td></tr><% }); %>
+  </tbody></table></div>
+  <% } else { %><p class="admin-meta">No products recorded.</p><% } %>
+</section>
+
+<div class="admin-grid admin-grid-2">
+  <section class="admin-panel">
+    <h3>Customization selections</h3>
+    <pre class="admin-code"><%= JSON.stringify(request.customizations, null, 2) %></pre>
+  </section>
+  <section class="admin-panel">
+    <h3>Buying context</h3>
+    <pre class="admin-code"><%= JSON.stringify(request.buyerContext, null, 2) %></pre>
+  </section>
+</div>
+
+<section class="admin-panel">
+  <h3>Attachments</h3>
+  <% if (request.files.length) { %>
+  <ul class="admin-list">
+    <% request.files.forEach(function (file) { %>
+    <li><a href="/admin/customization/file/<%= file.id %>"><%= file.original_name %></a> <span class="admin-meta"><%= file.mime_type %> · <%= Math.round(file.size_bytes / 1024) %> KB · private download</span></li>
+    <% }); %>
+  </ul>
+  <% } else { %><p class="admin-meta">No files uploaded.</p><% } %>
+</section>

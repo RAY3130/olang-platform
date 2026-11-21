@@ -1,0 +1,55 @@
+<section class="page-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.kicker %></p>
+    <h1><%= copy.title %></h1>
+    <p class="lede"><%= copy.lede %></p>
+    <p class="small-note"><%= fill(copy.updated, privacyVars) %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    <% copy.sections.forEach(function (section) { %>
+    <section>
+      <h2><%= section.title %></h2>
+      <% section.paragraphs.forEach(function (paragraph) { %><p><%= fill(paragraph, privacyVars) %></p><% }); %>
+    </section>
+    <% }); %>
+  </div>
+</section>
+
+<section class="section section-soft" id="cookies">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.cookiesTitle %></p>
+    <h2><%= copy.cookiesTitle %></h2>
+    <p><%= copy.cookiesText %></p>
+    <div class="cookie-settings">
+      <div class="cookie-setting">
+        <div><h3><%= copy.essentialLabel %></h3><p><%= copy.essentialDetail %></p></div>
+        <span class="status status-verified">✓</span>
+      </div>
+      <div class="cookie-setting">
+        <div><h3><%= copy.analyticsLabel %></h3><p><%= copy.analyticsDetail %></p></div>
+        <span class="status"><%= consent === true ? copy.choiceAccepted : consent === false ? copy.choiceRejected : copy.choiceUnknown %></span>
+      </div>
+    </div>
+    <form method="post" action="/api/consent" class="cookie-choice-form" data-consent-form>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="market" value="<%= market.code %>">
+      <input type="hidden" name="return_to" value="<%= currentPath %>">
+      <button class="btn btn-primary" type="submit" name="analytics" value="1"><%= copy.acceptAnalytics %></button>
+      <button class="btn btn-ghost" type="submit" name="analytics" value="0"><%= copy.rejectAnalytics %></button>
+      <span class="small-note"><%= copy.currentChoice %>: <%= consent === true ? copy.choiceAccepted : consent === false ? copy.choiceRejected : copy.choiceUnknown %></span>
+    </form>
+    <p class="small-note"><a class="tap-link" href="<%= urlFor('privacy') %>"><%= t('cookies.policy') %></a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.requestTitle %></p>
+    <h2><%= copy.requestTitle %></h2>
+    <p><%= copy.requestText %></p>
+    <a class="btn btn-ghost" href="<%= urlFor('privacy/request') %>"><%= copy.requestCta %></a>
+  </div>
+</section>

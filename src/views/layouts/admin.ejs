@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title><%= title %> | OLANG Staff Portal</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/main.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : '1' %>">
+  <link rel="stylesheet" href="/assets/admin.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : '1' %>">
+</head>
+<body class="admin-body" data-admin-csrf="<%= csrf %>">
+  <a class="skip-link" href="#admin-main">Skip to content</a>
+  <div class="admin-shell">
+    <aside class="admin-sidebar" aria-label="Staff portal navigation">
+      <a class="admin-brand" href="/admin">
+        <span class="brand-ring" aria-hidden="true"></span>
+        <span><strong>OLANG</strong><small>Staff portal</small></span>
+      </a>
+      <nav class="admin-nav">
+        <a class="<%= active === 'dashboard' ? 'active' : '' %>" href="/admin">Dashboard</a>
+        <% if (typeof can === 'function' && (can('inquiries') || can('inquiries_assigned'))) { %>
+        <a class="<%= active === 'inquiries' ? 'active' : '' %>" href="/admin/inquiries">Inquiries</a>
+        <a class="<%= active === 'customization' ? 'active' : '' %>" href="/admin/customization">Customization requests</a>
+        <% } %>
+        <% if (typeof can === 'function' && can('products')) { %>
+        <a class="<%= active === 'products' ? 'active' : '' %>" href="/admin/products">Products</a>
+        <a class="<%= active === 'assets' ? 'active' : '' %>" href="/admin/assets">Image assets</a>
+        <a class="<%= active === 'categories' ? 'active' : '' %>" href="/admin/categories">Categories</a>
+        <% } %>
+        <% if (typeof can === 'function' && can('content')) { %>
+        <a class="<%= active === 'content' ? 'active' : '' %>" href="/admin/content">Content</a>
+        <a class="<%= active === 'markets' ? 'active' : '' %>" href="/admin/markets">Markets</a>
+        <a class="<%= active === 'assistant' ? 'active' : '' %>" href="/admin/assistant">Product assistant</a>
+        <a class="<%= active === 'news' ? 'active' : '' %>" href="/admin/news">News</a>
+        <a class="<%= active === 'faqs' ? 'active' : '' %>" href="/admin/faqs">FAQs</a>
+        <a class="<%= active === 'cases' ? 'active' : '' %>" href="/admin/cases">Project cases</a>
+        <% } %>
+        <% if (typeof can === 'function' && can('documents')) { %>
+        <a class="<%= active === 'documents' ? 'active' : '' %>" href="/admin/documents">Documents</a>
+        <% } %>
+        <% if (adminUser && (adminUser.role === 'super_admin' || adminUser.role === 'sales_manager')) { %>
+        <a class="<%= active === 'privacy-requests' ? 'active' : '' %>" href="/admin/privacy-requests">Privacy requests</a>
+        <a class="<%= active === 'outbox' ? 'active' : '' %>" href="/admin/outbox">Email outbox</a>
+        <% } %>
+        <% if (adminUser && adminUser.role === 'super_admin') { %>
+        <a class="<%= active === 'users' ? 'active' : '' %>" href="/admin/users">Users</a>
+        <a class="<%= active === 'audit' ? 'active' : '' %>" href="/admin/audit">Audit log</a>
+        <% } %>
+      </nav>
+      <div class="admin-sidebar-foot">
+        <span class="mode-pill <%= siteMode === 'production' ? 'mode-live' : 'mode-demo' %>"><%= siteMode %></span>
+        <a href="/en-gb" target="_blank" rel="noopener">View public site ↗</a>
+        <a href="/en-gb/privacy" target="_blank" rel="noopener">Privacy notice ↗</a>
+      </div>
+    </aside>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-kicker">OLANG international platform</p>
+          <h1><%= title %></h1>
+        </div>
+        <div class="admin-account">
+          <span><strong><%= adminUser.displayName %></strong><small><%= roleLabels[adminUser.role] || adminUser.role %></small></span>
+          <a class="admin-account-link" href="/admin/password">Password</a>
+          <form method="post" action="/admin/logout">
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+            <button type="submit" class="btn btn-ghost btn-small">Sign out</button>
+          </form>
+        </div>
+      </header>
+      <main id="admin-main" class="admin-content">
+        <% if (notice) { %><div class="admin-flash admin-flash-ok" role="status"><%= notice %></div><% } %>
+        <% if (adminError) { %><div class="admin-flash admin-flash-error" role="alert"><%= adminError %></div><% } %>
+        <%- body %>
+      </main>
+    </div>
+  </div>
+  <script src="/assets/admin.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : '1' %>" defer></script>
+</body>
+</html>

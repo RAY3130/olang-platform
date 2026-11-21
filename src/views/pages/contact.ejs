@@ -1,0 +1,51 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/robe-hook-ol-1204.jpg" alt="OL-1204 <%= t('common.product') %>" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow"><%= copy.detailsTitle %></p>
+      <h2><%= copy.detailsTitle %></h2>
+      <p><%= copy.detailsText %></p>
+      <div class="contact-list">
+        <div><span><%= copy.companyLabel %></span><p><%= site.contact.company %><br><small><%= site.contact.companyCn %></small></p></div>
+        <div><span><%= copy.emailLabel %></span><p><a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a></p></div>
+        <div><span><%= copy.phoneLabel %></span><p><a href="tel:<%= site.contact.phoneHref %>"><%= site.contact.phone %></a><br><a class="text-link" href="<%= site.whatsappUrl %>" target="_blank" rel="noopener nofollow" data-whatsapp-cta data-whatsapp-location="contact"><%= t('common.whatsapp') %></a></p></div>
+        <div><span><%= copy.addressLabel %></span><p><%= address.display %><br><a class="text-link" href="<%= mapUrl %>" target="_blank" rel="noopener nofollow"><%= t('common.openMap') %> →</a></p></div>
+        <div><span><%= copy.hoursLabel %></span><p><%= copy.hoursValue %></p></div>
+      </div>
+      <div class="privacy-callout">
+        <h3><%= copy.privacyTitle %></h3>
+        <p><%= copy.privacyText %></p>
+        <a class="text-link" href="<%= urlFor('privacy/request') %>"><%= copy.privacyCta %> →</a>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow"><%= copy.formTitle %></p>
+      <h2><%= copy.formTitle %></h2>
+      <p><%= copy.formText %></p>
+      <%- include('../partials/inquiry-form', { formType: 'general', prefill: {} }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.routesTitle %></p><h2><%= copy.routesTitle %></h2></div>
+    <div class="route-grid">
+      <% copy.routes.forEach(function (route) { %>
+      <a class="route-card" href="<%= urlFor(route.target) %>"><h3><%= route.label %></h3><p><%= route.text %></p><span class="text-link">→</span></a>
+      <% }); %>
+    </div>
+  </div>
+</section>

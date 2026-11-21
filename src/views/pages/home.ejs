@@ -1,0 +1,321 @@
+<%
+  const hero = reference.hero || referenceImage;
+  const spaceImages = (reference.all || []).filter(function (image) { return image.kind !== 'hero'; }).slice(0, 4);
+  const projectImages = (reference.styles && reference.styles.length) ? reference.styles : (reference.all || []);
+  const firstProducts = products.slice(0, 4);
+%>
+
+<% if (market.code === 'en-gb') { %>
+<section class="v3-hero v3-hero-en">
+  <div class="wrap v3-hero-grid">
+    <div class="v3-hero-copy">
+      <p class="eyebrow"><%= hc.heroKicker %> <span class="v3-local-dot"></span> <%= market.name %></p>
+      <h1><%= market.heroTitle %></h1>
+      <p class="lede"><%= market.heroLede %></p>
+      <div class="v3-actions">
+        <a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.heroPrimary %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= hc.heroSecondary %></a>
+      </div>
+      <div class="v3-stat-line">
+        <span><strong><%= catalogSummary.products %></strong> <%= hc.statLabels[0] %></span>
+        <span><strong><%= catalogSummary.series %></strong> <%= hc.statLabels[1] %></span>
+        <span><strong><%= catalogSummary.categories %></strong> <%= hc.statLabels[2] %></span>
+        <span><strong><%= finishCount %></strong> <%= hc.statLabels[3] %></span>
+      </div>
+    </div>
+    <% if (hero) { %>
+    <figure class="v3-hero-figure">
+      <%- include('../partials/reference-picture', { image: hero, priority: true }) %>
+      <figcaption><%= hc.refCaption %> <span>·</span> <%= market.name %></figcaption>
+    </figure>
+    <% } %>
+  </div>
+</section>
+
+<section class="v3-section v3-space-section">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.spaceKicker %></p><h2><%= hc.spaceTitle %></h2><p class="section-lede"><%= hc.spaceText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('solutions') %>"><%= hc.heroSecondary %> <span>↗</span></a>
+    </div>
+    <div class="v3-space-grid">
+      <% hc.spaces.forEach(function (space, index) { const image = spaceImages[index] || hero; %>
+      <a class="v3-space-card" href="<%= urlFor(space.href) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-card-index">0<%= index + 1 %></span>
+        <h3><%= space.title %></h3>
+        <p><%= space.text %></p>
+        <span class="v3-text-arrow"><%= hc.heroSecondary %> <span>↗</span></span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section-soft v3-series-section">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.seriesKicker %></p><h2><%= hc.seriesTitle %></h2><p class="section-lede"><%= hc.seriesText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('series') %>"><%= hc.seriesCta %> <span>↗</span></a>
+    </div>
+    <div class="v3-series-grid">
+      <% seriesRows.forEach(function (row) { %>
+      <a class="v3-series-card" href="<%= urlFor('series/' + seriesSlug(row.series)) %>">
+        <span class="v3-series-code"><%= localizedSeries(row.series) %></span>
+        <span class="v3-series-count"><strong><%= row.count %></strong> <%= hc.seriesModelsLabel %></span>
+        <span class="v3-series-finish"><%= row.finishCount %> <%= t('common.finish') %></span>
+        <span class="v3-text-arrow"><%= hc.seriesCta %> <span>↗</span></span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-products-section">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.productKicker %></p><h2><%= hc.productTitle %></h2><p class="section-lede"><%= hc.productText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('products') %>"><%= t('common.viewAll') %> <span>↗</span></a>
+    </div>
+    <div class="v3-product-grid">
+      <% firstProducts.forEach(function (product) { %><%- include('../partials/product-card', { product: product, eager: true }) %><% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section-dark v3-projects-section">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.projectsKicker %></p><h2><%= hc.projectsTitle %></h2><p class="section-lede"><%= hc.projectsText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('projects') %>"><%= hc.projectsKicker %> <span>↗</span></a>
+    </div>
+    <div class="v3-project-grid">
+      <% projectReferences.forEach(function (entry, index) { const image = projectImages[index % Math.max(projectImages.length, 1)] || hero; %>
+      <a class="v3-project-card" href="<%= urlFor('projects/' + entry.slug) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-reference-tag"><%= hc.refCaption %></span>
+        <div><span class="v3-card-index"><%= hc.projectLabel %></span><h3><%= entry.title %></h3><p><%= entry.location || '' %></p></div>
+        <span class="v3-text-arrow"><%= t('common.learnMore') %> <span>↗</span></span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-trade-section">
+  <div class="wrap v3-trade-grid">
+    <div class="v3-trade-intro">
+      <p class="eyebrow"><%= hc.docsKicker %></p>
+      <h2><%= hc.docsTitle %></h2>
+      <p class="section-lede"><%= hc.docsText %></p>
+      <a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.docsCta %></a>
+    </div>
+    <div class="v3-trade-cards">
+      <% hc.tradeCards.forEach(function (card) { %>
+      <a href="<%= urlFor(card.href) %>"><strong><%= card.title %></strong><span><%= card.text %></span><span class="v3-text-arrow">↗</span></a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<% } else if (market.code === 'de') { %>
+<section class="v3-de-hero">
+  <% if (hero) { %>
+  <div class="v3-de-hero-media">
+    <%- include('../partials/reference-picture', { image: hero, priority: true }) %>
+    <span class="v3-de-image-label"><%= hc.refCaption %> · <%= market.name %></span>
+  </div>
+  <% } %>
+  <div class="wrap v3-de-hero-copy">
+    <p class="eyebrow"><%= hc.heroKicker %> <span class="v3-local-rule"></span> <%= market.name %></p>
+    <h1><%= market.heroTitle %></h1>
+    <p class="lede"><%= market.heroLede %></p>
+    <div class="v3-actions">
+      <a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.heroPrimary %></a>
+      <a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= hc.heroSecondary %></a>
+    </div>
+  </div>
+  <div class="wrap v3-de-params">
+    <div><strong><%= catalogSummary.products %></strong><span><%= hc.statLabels[0] %></span></div>
+    <div><strong><%= catalogSummary.series %></strong><span><%= hc.statLabels[1] %></span></div>
+    <div><strong><%= catalogSummary.categories %></strong><span><%= hc.statLabels[2] %></span></div>
+    <div><strong><%= finishCount %></strong><span><%= hc.statLabels[3] %></span></div>
+  </div>
+</section>
+
+<section class="v3-section v3-de-series">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.seriesKicker %></p><h2><%= hc.seriesTitle %></h2><p class="section-lede"><%= hc.seriesText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('series') %>"><%= hc.seriesCta %> <span>↗</span></a>
+    </div>
+    <div class="v3-de-matrix">
+      <div class="v3-de-matrix-head"><span><%= hc.seriesKicker %></span><span><%= hc.seriesModelsLabel %></span><span><%= t('common.finish') %></span><span></span></div>
+      <% seriesRows.forEach(function (row) { %>
+      <a class="v3-de-matrix-row" href="<%= urlFor('series/' + seriesSlug(row.series)) %>">
+        <span><strong><%= localizedSeries(row.series) %></strong><small><%= row.count %> <%= hc.seriesModelsLabel %></small></span>
+        <span><%= row.count %></span>
+        <span><%= row.finishCount %></span>
+        <span class="v3-text-arrow">↗</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-de-spaces">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.spaceKicker %></p><h2><%= hc.spaceTitle %></h2><p class="section-lede"><%= hc.spaceText %></p></div>
+    </div>
+    <div class="v3-space-grid v3-space-grid-de">
+      <% hc.spaces.forEach(function (space, index) { const image = spaceImages[index] || hero; %>
+      <a class="v3-space-card v3-space-card-de" href="<%= urlFor(space.href) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-card-index">0<%= index + 1 %></span><h3><%= space.title %></h3><p><%= space.text %></p>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section-soft v3-de-docs">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.docsKicker %></p><h2><%= hc.docsTitle %></h2><p class="section-lede"><%= hc.docsText %></p></div>
+      <a class="btn btn-ghost" href="<%= urlFor('resources') %>"><%= hc.docsCta %></a>
+    </div>
+    <div class="v3-de-doc-grid">
+      <% hc.docsCards.forEach(function (card, index) { %>
+      <a href="<%= urlFor('resources') %>?type=<%= index === 0 ? 'spec_sheet' : index === 1 ? 'installation' : 'packaging' %>">
+        <span class="v3-doc-number">0<%= index + 1 %></span><strong><%= card.title %></strong><span><%= card.text %></span><span class="v3-text-arrow">PDF ↗</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-de-projects">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.projectsKicker %></p><h2><%= hc.projectsTitle %></h2><p class="section-lede"><%= hc.projectsText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('projects') %>"><%= hc.projectsKicker %> <span>↗</span></a>
+    </div>
+    <div class="v3-project-grid v3-project-grid-de">
+      <% projectReferences.forEach(function (entry, index) { const image = projectImages[index % Math.max(projectImages.length, 1)] || hero; %>
+      <a class="v3-project-card v3-project-card-de" href="<%= urlFor('projects/' + entry.slug) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-reference-tag"><%= hc.refCaption %></span>
+        <div><span class="v3-card-index"><%= hc.projectLabel %></span><h3><%= entry.title %></h3><p><%= entry.location || '' %></p></div>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<% } else { %>
+<section class="v3-jp-hero">
+  <div class="wrap v3-jp-hero-grid">
+    <% if (hero) { %>
+    <figure class="v3-jp-hero-figure">
+      <%- include('../partials/reference-picture', { image: hero, priority: true }) %>
+      <figcaption><%= hc.refCaption %></figcaption>
+    </figure>
+    <% } %>
+    <div class="v3-jp-hero-copy">
+      <p class="eyebrow"><%= hc.heroKicker %> <span class="v3-local-rule"></span> <%= market.name %></p>
+      <div class="v3-jp-model-line"><span>OLANG</span><span>BATHROOM HARDWARE</span><span><%= catalogSummary.products %> MODELS</span></div>
+      <h1><%= market.heroTitle %></h1>
+      <p class="lede"><%= market.heroLede %></p>
+      <div class="v3-actions">
+        <a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.heroPrimary %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= hc.heroSecondary %></a>
+      </div>
+      <div class="v3-jp-stats">
+        <span><strong><%= catalogSummary.series %></strong> シリーズ</span><span><strong><%= catalogSummary.categories %></strong> カテゴリー</span><span><strong><%= finishCount %></strong> 仕上げ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-jp-spaces">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.spaceKicker %></p><h2><%= hc.spaceTitle %></h2><p class="section-lede"><%= hc.spaceText %></p></div>
+    </div>
+    <div class="v3-space-grid v3-space-grid-jp">
+      <% hc.spaces.forEach(function (space, index) { const image = spaceImages[index] || hero; %>
+      <a class="v3-space-card v3-space-card-jp" href="<%= urlFor(space.href) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-card-index">0<%= index + 1 %></span><h3><%= space.title %></h3><p><%= space.text %></p>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-jp-matrix-section">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.seriesKicker %></p><h2><%= hc.seriesTitle %></h2><p class="section-lede"><%= hc.seriesText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('series') %>"><%= hc.seriesCta %> <span>↗</span></a>
+    </div>
+    <div class="v3-jp-table-wrap">
+      <table class="v3-jp-table">
+        <thead><tr><th>シリーズ</th><th>モデル</th><th>仕上げ</th><th>用途</th><th></th></tr></thead>
+        <tbody>
+          <% seriesRows.forEach(function (row) { %>
+          <tr><td><a href="<%= urlFor('series/' + seriesSlug(row.series)) %>"><%= localizedSeries(row.series) %></a></td><td><%= row.count %></td><td><%= row.finishCount %></td><td><%= t('common.bathroom') || '浴室・洗面所' %></td><td><a class="v3-table-link" href="<%= urlFor('series/' + seriesSlug(row.series)) %>">詳細 ↗</a></td></tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section-soft v3-jp-specs">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.docsKicker %></p><h2><%= hc.docsTitle %></h2><p class="section-lede"><%= hc.docsText %></p></div>
+      <a class="btn btn-ghost" href="<%= urlFor('resources') %>"><%= hc.docsCta %></a>
+    </div>
+    <div class="v3-jp-doc-grid">
+      <% hc.docsCards.forEach(function (card, index) { %>
+      <a href="<%= urlFor('resources') %>?type=<%= index === 0 ? 'spec_sheet' : index === 1 ? 'installation' : 'packaging' %>"><span class="v3-doc-number">0<%= index + 1 %></span><strong><%= card.title %></strong><span><%= card.text %></span><span class="v3-text-arrow">PDF ↗</span></a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-jp-projects">
+  <div class="wrap">
+    <div class="v3-section-head">
+      <div><p class="eyebrow"><%= hc.projectsKicker %></p><h2><%= hc.projectsTitle %></h2><p class="section-lede"><%= hc.projectsText %></p></div>
+      <a class="v3-text-arrow" href="<%= urlFor('projects') %>"><%= hc.projectsKicker %> <span>↗</span></a>
+    </div>
+    <div class="v3-project-grid v3-project-grid-jp">
+      <% projectReferences.forEach(function (entry, index) { const image = projectImages[index % Math.max(projectImages.length, 1)] || hero; %>
+      <a class="v3-project-card v3-project-card-jp" href="<%= urlFor('projects/' + entry.slug) %>">
+        <% if (image) { %><%- include('../partials/reference-picture', { image: image, eager: true }) %><% } %>
+        <span class="v3-reference-tag"><%= hc.refCaption %></span>
+        <div><span class="v3-card-index"><%= hc.projectLabel %></span><h3><%= entry.title %></h3><p><%= entry.location || '' %></p></div>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-jp-care">
+  <div class="wrap v3-jp-care-grid">
+    <div><p class="eyebrow"><%= hc.careKicker %></p><h2><%= hc.careTitle %></h2><p class="section-lede"><%= hc.careText %></p><a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.finalCta %></a></div>
+    <div class="v3-jp-care-list"><% hc.carePoints.forEach(function (point, index) { %><div><span>0<%= index + 1 %></span><p><%= point %></p></div><% }); %></div>
+  </div>
+</section>
+<% } %>
+
+<section class="v3-section v3-final">
+  <div class="wrap v3-final-inner">
+    <p class="eyebrow"><%= hc.finalKicker %></p>
+    <h2><%= hc.finalTitle %></h2>
+    <p><%= hc.finalText %></p>
+    <div class="v3-actions"><a class="btn btn-primary" href="<%= urlFor('wholesale') %>#inquiry-form"><%= hc.finalCta %></a><a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= hc.finalSecondary %></a></div>
+  </div>
+</section>

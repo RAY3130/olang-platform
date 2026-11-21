@@ -1,0 +1,111 @@
+<form class="inquiry-form oem-form" id="inquiry-form" method="post" action="/api/inquiries" enctype="multipart/form-data" data-ajax-form data-wizard data-form-type="oem">
+  <div class="form-head">
+    <p class="eyebrow"><%= t('pages.oem.formKicker') %></p>
+    <h2><%= t('pages.oem.formTitle') %></h2>
+    <p><%= t('pages.oem.formIntro') %></p>
+  </div>
+  <% if (formErrorCode) { %>
+  <div class="form-alert" role="alert"><strong><%= t('forms.errorTitle') %></strong><span><%= t('forms.errors.' + formErrorCode) %></span></div>
+  <% } %>
+  <div class="form-alert" data-form-alert role="alert" hidden></div>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <input type="hidden" name="form_stamp" value="<%= formStamp %>">
+  <input type="hidden" name="inquiry_type" value="oem">
+  <input type="hidden" name="market" value="<%= market.code %>">
+  <input type="hidden" name="source_path" value="<%= currentPath %>">
+  <input type="hidden" name="return_to" value="<%= currentPath %>">
+  <div class="hp-field" aria-hidden="true">
+    <label>Company website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+  <ol class="wizard-progress" data-wizard-progress aria-label="<%= t('pages.oem.formTitle') %>"></ol>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">1</span> <%= t('pages.oem.step1') %></legend>
+    <div class="form-grid">
+      <label><span><%= t('forms.labels.name') %> *</span><input name="name" type="text" autocomplete="name" maxlength="120" required></label>
+      <label><span><%= t('forms.labels.company') %> *</span><input name="company" type="text" autocomplete="organization" maxlength="200" required></label>
+      <label><span><%= t('forms.labels.email') %> *</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label><span><%= t('forms.labels.phone') %> <small><%= t('common.optional') %></small></span><input name="phone" type="tel" autocomplete="tel" maxlength="80"></label>
+      <label><span><%= t('forms.labels.country') %> *</span><input name="country" type="text" autocomplete="country-name" maxlength="120" required></label>
+      <label><span><%= t('forms.labels.companyType') %></span>
+        <select name="company_type">
+          <option value=""><%= t('common.toBeConfirmed') %></option>
+          <% t('choices.companyTypes').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+        </select>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">2</span> <%= t('pages.oem.step2') %></legend>
+    <div class="form-grid">
+      <label><span><%= t('forms.labels.oemProjectType') %> *</span>
+        <select name="oem_project_type" required>
+          <option value=""><%= t('common.toBeConfirmed') %></option>
+          <% t('choices.oemTypes').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+        </select>
+      </label>
+      <label><span><%= t('forms.labels.oemCurrentModel') %></span><input name="oem_current_model" type="text" maxlength="200" placeholder="OL-1204 / reference"></label>
+      <label class="full"><span><%= t('forms.labels.productInterests') %></span><input name="product_interests" type="text" maxlength="1000" placeholder="<%= t('forms.placeholders.productInterests') %>"></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">3</span> <%= t('pages.oem.step3') %></legend>
+    <div class="form-grid">
+      <label><span><%= t('forms.labels.oemMaterial') %></span><input name="oem_material" type="text" maxlength="500" placeholder="<%= t('forms.placeholders.oemMaterial') %>"></label>
+      <label><span><%= t('forms.labels.oemFinish') %></span><input name="oem_finish" type="text" maxlength="500" placeholder="<%= t('forms.placeholders.oemFinish') %>"></label>
+      <label class="full"><span><%= t('forms.labels.oemDimensions') %></span><input name="oem_dimensions" type="text" maxlength="500" placeholder="<%= t('forms.placeholders.oemDimensions') %>"></label>
+      <label class="full"><span><%= t('forms.labels.oemApplication') %></span><input name="oem_application" type="text" maxlength="300"></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">4</span> <%= t('pages.oem.step4') %></legend>
+    <div class="form-grid">
+      <label><span><%= t('forms.labels.oemTargetQuantity') %></span><input name="target_quantity" type="text" maxlength="120" placeholder="e.g. 2,000 pcs"></label>
+      <label><span><%= t('forms.labels.targetMarket') %></span><input name="target_market" type="text" maxlength="120"></label>
+      <label><span><%= t('forms.labels.expectedOrderDate') %></span><input name="expected_order_date" type="date"></label>
+      <label><span><%= t('forms.labels.terms') %></span>
+        <select name="terms">
+          <option value="to-confirm"><%= t('common.toBeConfirmed') %></option>
+          <% t('choices.terms').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+        </select>
+      </label>
+      <label class="full"><span><%= t('forms.labels.shippingDestination') %></span><input name="shipping_destination" type="text" maxlength="160"></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">5</span> <%= t('pages.oem.step5') %></legend>
+    <label class="file-field">
+      <span><%= t('forms.labels.files') %></span>
+      <input name="attachments" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.stp,.step" data-file-input>
+      <small class="small-note"><%= t('forms.uploadHelp') %></small>
+    </label>
+    <label class="full"><span><%= t('forms.labels.oemBranding') %></span><textarea name="oem_branding" rows="3" maxlength="1000"></textarea></label>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">6</span> <%= t('pages.oem.step6') %></legend>
+    <div class="notice-box"><strong><%= t('pages.oem.ipTitle') %></strong><p><%= t('pages.oem.ipText') %></p></div>
+    <label class="full"><span><%= t('forms.labels.oemNda') %></span>
+      <select name="oem_nda">
+        <% t('choices.nda').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+  </fieldset>
+
+  <fieldset class="wizard-step" data-wizard-step>
+    <legend><span class="step-number">7</span> <%= t('pages.oem.step7') %></legend>
+    <label class="full"><span><%= t('forms.labels.message') %> *</span><textarea name="message" rows="5" maxlength="5000" required placeholder="<%= t('forms.placeholders.message') %>"></textarea></label>
+    <p class="small-note"><%= t('pages.oem.reviewNote') %></p>
+    <label class="check">
+      <input type="checkbox" name="consent" required>
+      <span><%= t('forms.consentLabel') %> <a href="<%= urlFor('privacy') %>" target="_blank" rel="noopener"><%= t('forms.privacyLink') %></a>. <%= t('forms.consentDetail') %></span>
+    </label>
+    <p class="form-required-note"><%= t('forms.requiredHint') %></p>
+    <button class="btn btn-primary btn-full" type="submit"><%= t('pages.oem.submit') %></button>
+    <p class="small-note form-legal"><%= t('common.formSecureNote') %></p>
+  </fieldset>
+</form>

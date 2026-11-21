@@ -1,0 +1,40 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Access control</p><h2>Users and roles</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/audit">Audit log</a>
+</div>
+<div class="admin-note">Roles: Super Admin (all), Content Manager (products, content, documents), Sales Manager (inquiries, analytics, export), Sales Staff (assigned inquiries and notes). The last active Super Admin cannot be deactivated.</div>
+
+<section class="admin-panel" style="margin-top:1rem">
+  <h3>Create user</h3>
+  <form method="post" action="/admin/users" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <div class="admin-form-grid">
+      <label>Username<input name="username" required maxlength="80" autocomplete="off"></label>
+      <label>Display name<input name="display_name" required maxlength="120"></label>
+      <label>Email<input name="email" type="email" maxlength="254"></label>
+      <label>Role<select name="role"><% roles.forEach(function (entry) { %><option value="<%= entry[0] %>"><%= entry[1] %></option><% }); %></select></label>
+      <label>Initial password<input name="password" type="password" minlength="12" required autocomplete="new-password"><span class="admin-form-note">The new user must change it on first login.</span></label>
+    </div>
+    <button class="btn btn-primary btn-small" type="submit">Create user</button>
+  </form>
+</section>
+
+<% users.forEach(function (user) { %>
+<details class="admin-details">
+  <summary><%= user.display_name %> <span class="admin-meta"><%= user.username %> · <%= roleLabels[user.role] %> · <%= user.active ? 'active' : 'inactive' %></span></summary>
+  <div class="admin-details-body">
+    <form method="post" action="/admin/users/<%= user.id %>" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <div class="admin-form-grid">
+        <label>Display name<input name="display_name" value="<%= user.display_name %>" maxlength="120" required></label>
+        <label>Email<input name="email" type="email" value="<%= user.email || '' %>" maxlength="254"></label>
+        <label>Role<select name="role"><% roles.forEach(function (entry) { %><option value="<%= entry[0] %>"<%= user.role === entry[0] ? ' selected' : '' %>><%= entry[1] %></option><% }); %></select></label>
+        <label class="check"><input type="checkbox" name="active" value="1"<%= user.active ? ' checked' : '' %>> Active</label>
+        <label>Reset password (optional)<input name="new_password" type="password" minlength="12" autocomplete="new-password"><span class="admin-form-note">Resetting signs the user out and forces a password change.</span></label>
+      </div>
+      <button class="btn btn-primary btn-small" type="submit">Save user</button>
+    </form>
+    <p class="admin-meta">Last login: <%= user.last_login_at || 'Never' %> · Created: <%= user.created_at.slice(0,10) %></p>
+  </div>
+</details>
+<% }); %>

@@ -1,0 +1,76 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= pc.selectorKicker %></p>
+      <h1><%= pc.selectorTitle %></h1>
+      <p class="lede"><%= pc.selectorLede %></p>
+      <p class="small-note"><%= localSignal %></p>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/official/cards/<%= products[0] ? products[0].sku : 'OL-1208' %>.jpg" alt="" width="1800" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <form method="get" action="<%= urlFor('selector') %>" class="selector-form">
+      <div class="selector-step">
+        <span class="selector-number">01</span>
+        <label><%= pc.selectorSpace %>
+          <select name="space">
+            <option value=""><%= pc.selectorAll %></option>
+            <% spaceOptions.forEach(function (option) { %><option value="<%= option.key %>"<%= space === option.key ? ' selected' : '' %>><%= option.label %></option><% }); %>
+          </select>
+        </label>
+      </div>
+      <div class="selector-step">
+        <span class="selector-number">02</span>
+        <label><%= pc.selectorSeries %>
+          <select name="series">
+            <option value=""><%= pc.selectorAll %></option>
+            <% seriesOptions.forEach(function (row) { %><option value="<%= row.series %>"<%= series === row.series ? ' selected' : '' %>><%= localizedSeries(row.series) %> (<%= row.count %>)</option><% }); %>
+          </select>
+        </label>
+      </div>
+      <div class="selector-step">
+        <span class="selector-number">03</span>
+        <label><%= pc.selectorFinish %>
+          <select name="finish">
+            <option value=""><%= pc.selectorAll %></option>
+            <% finishes.forEach(function (row) { %><option value="<%= row.code %>"<%= finish === row.code ? ' selected' : '' %>><%= row.name %> (<%= row.count %>)</option><% }); %>
+          </select>
+        </label>
+      </div>
+      <div class="selector-actions">
+        <button class="btn btn-primary" type="submit"><%= pc.selectorSubmit %></button>
+        <a class="btn btn-ghost" href="<%= urlFor('selector') %>"><%= pc.selectorReset %></a>
+      </div>
+      <p class="small-note selector-note"><%= pc.selectorNote %></p>
+    </form>
+
+    <% if (hasSelection) { %>
+    <div class="catalog-toolbar">
+      <p class="result-count"><%= pc.selectorResults.replace('{count}', products.length) %></p>
+      <a class="text-link" href="<%= urlFor('products') %>"><%= pc.allProducts %> →</a>
+    </div>
+    <% if (products.length) { %>
+    <div class="product-grid">
+      <% products.forEach(function (product) { %>
+      <%- include('../partials/product-card', { product: product }) %>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="empty-state">
+      <h2><%= pc.selectorEmpty %></h2>
+      <a class="btn btn-primary" href="<%= urlFor('inquiry') %>"><%= pc.selectorEmptyCta %></a>
+    </div>
+    <% } %>
+    <% } else { %>
+    <div class="selector-intro">
+      <p class="eyebrow"><%= pc.selectorKicker %></p>
+      <p><%= pc.selectorNote %></p>
+    </div>
+    <% } %>
+  </div>
+</section>

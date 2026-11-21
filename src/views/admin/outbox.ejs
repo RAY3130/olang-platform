@@ -1,0 +1,27 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Delivery</p><h2>Email outbox</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin">Dashboard</a>
+</div>
+<div class="admin-flash <%= emailConfigured ? 'admin-flash-ok' : 'admin-flash-error' %>">
+  <%= emailConfigured ? 'SMTP transport is configured. Status reflects actual send attempts.' : 'SMTP is NOT configured. Every inquiry notification and acknowledgement is stored here as not_configured. No email has been sent.' %>
+</div>
+
+<div class="admin-table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Created</th><th>Inquiry</th><th>Kind</th><th>To</th><th>Subject</th><th>Status</th><th>Detail</th></tr></thead>
+    <tbody>
+      <% rows.forEach(function (row) { %>
+      <tr>
+        <td><%= row.created_at.slice(0,16).replace('T',' ') %></td>
+        <td><% if (row.inquiry_id) { %><a href="/admin/inquiries/<%= row.inquiry_id %>"><%= row.reference || row.inquiry_id %></a><% } else { %>—<% } %></td>
+        <td><%= row.kind %></td>
+        <td><%= row.to_email %></td>
+        <td><%= row.subject %></td>
+        <td><span class="status-pill <%= row.status === 'sent' ? 'status-won' : row.status === 'failed' ? 'status-need_more_info' : 'status-archived' %>"><%= row.status %></span></td>
+        <td><details><summary class="link-button">View</summary><p class="admin-meta"><%= row.error || '' %></p><pre class="admin-email-body"><%= row.body_text %></pre></details></td>
+      </tr>
+      <% }); %>
+      <% if (!rows.length) { %><tr><td colspan="7">No email records.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>

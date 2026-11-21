@@ -1,0 +1,35 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Project content</p><h2><%= entry.title %></h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/cases">Back to cases</a>
+</div>
+<div class="admin-note">Company-published references may be shown with a source and a public-reference label. A reference marked Verified requires written customer authorization and an authorization reference. Unpublish immediately if permission is withdrawn.</div>
+<form method="post" action="/admin/cases/<%= entry.id %>" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrf %>">
+  <section class="admin-panel">
+    <div class="admin-form-grid">
+      <label>Title<input name="title" value="<%= entry.title %>" required maxlength="200"></label>
+      <label>Slug<input name="slug" value="<%= entry.slug %>" required maxlength="120"></label>
+      <label>Market / region<input name="market" value="<%= entry.market || '' %>" maxlength="40"></label>
+      <label>Location<input name="location" value="<%= entry.location || '' %>" maxlength="200"></label>
+      <label>Project type<input name="project_type" value="<%= entry.project_type || '' %>" maxlength="100" placeholder="Hotel / resort / residential"></label>
+      <label>Year<input name="year" value="<%= entry.year || '' %>" maxlength="20"></label>
+      <label>Products / scope<input name="products" value="<%= entry.products || '' %>" maxlength="1000"></label>
+      <label>Image path<input name="image_path" value="<%= entry.image_path || '' %>" maxlength="300" placeholder="images/projects/case-1.jpg"></label>
+      <label>Source URL<input name="source_url" value="<%= entry.source_url || '' %>" maxlength="500" placeholder="https://example.com/"></label>
+      <label>Verification status
+        <select name="verification_status">
+          <% [['company_published','Company-published reference'],['verified','Verified reference (authorization required)'],['pending','Pending verification']].forEach(function (option) { %>
+          <option value="<%= option[0] %>"<%= (entry.verification_status || 'pending') === option[0] ? ' selected' : '' %>><%= option[1] %></option>
+          <% }); %>
+        </select>
+      </label>
+      <label>Authorization reference<input name="authorization_reference" value="<%= entry.authorization_reference || '' %>" maxlength="300"></label>
+      <label class="full" style="grid-column:1/-1">Summary — English<textarea name="summary" rows="4" maxlength="4000" required><%= entry.summary %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Summary — Deutsch<textarea name="summary_de" rows="3" maxlength="4000"><%= entry.summary_de || '' %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Summary — Italiano<textarea name="summary_it" rows="3" maxlength="4000"><%= entry.summary_it || '' %></textarea></label>
+      <label class="check"><input type="checkbox" name="authorization_confirmed" value="1"<%= entry.authorization_confirmed ? ' checked' : '' %>> Written authorization confirmed</label>
+      <label class="check"><input type="checkbox" name="published" value="1"<%= entry.published ? ' checked' : '' %>> Published</label>
+    </div>
+    <button class="btn btn-primary" type="submit">Save case</button>
+  </section>
+</form>

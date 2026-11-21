@@ -1,0 +1,27 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Document library</p><h2>Documents</h2></div>
+  <a class="btn btn-primary btn-small" href="/admin/documents/new">Add document</a>
+</div>
+<p class="admin-form-note">A public download requires a real uploaded file, <code class="admin-code">visibility=public</code> and <code class="admin-code">status=available</code>. Records without a file are shown as “available on request” and must not use a fake PDF link.</p>
+
+<div class="admin-table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Title</th><th>Type</th><th>Product</th><th>Version</th><th>Markets</th><th>Access</th><th>Status</th><th>File</th><th></th></tr></thead>
+    <tbody>
+      <% documents.forEach(function (doc) { %>
+      <tr>
+        <td><strong><%= doc.title %></strong><small><%= doc.updated_at.slice(0,10) %></small></td>
+        <td><%= documentTypeLabel(doc.doc_type) %></td>
+        <td><%= doc.sku || '—' %></td>
+        <td><%= doc.version %></td>
+        <td><%= doc.markets.join(', ') %></td>
+        <td><%= doc.visibility %></td>
+        <td><span class="status-pill <%= doc.status === 'available' ? 'status-won' : 'status-archived' %>"><%= doc.status %></span></td>
+        <td><%= doc.file_path ? 'stored' : 'none' %></td>
+        <td><a class="text-link" href="/admin/documents/<%= doc.id %>">Edit</a></td>
+      </tr>
+      <% }); %>
+      <% if (!documents.length) { %><tr><td colspan="9">No document records.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>

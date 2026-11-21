@@ -1,0 +1,50 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %> · <%= companyCommon.factory %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= urlFor('contact') %>"><%= copy.cta %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('about') %>"><%= copy.backAbout %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/<%= copy.image.replace(/^\/+/, '') %>" alt="<%= copy.imageAlt %>" width="1400" height="933">
+      <p class="media-caption"><%= t('common.publicSource') %> · OLANG</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= copy.introTitle %></h2>
+      <p class="section-lede"><%= copy.introText %></p>
+    </div>
+    <div class="process-grid process-grid-wide">
+      <% copy.steps.forEach(function (step) { %>
+      <div><span><%= step.number %></span><h3><%= step.title %></h3><p><%= step.text %></p></div>
+      <% }); %>
+    </div>
+    <p class="small-note"><%= copy.note %></p>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= copy.capabilitiesTitle %></h2>
+      <ul class="clean-list">
+        <% copy.capabilities.forEach(function (item) { %><li><%= item %></li><% }); %>
+      </ul>
+      <p class="small-note"><%= copy.note %></p>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/company/production-line.jpg" alt="OLANG production line, public company image" width="1400" height="933" loading="lazy">
+      <p class="media-caption"><%= t('common.publicSource') %> · OLANG</p>
+    </div>
+  </div>
+</section>

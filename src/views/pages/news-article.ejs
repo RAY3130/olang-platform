@@ -1,0 +1,52 @@
+<section class="page-hero page-hero-article">
+  <div class="wrap narrow">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <% breadcrumbs.forEach(function (crumb, index) { %>
+      <% if (index < breadcrumbs.length - 1) { %><a href="<%= crumb.url %>"><%= crumb.name %></a><span aria-hidden="true">/</span><% } else { %><span aria-current="page"><%= crumb.name %></span><% } %>
+      <% }); %>
+    </nav>
+    <div class="news-meta"><span><%= article.category === 'company' ? copy.company : copy.industry %></span><time datetime="<%= article.published_at %>"><%= copy.published %> <%= formatDate(article.published_at, locale) %></time></div>
+    <h1><%= article.title %></h1>
+    <p class="lede"><%= article.excerpt %></p>
+  </div>
+</section>
+
+<% if (article.image_path) { %>
+<section class="section section-tight">
+  <div class="wrap narrow">
+    <figure class="article-image"><img src="/<%= article.image_path.replace(/^\/+/, '') %>" alt="<%= article.title %>" width="1400" height="900"><figcaption><%= t('common.publicSource') %> · OLANG</figcaption></figure>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap narrow article-body">
+    <% String(article.body || '').split(/\n{2,}/).forEach(function (paragraph) { %>
+    <p><%= paragraph %></p>
+    <% }); %>
+    <div class="article-source">
+      <span><%= copy.source %></span>
+      <a class="text-link" href="<%= article.source_url %>" target="_blank" rel="noopener noreferrer"><%= article.source_url %> ↗</a>
+    </div>
+    <a class="btn btn-ghost" href="<%= urlFor('news') %>">← <%= copy.backNews %></a>
+  </div>
+</section>
+
+<% if (related.length) { %>
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.related %></p><h2><%= copy.related %></h2></div>
+    <div class="news-grid news-grid-related">
+      <% related.forEach(function (item) { %>
+      <article class="news-card">
+        <div class="news-body">
+          <div class="news-meta"><span><%= item.category === 'company' ? copy.company : copy.industry %></span><time datetime="<%= item.published_at %>"><%= formatDate(item.published_at, locale) %></time></div>
+          <h2><a href="<%= urlFor('news/' + item.slug) %>"><%= item.title %></a></h2>
+          <p><%= item.excerpt %></p>
+        </div>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<% } %>

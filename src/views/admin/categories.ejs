@@ -1,0 +1,44 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Catalogue taxonomy</p><h2>Product categories</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/products">Back to products</a>
+</div>
+<p class="admin-form-note">Categories control navigation and catalogue filters. Changing a key can break links; the slug is public. Only publish categories that have real products or a deliberate “coming later” reason.</p>
+
+<section class="admin-panel">
+  <h3>Add category</h3>
+  <form method="post" action="/admin/categories" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <div class="admin-form-grid">
+      <label>Key<input name="key" required maxlength="80" placeholder="e.g. soap-dishes"></label>
+      <label>Slug<input name="slug" required maxlength="80" placeholder="e.g. soap-dishes"></label>
+      <label>English name<input name="name_en" required maxlength="120"></label>
+      <label>Deutsch<input name="name_de" maxlength="120"></label>
+      <label>Italiano<input name="name_it" maxlength="120"></label>
+      <label>Sort order<input name="sort_order" type="number" min="0" max="1000" value="100"></label>
+    </div>
+    <button class="btn btn-primary btn-small" type="submit">Add category</button>
+  </form>
+</section>
+
+<% categories.forEach(function (category) { const tr = translations[category.id] || {}; %>
+<details class="admin-details">
+  <summary><%= tr.en ? tr.en.name : category.key %> <span class="admin-meta"><%= category.slug %> · <%= category.product_count %> products · <%= category.published ? 'published' : 'hidden' %></span></summary>
+  <div class="admin-details-body">
+    <form method="post" action="/admin/categories/<%= category.id %>" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <div class="admin-form-grid">
+        <label>Slug<input name="slug" value="<%= category.slug %>" maxlength="80" required></label>
+        <label>Sort order<input name="sort_order" type="number" min="0" max="1000" value="<%= category.sort_order %>"></label>
+        <label class="check"><input type="checkbox" name="published" value="1"<%= category.published ? ' checked' : '' %>> Published</label>
+        <% ['en','de','it'].forEach(function (locale) { const row = tr[locale] || {}; %>
+        <label><%= locale === 'en' ? 'English' : locale === 'de' ? 'Deutsch' : 'Italiano' %> name<input name="name_<%= locale %>" value="<%= row.name || '' %>" maxlength="120"></label>
+        <label style="grid-column:1/-1"><%= locale %> description<textarea name="description_<%= locale %>" rows="2" maxlength="1000"><%= row.description || '' %></textarea></label>
+        <label><%= locale %> SEO title<input name="seo_title_<%= locale %>" value="<%= row.seo_title || '' %>" maxlength="200"></label>
+        <label><%= locale %> SEO description<input name="seo_description_<%= locale %>" value="<%= row.seo_description || '' %>" maxlength="320"></label>
+        <% }); %>
+      </div>
+      <button class="btn btn-primary btn-small" type="submit">Save category</button>
+    </form>
+  </div>
+</details>
+<% }); %>

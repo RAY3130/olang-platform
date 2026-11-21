@@ -1,0 +1,8 @@
+node_modules
+storage
+.env
+test-artifacts
+tests
+npm-debug.log
+.git
+.gitignore

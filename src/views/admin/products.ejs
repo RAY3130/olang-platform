@@ -1,0 +1,57 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Catalogue</p><h2><%= products.length %> product records</h2></div>
+  <div class="admin-actions">
+    <a class="btn btn-primary btn-small" href="/admin/products/new">New product</a>
+    <a class="btn btn-ghost btn-small" href="/admin/products/export.csv">Export CSV</a>
+    <a class="btn btn-ghost btn-small" href="/admin/categories">Categories</a>
+  </div>
+</div>
+
+<% if (importResult) { %>
+<div class="admin-flash admin-flash-ok">Imported/updated <strong><%= importResult.imported %></strong> of <%= importResult.total %> rows.</div>
+<% } %>
+<% if (importErrors && importErrors.length) { %>
+<div class="admin-flash admin-flash-error"><strong>Import issues</strong><ul class="admin-list"><% importErrors.forEach(function (error) { %><li><%= error %></li><% }); %></ul></div>
+<% } %>
+
+<section class="admin-panel">
+  <form method="get" action="/admin/products" class="admin-form">
+    <div class="admin-form-grid">
+      <label>Search SKU or name<input type="search" name="q" value="<%= filters.q %>" maxlength="120"></label>
+      <label>Category<select name="category"><option value="">All categories</option><% categories.forEach(function (c) { %><option value="<%= c.key %>"<%= filters.category === c.key ? ' selected' : '' %>><%= c.key %></option><% }); %></select></label>
+      <label>Published<select name="published"><option value="">All</option><option value="1"<%= filters.published === '1' ? ' selected' : '' %>>Published</option><option value="0"<%= filters.published === '0' ? ' selected' : '' %>>Unpublished</option></select></label>
+    </div>
+    <div class="admin-form-actions"><button class="btn btn-ghost btn-small" type="submit">Filter</button><a class="btn btn-ghost btn-small" href="/admin/products">Reset</a></div>
+  </form>
+</section>
+
+<div class="admin-table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>SKU / Slug</th><th>Name (EN)</th><th>Category</th><th>Published</th><th>Data filled</th><th>Docs</th><th>Translation</th><th></th></tr></thead>
+    <tbody>
+      <% products.forEach(function (p) { %>
+      <tr>
+        <td><strong><%= p.sku %></strong><small><%= p.slug %></small></td>
+        <td><%= p.name || '—' %><small><%= p.series || 'No series' %></small></td>
+        <td><%= p.category_key %></td>
+        <td><span class="status-pill <%= p.published ? 'status-won' : 'status-archived' %>"><%= p.published ? 'Live' : 'Hidden' %></span></td>
+        <td><%= p.filled_attributes %> / 18</td>
+        <td><%= p.document_count %></td>
+        <td><%= p.translation_status %></td>
+        <td><a class="text-link" href="/admin/products/<%= p.id %>">Edit</a></td>
+      </tr>
+      <% }); %>
+      <% if (!products.length) { %><tr><td colspan="8">No products match.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<section class="admin-panel" style="margin-top:1rem">
+  <h3>Bulk import</h3>
+  <p class="admin-form-note">CSV columns: <code class="admin-code">sku,slug,category_key,series,image_path,published,name_en,name_de,name_it,short_en,description_en,seo_title_en,seo_description_en,source_url,source_checked_at</code>. Existing SKUs are updated; new SKUs get empty verified fields. Imports do not invent specifications.</p>
+  <form method="post" action="/admin/products/import" enctype="multipart/form-data" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <label>CSV file<input type="file" name="csv" accept=".csv,text/csv" required></label>
+    <button class="btn btn-ghost btn-small" type="submit">Import CSV</button>
+  </form>
+</section>

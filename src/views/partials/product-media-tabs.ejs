@@ -1,0 +1,76 @@
+<%
+  const mediaMain = (media && media.main) ? media.main : {
+    src: product.image_path ? '/' + product.image_path.replace(/^\/+/, '') : '',
+    avifSrcset: null,
+    webpSrcset: null,
+    width: null,
+    height: null,
+    alt: product.name + ' ' + product.sku
+  };
+  const ratioClass = product.presentationRatioClass || product.imageRatioClass || '4x3';
+  const colorRows = product.colors || [];
+  const photoColors = colorRows.filter(function (c) { return Boolean(c.image_path); });
+  const chipOnlyColors = colorRows.filter(function (c) { return !c.image_path; });
+  const finishCount = colorRows.length;
+  const finishWord = locale === 'de' ? 'Oberflächen' : locale === 'ja' ? '色' : 'finishes';
+%>
+<div class="product-detail-media media-gallery" data-media-gallery data-product-gallery data-gallery-count="<%= 1 + photoColors.length %>">
+  <div class="photo-stage" data-ratio-class="ratio-<%= ratioClass %>">
+    <% if (mediaMain.src) { %>
+    <div class="photo-toolbar">
+      <span class="photo-badge"><%= t('photo.productPhoto') %></span>
+      <button type="button" class="media-zoom" data-photo-zoom aria-label="<%= t('photo.zoomPhoto') %>"><span aria-hidden="true">＋</span> <%= t('photo.zoom') %></button>
+    </div>
+    <div class="photo-frame ratio-<%= ratioClass %>" style="--frame-bg: var(--img-bg)" data-photo-frame data-view="full">
+      <picture>
+        <% if (mediaMain.avifSrcset) { %><source type="image/avif" srcset="<%= mediaMain.avifSrcset %>" sizes="(max-width: 767px) 92vw, 58vw"><% } %>
+        <% if (mediaMain.webpSrcset) { %><source type="image/webp" srcset="<%= mediaMain.webpSrcset %>" sizes="(max-width: 767px) 92vw, 58vw"><% } %>
+        <img data-photo-main data-photo-full="<%= mediaMain.full || mediaMain.src %>" src="<%= mediaMain.src %>" alt="<%= mediaMain.alt %>"<% if (mediaMain.width && mediaMain.height) { %> width="<%= mediaMain.width %>" height="<%= mediaMain.height %>"<% } %> fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <% if (photoColors.length) { %>
+    <div class="photo-thumbs" role="group" aria-label="<%= t('photo.galleryLabel') || t('common.gallery') %>">
+      <button type="button" class="photo-thumb is-active" data-photo-thumb data-view="full" data-photo-thumb-src="<%= mediaMain.src %>" data-photo-thumb-full="<%= mediaMain.full || mediaMain.src %>" data-thumb-label="<%= t('photo.source') %>">
+        <span class="thumb-img"><img src="<%= mediaMain.thumb || mediaMain.src %>" alt="" width="72" height="72" loading="lazy"></span>
+        <span><%= t('photo.overview') || 'Overview' %></span>
+      </button>
+      <% photoColors.forEach(function (c) { %>
+      <button type="button" class="photo-thumb photo-thumb-finish" data-photo-thumb data-view="full" data-photo-thumb-src="<%= c.image_path %>" data-photo-thumb-full="<%= c.image_path %>" data-thumb-label="<%= t('photo.finishPhoto') %> · <%= c.localized_label || c.display_label %>" data-finish-label="<%= c.localized_label || c.display_label %>">
+        <span class="thumb-img"><img src="<%= c.thumb_path || c.image_path %>" alt="" width="72" height="72" loading="lazy"></span>
+        <span><%= c.localized_label || c.display_label %></span>
+      </button>
+      <% }); %>
+    </div>
+    <% } %>
+    <p class="photo-caption" data-photo-caption><%= t('photo.productPhoto') %> · <%= t('photo.overview') || 'Overview' %></p>
+
+    <div class="photo-finish-panel">
+      <div class="photo-finish-head">
+        <span><%= t('photo.finishGroup') %></span>
+        <small><%= finishCount %> <%= finishWord %></small>
+      </div>
+      <div class="photo-colors" role="group" aria-label="<%= t('photo.finishGroup') %>">
+        <% colorRows.forEach(function (c, i) { %>
+          <% if (c.image_path) { %>
+          <button type="button" class="photo-color" data-color-image="<%= c.image_path %>" data-color-label="<%= c.localized_label || c.display_label %>" data-color-caption="<%= t('photo.captionPhoto') %> · <%= c.localized_label || c.display_label %>">
+            <img src="<%= c.chip_path %>" alt="" width="24" height="24" loading="lazy"><span><%= c.localized_label || c.display_label %></span><small><%= t('photo.photoAvailable') || 'photo' %></small>
+          </button>
+          <% } else { %>
+          <a class="photo-color is-chip-only" href="<%= urlFor('inquiry') %>?sku=<%= encodeURIComponent(product.sku) %>&amp;finish=<%= encodeURIComponent(c.official_label) %>">
+            <img src="<%= c.chip_path %>" alt="" width="24" height="24" loading="lazy"><span><%= c.localized_label || c.display_label %></span><small><%= t('photo.finishSample') %></small>
+          </a>
+          <% } %>
+        <% }); %>
+      </div>
+      <p class="photo-finish-note"><%= t('photo.matrixNote') %></p>
+    </div>
+
+    <% } %>
+  </div>
+</div>
+
+<div class="photo-lightbox" data-photo-lightbox hidden role="dialog" aria-modal="true" aria-label="<%= t('photo.zoomPhoto') %>">
+  <button type="button" class="lightbox-close" data-photo-close aria-label="<%= t('common.close') %>">×</button>
+  <div class="lightbox-frame" data-photo-frame><img data-photo-large src="<%= mediaMain.src %>" alt=""></div>
+  <p class="lightbox-hint"><%= t('photo.zoomHint') %></p>
+</div>

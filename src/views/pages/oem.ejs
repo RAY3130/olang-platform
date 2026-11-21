@@ -1,0 +1,54 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#inquiry-form"><%= t('common.startOem') %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('projects') %>"><%= t('common.discussProject') %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/grab-bar-ol-1160.jpg" alt="OL-1160 <%= t('common.product') %>" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.scopeKicker %></p><h2><%= copy.scopeTitle %></h2><p class="section-lede"><%= copy.scopeText %></p></div>
+    <div class="check-grid">
+      <% copy.scopeCards.forEach(function (card, index) { %>
+      <div><span>0<%= index + 1 %></span><h3><%= card.title %></h3><p><%= card.text %></p></div>
+      <% }); %>
+    </div>
+    <div class="notice-box"><strong><%= copy.ipTitle %></strong><p><%= copy.ipText %></p></div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.processKicker %></p><h2><%= copy.processTitle %></h2></div>
+    <div class="process-grid process-grid-7">
+      <% copy.process.forEach(function (step) { %>
+      <div><span><%= step.number %></span><h3><%= step.title %></h3><p><%= step.text %></p></div>
+      <% }); %>
+    </div>
+    <p class="small-note"><%= copy.noCapacityClaim %></p>
+  </div>
+</section>
+
+<section class="section" id="oem-form">
+  <div class="wrap form-layout">
+    <div>
+      <p class="eyebrow"><%= copy.formKicker %></p>
+      <h2><%= copy.formTitle %></h2>
+      <p class="lede"><%= copy.formIntro %></p>
+      <div class="step-grid">
+        <% copy.formSteps.forEach(function (step, index) { %><div><span>0<%= index + 1 %></span><h3><%= step %></h3></div><% }); %>
+      </div>
+    </div>
+    <%- include('../partials/oem-form') %>
+  </div>
+</section>

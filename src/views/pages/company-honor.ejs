@@ -1,0 +1,54 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %> · <%= companyCommon.honor %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#honor-documents"><%= copy.requestCta %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('about') %>"><%= copy.backAbout %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/company/design-patent.jpg" alt="Design patent documentation published by OLANG" width="1400" height="933">
+      <p class="media-caption"><%= t('common.publicSource') %> · OLANG</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= t('common.honorDocumentsTitle') %></h2>
+      <p class="section-lede"><%= t('common.honorDocumentsText') %></p>
+    </div>
+    <div class="honor-grid">
+      <% copy.entries.forEach(function (entry, index) { %>
+      <article class="honor-card">
+        <span class="card-number">0<%= index + 1 %></span>
+        <h2><%= entry.title %></h2>
+        <p><%= entry.text %></p>
+        <a class="btn btn-ghost honor-request" href="<%= urlFor('resources') %>?type=<%= index === 1 ? 'test_report' : 'certificate' %>&amp;document=<%= encodeURIComponent(entry.title) %>#document-request" data-document-request data-type="<%= index === 1 ? 'test_report' : 'certificate' %>"><%= t('common.requestDocument') %> →</a>
+      </article>
+      <% }); %>
+    </div>
+    <p class="source-note"><%= copy.note %></p>
+  </div>
+</section>
+
+<section class="section section-soft" id="honor-documents">
+  <div class="wrap project-band">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h2><%= copy.requestTitle %></h2>
+      <p class="lede"><%= copy.requestText %></p>
+      <a class="btn btn-primary" href="<%= urlFor('resources') %>?type=certificate#document-request"><%= copy.requestCta %></a>
+    </div>
+    <div class="evidence-card">
+      <h3><%= companyCommon.development %></h3>
+      <p><%= t('pages.about.developmentText') %></p>
+      <a class="text-link" href="<%= urlFor('about/development') %>"><%= companyCommon.development %> →</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+node_modules/
+.env
+storage/*.sqlite
+storage/*.sqlite-shm
+storage/*.sqlite-wal
+storage/uploads/*
+!storage/uploads/.gitkeep
+storage/backups/
+storage/backup*/
+storage/report-qa-uploads/
+storage/bootstrap-admin*.txt
+storage/ADMIN-CREDENTIALS.txt
+storage/*.before-*.sqlite*
+test-artifacts/
+*.log
+.DS_Store
+
+# 部署凭据与本地产物（绝不入库）
+deploy/.deploy.env
+deploy/.admin-credentials.local.txt
+deploy/.checks.tsv

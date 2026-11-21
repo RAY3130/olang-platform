@@ -1,0 +1,2164 @@
+{
+  "colors": [
+    {
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "kind": "metal",
+      "chip_path": "/images/colors/brushed-gold.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f8dac8bd-1abd-401c-bf0d-866d7f038264.png"
+    },
+    {
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "kind": "metal",
+      "chip_path": "/images/colors/chrome.png",
+      "note": "Official label: Chrome-plated",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/8f5fe993-218a-4324-b599-4f0a91e1c259.png"
+    },
+    {
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "kind": "metal",
+      "chip_path": "/images/colors/matte-black.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/65953d91-31e3-4337-8d78-e7c05ab4e1b6.png"
+    },
+    {
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "kind": "metal",
+      "chip_path": "/images/colors/gunmetal.png",
+      "note": "Machine translation of 枪灰; rendered as Gunmetal",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/bc461a28-3f09-4f3f-9e3a-ef0d06e32fb8.png"
+    },
+    {
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "kind": "metal",
+      "chip_path": "/images/colors/rose-gold.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f2604a11-4433-4034-975f-bade06cd6f79.png"
+    },
+    {
+      "official_label": "Chrome plating + matte black",
+      "display_label": "Chrome + Matte Black",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/chrome-matte-black.png",
+      "note": "Official label: Chrome plating + matte black",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/df35308f-83c2-47e9-8387-a4c2cd4427e3.png"
+    },
+    {
+      "official_label": "Rose Gold + Matte Black",
+      "display_label": "Rose Gold + Matte Black",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/rose-gold-matte-black.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/ec531c2e-4ff4-4a35-a252-53418b8c5f3d.png"
+    },
+    {
+      "official_label": "Gunmetal + Rose Gold",
+      "display_label": "Gunmetal + Rose Gold",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/gunmetal-rose-gold.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/7c54d1f2-ea38-4d7d-a331-3fc3f2e55785.png"
+    },
+    {
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/matte-white-matte-black.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/323f738f-1408-46b3-b398-5a6bc88daa55.png"
+    },
+    {
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/matte-black-rose-gold.png",
+      "note": "",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e8386caf-e6b4-44ca-8fc0-5b1d972a0f31.png"
+    },
+    {
+      "official_label": "Chrome-plated + white glass",
+      "display_label": "Chrome + White Glass",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/chrome-white-glass.png",
+      "note": "Official label: Chrome-plated + white glass",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/16b6fd6d-40b7-4420-9f5a-7dd3849c99e1.png"
+    },
+    {
+      "official_label": "Chrome-plated + White Rock Slab",
+      "display_label": "Chrome + White Stone",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/chrome-white-stone.png",
+      "note": "Official label: Chrome-plated + White Rock Slab",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2e9e8a99-ce19-4fd3-98db-b66b828f62fe.png"
+    },
+    {
+      "official_label": "Chrome plating + Black rock slab",
+      "display_label": "Chrome + Black Stone",
+      "kind": "two_tone",
+      "chip_path": "/images/colors/chrome-black-stone.png",
+      "note": "Official label: Chrome plating + Black rock slab",
+      "swatch_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/5b43e324-5f34-4bfe-ae7f-871e971f52a2.png"
+    }
+  ],
+  "products": [
+    {
+      "sku": "OL-11301",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11301A",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-11301B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11301B-A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11302",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11302A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11302B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11303",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11306",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11306B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11309",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11309A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11309L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11310A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11312",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11312A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11312L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11314",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11314A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11314B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11314L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11315",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11315A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11316",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11316A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11317",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11317A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11317L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11318L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11501",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11502",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11502-1",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11502A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11502S",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11503",
+      "labels": "Chrome-plated + white glass||Chrome-plated + White Rock Slab||Chrome plating + Black rock slab"
+    },
+    {
+      "sku": "OL-11601A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11603A",
+      "labels": "Matte Black"
+    },
+    {
+      "sku": "OL-11605",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11605A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11605L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11606A",
+      "labels": "Matte Black"
+    },
+    {
+      "sku": "OL-11606A-2A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11608",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11608A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-11608L",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-1204",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1204B",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1205",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1207",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1208",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1209",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1211A",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-1701B",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1702",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1704",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1705",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1706",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1706B",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1707",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1708",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-1711",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-5201B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5208A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5209",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5210A",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5216",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5218B",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5218H",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5219D",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5219H",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5221",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5232",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5234",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5235",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-5236",
+      "labels": "Chrome-plated"
+    },
+    {
+      "sku": "OL-6601A",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-6601B",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-6601C",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-6602",
+      "labels": "Chrome-plated||Matte Black||Rose Gold"
+    },
+    {
+      "sku": "OL-6604",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6604A",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6605",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6606B",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6606S",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6607",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6608",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6609",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-6611",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder||Rose Gold"
+    },
+    {
+      "sku": "OL-7201A",
+      "labels": "Brushed Gold||Chrome-plated||Cannon fodder"
+    },
+    {
+      "sku": "OL-7201B",
+      "labels": "Brushed Gold||Chrome-plated||Cannon fodder"
+    },
+    {
+      "sku": "OL-7202",
+      "labels": "Brushed Gold||Chrome-plated||Cannon fodder"
+    },
+    {
+      "sku": "OL-7203",
+      "labels": "Brushed Gold||Chrome-plated||Cannon fodder"
+    },
+    {
+      "sku": "OL-7204",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7205",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7206",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7206A",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7207",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7208",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7209",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7211",
+      "labels": "Brushed Gold||Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-7304A",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7306",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7306S",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7307A",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7308",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7309A",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7311A",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-7604",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-7605",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-7606",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-7607",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-7608",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-7611",
+      "labels": "Chrome plating + matte black||Rose Gold + Matte Black||Gunmetal + Rose Gold||Matte White + Matte Black||Matte Black + Rose Gold"
+    },
+    {
+      "sku": "OL-9004",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9005",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9006",
+      "labels": "Chrome-plated||Matte Black"
+    },
+    {
+      "sku": "OL-9006A",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9006S",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9007",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9008",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9009",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9011",
+      "labels": "Chrome-plated||Matte Black||Cannon fodder"
+    },
+    {
+      "sku": "OL-9715A",
+      "labels": "Chrome-plated"
+    }
+  ],
+  "images": [
+    {
+      "sku": "OL-11301",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11301-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/bc02261b-866a-4a18-a113-c95187362e78.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/48.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11301A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-11301A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/507b2dcd-0fe8-4bcb-99df-3a42394851a0.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/49.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11301A",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-11301A-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2bd7a085-38cc-4e86-9074-bad770f4c15c.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/49.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11301B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11301B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/77f5a589-135e-43d3-ad15-89c891ef5890.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/50.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11301B-A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11301B-A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3acfa7e4-827a-429c-8a50-72acbe2c4246.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/51.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11302",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11302-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/c834de71-0d29-4cbd-9228-f6ca9b57c352.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/52.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11302A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11302A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/b536b035-dfc0-47fc-9e4e-4ac3446de66a.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/53.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11302B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11302B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/4cfa539d-099c-4438-b412-a4a4fa5cb9fa.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/54.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11303",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11303-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/00ee185f-6955-40d3-88e3-4f4b5d049c65.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/134.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11306",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11306-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/432f60a8-fa98-49d2-bba2-850f3de5401e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/55.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11306B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11306B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f1d44288-cdda-4211-8d1a-3f96041d92cc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/56.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11309",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11309-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f558d3f1-1c11-464a-9936-f7cdbd44e0d2.png",
+      "source_page": "https://en.olang.cn/ProductDetail/118.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11309A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11309A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a1499a6a-a83a-481e-9e1f-6c3f74f8707f.png",
+      "source_page": "https://en.olang.cn/ProductDetail/117.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11309L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11309L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d38c3ee7-c84b-43c7-a81e-34543b41ab9b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/116.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11310A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11310A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f0e7f29e-b8da-4fee-a174-cc8206f291ce.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/115.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11312",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11312-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/68a903cc-3bd2-4262-98ad-653a238a9ee7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/114.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11312A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11312A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/fc708a8c-6e01-4b8e-b570-cd243042b25d.png",
+      "source_page": "https://en.olang.cn/ProductDetail/113.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11312L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11312L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/75676772-22e2-4eaf-86e2-03183062f0f0.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/112.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11314",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11314-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/eda7e62d-5eac-47a9-86b5-e1a3401f97a3.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/111.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11314A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11314A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/05f4dbf3-50a8-4145-b64d-18bf38e35f7f.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/110.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11314B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11314B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f46c08b8-d48b-4116-9521-b5396682f98e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/109.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11314L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11314L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/884d82fe-a994-42d0-8082-62c9b5ef7fa2.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/108.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11315",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11315-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/b0813e47-bbf4-48de-9757-f341166ae687.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/57.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11315A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11315A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/183aaea0-5e04-4c9f-8cf3-77f2d47130b5.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/58.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11316",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11316-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d6f84d6b-7131-42f0-bfaf-7c3de971d03a.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/59.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11316A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11316A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f0681289-5b9e-4fe4-8124-7507391aab5c.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/60.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11317",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11317-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f005b1b6-6a37-4e29-a741-3e048d3b5f41.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/107.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11317A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11317A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/b525e9a2-bb9a-4d65-8882-55791694ed18.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/106.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11317L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11317L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e5371c86-8990-4fa4-bfea-49b1bd611560.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/105.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11318L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11318L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/cf7ae6bf-e425-43c8-9540-8c21b2f3e747.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/104.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11501",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11501-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/647fccc1-466d-40d4-821e-f6fda245f062.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/61.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11502",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11502-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/58eb9526-9704-49d5-a603-4cbff487c838.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/64.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11502-1",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11502-1-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/4a44eebc-cd15-404d-92c6-6bbbf991ff3e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/62.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11502A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11502A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/44762224-c44e-459d-a17f-f35a6ed2995b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/123.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11502S",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11502S-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/691a3abb-4ea9-4a34-9ae6-cc7ec5e5022c.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/63.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11503",
+      "official_label": "Chrome plating + Black rock slab",
+      "display_label": "Chrome + Black Stone",
+      "local_path": "/images/products/official/OL-11503-chrome-black-stone.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/de153be7-7d54-40a3-a6cf-a241d75292b2.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/65.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11601A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11601A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/1a575123-c53d-46df-b0ae-d47c48ca9b40.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/103.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11603A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-11603A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/aa3b7524-877c-4f60-b8de-a174389c8bde.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/102.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11605",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11605-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/0b7c3aad-70e6-4d02-a079-29d2abf8dc0a.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/101.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11605A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11605A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d53808a8-22ee-46bd-9813-4dbdca196130.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/100.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11605L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11605L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/300b2ebd-c1f2-4608-ac58-d7469e652546.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/99.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11606A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-11606A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d9d42066-c7a9-4da2-953c-44a65239b6f9.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/98.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11606A-2A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11606A-2A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/c69a74e3-a055-4634-be3f-41b49c444439.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/97.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11608",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11608-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/911b39bb-f625-4a3a-b753-e8b7f5343964.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/96.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11608A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11608A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/43406b09-f107-4163-af56-7c3593db7bdc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/95.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-11608L",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-11608L-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/0a255df2-f0e5-4742-baea-8738db5f38fc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/136.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/colors/OL-1204/brushed-gold.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/21.html",
+      "source_page": "https://en.olang.cn/ProductDetail/21.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/colors/OL-1204/chrome.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/21.html",
+      "source_page": "https://en.olang.cn/ProductDetail/21.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/colors/OL-1204/matte-black.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/21.html",
+      "source_page": "https://en.olang.cn/ProductDetail/21.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/colors/OL-1204/gunmetal.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/21.html",
+      "source_page": "https://en.olang.cn/ProductDetail/21.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204B",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/OL-1204B-brushed-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/9df195f5-f564-438f-adf4-fc3f4e1ee5b7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/20.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1204B",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-1204B-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a216fdef-a737-406e-a33a-3f0e96002577.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/20.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1205",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/colors/OL-1205/brushed-gold.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/29.html",
+      "source_page": "https://en.olang.cn/ProductDetail/29.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1205",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/colors/OL-1205/chrome.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/29.html",
+      "source_page": "https://en.olang.cn/ProductDetail/29.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1205",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/colors/OL-1205/matte-black.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/29.html",
+      "source_page": "https://en.olang.cn/ProductDetail/29.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1205",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/colors/OL-1205/gunmetal.jpg",
+      "source_image_url": "https://en.olang.cn/ProductDetail/29.html",
+      "source_page": "https://en.olang.cn/ProductDetail/29.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1207",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1207-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3f7ea728-eef8-4132-8ed1-c26f2d5ceea4.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/66.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1207",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-1207-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a47c2936-0dc0-4aaf-bc8d-726b63227c9a.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/66.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1208",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/OL-1208-brushed-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/9d140945-56d4-4d9c-bb83-174d286631c7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/73.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1208",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-1208-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e8a508e7-d2a1-42c8-ae05-bcb2d407e46e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/73.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1208",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1208-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/8d123efd-9604-4ee6-8e82-3207cc57a42c.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/73.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1208",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-1208-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3c93e490-f307-41bf-9ebd-80dccea2c7bc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/73.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1209",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/OL-1209-brushed-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f2af8915-45f7-4511-9754-a174ceef70cc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/81.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1209",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-1209-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a775141e-cd07-4fd4-ae17-2efe637b33a2.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/81.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1209",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1209-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/65167bbd-1861-4773-b814-c174149c3524.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/81.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1209",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-1209-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d6d55df4-82dc-4394-a9de-a46c8e82c834.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/81.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1211A",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/OL-1211A-brushed-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/751e34ea-ac55-47df-86d0-01848b7b00aa.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/86.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1211A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-1211A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/4033790e-b24c-400e-a23c-8d715d134ba4.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/86.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1211A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1211A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/89b10fe7-2bfd-4234-a8bd-445f014d98f7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/86.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1211A",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-1211A-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/6fdadcd6-b3d1-4678-81c4-b59752085f64.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/86.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1701B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-1701B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f7c8af03-82fa-427e-8d2b-6bde59246afa.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/10.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1701B",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1701B-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f69a2383-f895-4741-82d3-87204fc5ddff.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/10.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1701B",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1701B-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/93583d2e-816b-477c-bd9d-ecdee48b0510.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/10.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1704",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1704-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/99c7f221-15c3-4a24-b083-d986466ea3cf.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/22.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1705",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1705-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f229a734-984c-42c6-a6ad-79ac7f6c5171.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/30.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1706",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1706-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/b6f705a5-43fb-49ed-9205-8f74e4ff9be2.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/36.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1706B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-1706B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2a7a014c-fa96-42e3-a9bc-36b7b2268917.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/35.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1706B",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-1706B-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e039dc5f-61f1-4bb7-8d28-a46f5c273512.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/35.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1706B",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1706B-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/042ce9c0-8c38-4951-910d-ca7eb22435c4.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/35.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1707",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1707-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/161ee1ae-6e33-4071-914e-07a5c0efc8b7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/67.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1708",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1708-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/cd4751e7-f733-4538-8844-5ff12eed4312.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/74.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-1711",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-1711-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/4655d807-4808-4535-b05f-82b8a1861b7f.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/87.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5201B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5201B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f4de1a31-b8e0-49e8-a0e4-a05afc3abcbe.png",
+      "source_page": "https://en.olang.cn/ProductDetail/137.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5208A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5208A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/8e92a2be-6769-43b1-a432-97620bd3ee7d.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/94.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5209",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5209-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3e794019-1bc1-4312-ba24-30e9816cb15b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/121.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5210A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5210A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/cf88c81a-95f0-4f50-be64-bb4a09ed9747.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/120.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5216",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5216-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/12d1e029-80aa-4566-ae35-ab79f6833619.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/124.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5218B",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5218B-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/44d9da85-c608-4b89-ab49-55cf07d17108.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/125.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5218H",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5218H-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/dc0bcf90-40fa-476a-aaf0-5a3124761287.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/126.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5219D",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5219D-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/89450ed5-d8f9-4398-b690-718ee8fe1adb.png",
+      "source_page": "https://en.olang.cn/ProductDetail/127.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5219H",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5219H-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/262c4b94-f0e4-46a1-9604-7b1c2ded4c76.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/128.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5221",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5221-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/5476aad0-6069-4077-a1ac-48e378ae307b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/129.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5232",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5232-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/82cc3dcd-026e-49ce-99a9-803f5a72b681.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/130.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5234",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5234-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a594a052-87df-4a8b-b226-6e7070fcee55.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/131.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5235",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5235-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/7d63ca52-0e8b-421e-afaa-2be466910eab.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/132.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-5236",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-5236-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/6a39c717-4f45-413a-9ff6-db813e705363.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/133.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6601A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-6601A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d182e607-8e4d-4c2e-bcc2-c614ded160a0.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/11.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6601A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-6601A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/87115097-6630-43bf-b5da-df5187957947.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/11.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6601A",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6601A-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f37d86ab-d99c-45a4-baf2-7ace556f8a87.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/11.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6601C",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6601C-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/35e22743-15ba-484c-8864-dfbaa16a1c47.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/13.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6602",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6602-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2e78e6d1-b302-41df-acef-b6381b128753.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/17.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6604A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-6604A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/9dffe066-4193-4d56-97fb-414cd4f33b82.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/23.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6604A",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-6604A-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/ae946ea3-48cb-4605-87ea-8d9224958cfc.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/23.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6604A",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6604A-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/8ce0cc9c-301a-40ff-a280-83ed1b4d798b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/23.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6604A",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6604A-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/537460de-db6d-4cc8-8158-1664074258c4.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/23.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6605",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6605-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/7c423953-a11b-427f-b4f1-78c74cc00a89.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/31.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6605",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6605-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/245b34ce-03dc-4745-bf6e-1303fcbb05d8.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/31.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6606B",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6606B-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d3c2808b-6c96-49d3-aef7-b763fdf34937.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/37.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6606S",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6606S-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/0b80c75f-11d8-4666-a056-f1daaae7df0f.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/38.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6606S",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6606S-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3079cab5-b189-41d2-ae6a-863acd02c24b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/38.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6607",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6607-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f8b6c210-0084-406a-8585-1e3f439c58d2.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/68.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6608",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6608-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/369fe4e5-b78d-4c0e-b0d1-a19f1c588c09.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/75.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6608",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6608-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/1d0cc660-7275-49f9-80ec-58c5482a807e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/75.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6609",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6609-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/6c6ed56e-414a-4f3c-ba59-ef18889467db.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/82.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6609",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6609-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/79519826-ea10-4766-ad8a-c95d48e83743.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/82.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6611",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-6611-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/4eb951dd-46b4-499f-aa08-3c6072ab3029.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/88.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-6611",
+      "official_label": "Rose Gold",
+      "display_label": "Rose Gold",
+      "local_path": "/images/products/official/OL-6611-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/493f8caa-e71c-4858-bd71-5761a18a074a.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/88.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7201A",
+      "official_label": "Brushed Gold",
+      "display_label": "Brushed Gold",
+      "local_path": "/images/products/official/OL-7201A-brushed-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/55f53f9d-e78f-4676-8b2a-6126d2bd65d0.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/14.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7201A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-7201A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/fbc532d7-3efd-45c2-ac69-248dc0c80b44.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/14.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7201A",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7201A-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d0faa35f-1d18-4691-9a89-a4f0a360e8e6.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/14.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7202",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7202-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/c2cc5691-9c5f-4742-9907-9f8983bca3a9.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/18.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7203",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-7203-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2a667665-1fcc-4d31-8b18-23e1b00de9ad.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/19.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7204",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-7204-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/cb5d9148-07e7-4a91-8a06-cfe5eccdeef6.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/25.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7204",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7204-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/c53fe02b-51f0-4260-a8b5-a3dda33de6b7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/25.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7205",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7205-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/1b6fe2d6-b4a6-4ecb-9d1f-7a36b579437d.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/32.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7206",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7206-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/9db45149-7825-404a-9a13-4386e5eab434.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/41.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7206A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-7206A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/08bd357b-6deb-40f0-be14-ef0c5c4cfb57.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/40.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7207",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-7207-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/bcfe178e-00f8-4a4a-ab5a-009cefb64d69.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/69.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7208",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-7208-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/fd9d9fb9-35f8-477b-bc05-d09bfddfee4d.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/76.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7208",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7208-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d0e6e705-01de-463d-b000-cf7eb825c54b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/76.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7209",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-7209-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/44de0506-3c1d-42f0-83ce-3a3275f3f55b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/83.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7209",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7209-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a33301a8-479b-4959-8de0-6e2cdf5a8fb0.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/83.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7211",
+      "official_label": "Matte Black",
+      "display_label": "Matte Black",
+      "local_path": "/images/products/official/OL-7211-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e9c7d272-1e60-49bf-8474-57427df4e83f.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/89.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7211",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-7211-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/55952a06-8f81-4375-9b03-c9d2f7f94e0b.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/89.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7604",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7604-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/1cebe4be-ce6d-4827-9162-8c622e823584.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/27.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7605",
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "local_path": "/images/products/official/OL-7605-matte-white-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/c26f6e37-8272-425c-97f6-ee46b92de2b5.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/33.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7605",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7605-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/dd9af3e0-ea14-4bb6-9369-77f7fddf33ec.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/33.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7606",
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "local_path": "/images/products/official/OL-7606-matte-white-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/0b31c4d9-cc34-422d-8d7a-1528ff6f9a31.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/44.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7606",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7606-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/20efd1f7-efe9-43db-b19a-e378fe49c360.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/44.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7607",
+      "official_label": "Gunmetal + Rose Gold",
+      "display_label": "Gunmetal + Rose Gold",
+      "local_path": "/images/products/official/OL-7607-gunmetal-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e0c68ee3-d646-4346-a8e9-8460c9684192.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/71.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7607",
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "local_path": "/images/products/official/OL-7607-matte-white-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/ab6097f7-a383-4836-bc00-5f39ededba45.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/71.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7607",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7607-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/57302c80-e27e-4723-9dcb-bdc765acff05.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/71.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7608",
+      "official_label": "Gunmetal + Rose Gold",
+      "display_label": "Gunmetal + Rose Gold",
+      "local_path": "/images/products/official/OL-7608-gunmetal-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/ee64de68-3c97-46c0-9af6-0b9a24dcce7c.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/79.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7608",
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "local_path": "/images/products/official/OL-7608-matte-white-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/54fbe099-b55c-4b91-81fb-9ae9ff885850.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/79.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7608",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7608-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a9ae8aa1-f3c4-416c-b526-8e9f44d0dbbf.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/79.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7611",
+      "official_label": "Gunmetal + Rose Gold",
+      "display_label": "Gunmetal + Rose Gold",
+      "local_path": "/images/products/official/OL-7611-gunmetal-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/d82a16d6-f501-4d95-aef9-71a2fc3d5bac.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/91.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7611",
+      "official_label": "Matte White + Matte Black",
+      "display_label": "Matte White + Matte Black",
+      "local_path": "/images/products/official/OL-7611-matte-white-matte-black.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/f4a30274-8521-428a-9c2a-5794312a7064.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/91.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-7611",
+      "official_label": "Matte Black + Rose Gold",
+      "display_label": "Matte Black + Rose Gold",
+      "local_path": "/images/products/official/OL-7611-matte-black-rose-gold.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/3cace5cb-8e79-49bf-92b9-293df6ade740.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/91.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9004",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9004-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/55df1f3f-8eac-4443-87ff-da8911ff590e.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/28.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9005",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9005-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/fea905bd-3ed8-4df3-ad31-da07095f1688.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/34.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9006A",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9006A-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/e4c71a4f-b10c-4f2b-8d48-ea06e98202ff.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/45.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9006S",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9006S-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/a8205976-e295-4d13-abf5-92edbaee12ce.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/46.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9008",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9008-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/01b40697-e2c4-483a-a554-c6a55c5c3f99.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/80.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9009",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9009-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/7eed1974-30dd-4683-afe5-e5f7c696ada7.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/85.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9011",
+      "official_label": "Cannon fodder",
+      "display_label": "Gunmetal",
+      "local_path": "/images/products/official/OL-9011-gunmetal.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/6afb1f00-adad-4185-bdf3-5ae228de7f14.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/92.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    },
+    {
+      "sku": "OL-9715A",
+      "official_label": "Chrome-plated",
+      "display_label": "Chrome",
+      "local_path": "/images/products/official/OL-9715A-chrome.jpg",
+      "source_image_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025011621402668425/cms/image/2c023a7f-d34e-4eb9-bf08-952cbf780be1.jpg",
+      "source_page": "https://en.olang.cn/ProductDetail/119.html",
+      "captured_at": "2026-11-10T15:12:29.315Z",
+      "photo_status": "captured"
+    }
+  ]
+}

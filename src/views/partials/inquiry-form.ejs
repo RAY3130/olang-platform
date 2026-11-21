@@ -1,0 +1,164 @@
+<%
+  const isWholesale = formType === 'wholesale';
+  const isProject = formType === 'project';
+  const isProduct = formType === 'product_info';
+  const isDocument = formType === 'document_request';
+  const companyRequired = isWholesale || isProject || isDocument || formType === 'oem';
+  const domId = typeof formId === 'undefined' ? 'inquiry-form' : formId;
+  const submitLabels = {
+    general: 'forms.submitGeneral',
+    product_info: 'forms.submitQuote',
+    wholesale: 'forms.submitWholesale',
+    project: 'forms.submitProject',
+    document_request: 'forms.submitDocuments'
+  };
+  const titleKey = isWholesale ? 'forms.titleWholesale' : isDocument ? 'forms.titleDocuments' : isProduct ? 'forms.titleProduct' : isProject ? 'forms.titleProject' : 'forms.titleGeneral';
+  const introKey = isWholesale ? 'forms.introWholesale' : isDocument ? 'forms.introDocuments' : isProduct ? 'forms.introProduct' : isProject ? 'forms.introProject' : 'forms.introGeneral';
+%>
+<form class="inquiry-form" id="<%= domId %>" method="post" action="/api/inquiries" enctype="multipart/form-data" data-ajax-form data-form-type="<%= formType %>">
+  <div class="form-head">
+    <p class="eyebrow"><%= t('choices.inquiryTypes.' + formType) %></p>
+    <h2><%= t(titleKey) %></h2>
+    <p><%= t(introKey) %></p>
+  </div>
+  <% if (formErrorCode) { %>
+  <div class="form-alert" role="alert"><strong><%= t('forms.errorTitle') %></strong><span><%= t('forms.errors.' + formErrorCode) %></span></div>
+  <% } %>
+  <div class="form-alert" data-form-alert role="alert" hidden></div>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <input type="hidden" name="form_stamp" value="<%= formStamp %>">
+  <input type="hidden" name="inquiry_type" value="<%= formType %>">
+  <input type="hidden" name="market" value="<%= market.code %>">
+  <input type="hidden" name="source_path" value="<%= currentPath %>">
+  <input type="hidden" name="return_to" value="<%= currentPath %>">
+  <% if (isProduct && typeof product !== 'undefined' && product) { %>
+  <input type="hidden" name="product_sku" value="<%= product.sku %>">
+  <div class="selected-product">
+    <% if (product.image_path) { %><img src="/<%= product.image_path.replace(/^\/+/, '') %>" alt="" width="80" height="80" loading="lazy"><% } %>
+    <div><strong><%= product.name %> · <%= product.sku %></strong><small><%= product.category_name %><%= product.series ? ' · ' + localizedSeries(product.series) : '' %></small></div>
+  </div>
+  <% } %>
+  <div class="hp-field" aria-hidden="true">
+    <label>Company website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+  <div class="form-grid">
+    <label><span><%= t('forms.labels.name') %> *</span><input name="name" type="text" autocomplete="name" maxlength="120" required></label>
+    <label><span><%= t('forms.labels.company') %><%= companyRequired ? ' *' : '' %></span><input name="company" type="text" autocomplete="organization" maxlength="200"<%= companyRequired ? ' required' : '' %>></label>
+    <label><span><%= t('forms.labels.email') %> *</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+    <label><span><%= t('forms.labels.phone') %> <small><%= t('common.optional') %></small></span><input name="phone" type="tel" autocomplete="tel" maxlength="80"></label>
+    <label><span><%= t('forms.labels.country') %> *</span><input name="country" type="text" autocomplete="country-name" maxlength="120" required></label>
+    <% if (isWholesale) { %>
+    <label><span><%= t('forms.labels.companyType') %></span>
+      <select name="company_type">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.companyTypes').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.targetMarket') %></span><input name="target_market" type="text" maxlength="120" placeholder="<%= t('forms.placeholders.country') %>"></label>
+    <label><span><%= t('common.finish') %></span>
+      <select name="requested_finish">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.finishes').forEach(function (label) { %><option value="<%= label %>"><%= label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.packaging') %></span>
+      <select name="packaging">
+        <option value="to-confirm"><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.packaging').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.shippingDestination') %></span><input name="shipping_destination" type="text" maxlength="160"></label>
+    <label><span><%= t('forms.labels.terms') %></span>
+      <select name="terms">
+        <option value="to-confirm"><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.terms').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.expectedOrderDate') %></span><input name="expected_order_date" type="date"></label>
+    <label class="full"><span><%= t('forms.labels.productInterests') %></span><input name="product_interests" type="text" maxlength="1000" value="<%= typeof prefill !== 'undefined' && prefill && prefill.series ? prefill.series : '' %>" placeholder="<%= t('forms.placeholders.productInterests') %>"></label>
+    <% } %>
+    <% if (isProject) { %>
+    <label><span><%= t('forms.labels.projectName') %> *</span><input name="project_name" type="text" maxlength="200" required></label>
+    <label><span><%= t('forms.labels.projectType') %></span>
+      <select name="project_type">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.projectTypes').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.projectLocation') %></span><input name="project_location" type="text" maxlength="200"></label>
+    <label><span><%= t('forms.labels.companyType') %></span>
+      <select name="company_type">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.companyTypes').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label class="full"><span><%= t('forms.labels.productCategories') %></span><input name="product_categories" type="text" maxlength="500" placeholder="<%= t('forms.placeholders.productCategories') %>"></label>
+    <label><span><%= t('forms.labels.estimatedQuantity') %></span><input name="estimated_quantity" type="text" maxlength="120" placeholder="<%= t('forms.placeholders.quantity') %>"></label>
+    <label><span><%= t('common.finish') %></span>
+      <select name="required_finish">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.finishes').forEach(function (label) { %><option value="<%= label %>"><%= label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.installationRequirements') %></span><input name="installation_requirements" type="text" maxlength="500" placeholder="<%= t('forms.placeholders.installation') %>"></label>
+    <label><span><%= t('forms.labels.packaging') %></span>
+      <select name="packaging">
+        <option value="to-confirm"><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.packaging').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.deliverySchedule') %></span><input name="delivery_schedule" type="text" maxlength="300" placeholder="<%= t('forms.placeholders.delivery') %>"></label>
+    <label><span><%= t('forms.labels.shippingDestination') %></span><input name="shipping_destination" type="text" maxlength="160"></label>
+    <label><span><%= t('forms.labels.terms') %></span>
+      <select name="terms">
+        <option value="to-confirm"><%= t('common.toBeConfirmed') %></option>
+        <% t('choices.terms').forEach(function (opt) { %><option value="<%= opt.value %>"><%= opt.label %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.targetMarket') %></span><input name="target_market" type="text" maxlength="120" placeholder="<%= t('forms.placeholders.country') %>"></label>
+    <% } %>
+    <% if (isProduct && typeof product !== 'undefined' && product) { %>
+    <label><span><%= t('forms.quantity') %> *</span><input name="quantity" type="number" min="1" max="1000000" inputmode="numeric" required placeholder="<%= t('forms.placeholders.quantity') %>"></label>
+    <% if (product.finishes && product.finishes.length) { %>
+    <label><span><%= t('common.finish') %></span>
+      <select name="requested_finish">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% product.finishes.forEach(function (finish) { %><option value="<%= finish.name %>"><%= finish.name %></option><% }); %>
+      </select>
+    </label>
+    <% } %>
+    <% } %>
+    <% if (isDocument) { %>
+    <label><span><%= t('forms.labels.documentSku') %></span><input name="document_sku" type="text" maxlength="80" value="<%= typeof prefill !== 'undefined' && prefill && prefill.sku ? prefill.sku : '' %>" placeholder="<%= t('forms.placeholders.documentSku') %>"></label>
+    <label><span><%= t('forms.labels.documentType') %></span>
+      <select name="document_type">
+        <option value=""><%= t('common.toBeConfirmed') %></option>
+        <% Object.keys(t.dict.docTypes).forEach(function (key) { %><option value="<%= key %>"<%= typeof prefill !== 'undefined' && prefill && prefill.type === key ? ' selected' : '' %>><%= t('docTypes.' + key) %></option><% }); %>
+      </select>
+    </label>
+    <label><span><%= t('forms.labels.documentMarket') %></span><input name="document_market" type="text" maxlength="80" value="<%= market.name %>"></label>
+    <% } %>
+  </div>
+  <% if ((isWholesale || isProject) && typeof pickerProducts !== 'undefined' && pickerProducts && pickerProducts.length) { %>
+  <%- include('product-picker', { pickerProducts: pickerProducts }) %>
+  <% } %>
+  <label class="full"><span><%= t('forms.labels.message') %> *</span><textarea name="message" rows="5" maxlength="5000" required placeholder="<%= t('forms.placeholders.message') %>"></textarea></label>
+  <label class="full file-field">
+    <span><%= t('forms.labels.files') %> <small><%= t('common.optional') %></small></span>
+    <div class="file-control">
+      <input class="file-native" name="attachments" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.stp,.step,.xls,.xlsx,.csv,.dwg,.dxf" data-file-input data-file-selected-label="<%= t('forms.fileSelected') %>" data-no-files-label="<%= t('forms.noFiles') %>">
+      <button type="button" class="file-trigger" data-file-trigger><%= t('forms.placeholders.files') %></button>
+      <span class="file-name" data-file-name><%= t('forms.noFiles') %></span>
+    </div>
+    <small class="small-note"><%= t('forms.uploadHelp') %></small>
+    <small class="small-note"><%= t('forms.uploadSecurity') %></small>
+  </label>
+  <label class="check">
+    <input type="checkbox" name="consent" required>
+    <span><%= t('forms.consentLabel') %> <a href="<%= urlFor('privacy') %>" target="_blank" rel="noopener"><%= t('forms.privacyLink') %></a>. <%= t('forms.consentDetail') %></span>
+  </label>
+  <p class="form-required-note"><%= t('forms.requiredHint') %></p>
+  <button class="btn btn-primary btn-full" type="submit"><%= t(submitLabels[formType] || 'forms.submitGeneral') %></button>
+  <p class="small-note form-legal"><%= t('common.formSecureNote') %></p>
+</form>
+

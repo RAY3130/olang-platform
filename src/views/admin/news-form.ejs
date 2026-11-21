@@ -1,0 +1,35 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Editorial</p><h2><%= article.slug %></h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/news">Back to news</a>
+</div>
+<form method="post" action="/admin/news/<%= article.id %>" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrf %>">
+  <section class="admin-panel">
+    <h3>Publication</h3>
+    <div class="admin-form-grid">
+      <label>Category
+        <select name="category">
+          <option value="company"<%= article.category === 'company' ? ' selected' : '' %>>OLANG News</option>
+          <option value="industry"<%= article.category === 'industry' ? ' selected' : '' %>>Industry News</option>
+        </select>
+      </label>
+      <label>Published date<input type="date" name="published_at" value="<%= article.published_at %>" required></label>
+      <label>Image path<input name="image_path" value="<%= article.image_path || '' %>" maxlength="300"></label>
+      <label>Source URL<input name="source_url" value="<%= article.source_url || '' %>" maxlength="500"></label>
+      <label class="check"><input type="checkbox" name="published" value="1"<%= article.published ? ' checked' : '' %>> Published</label>
+    </div>
+  </section>
+  <% ['en','de','it'].forEach(function (locale) { const tr = translations[locale] || {}; %>
+  <section class="admin-panel">
+    <h3><%= locale === 'en' ? 'English' : locale === 'de' ? 'Deutsch' : 'Italiano' %></h3>
+    <div class="admin-form-grid">
+      <label class="full" style="grid-column:1/-1">Title<input name="title_<%= locale %>" value="<%= tr.title || '' %>" maxlength="300"<%= locale === 'en' ? ' required' : '' %>></label>
+      <label class="full" style="grid-column:1/-1">Excerpt<textarea name="excerpt_<%= locale %>" rows="2" maxlength="1000"><%= tr.excerpt || '' %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Body<textarea name="body_<%= locale %>" rows="9" maxlength="12000"><%= tr.body || '' %></textarea></label>
+      <label>SEO title<input name="seo_title_<%= locale %>" value="<%= tr.seo_title || '' %>" maxlength="200"></label>
+      <label>SEO description<input name="seo_description_<%= locale %>" value="<%= tr.seo_description || '' %>" maxlength="320"></label>
+    </div>
+  </section>
+  <% }); %>
+  <div class="admin-form-actions"><button class="btn btn-primary" type="submit">Save article</button><a class="btn btn-ghost" href="/admin/news">Cancel</a></div>
+</form>

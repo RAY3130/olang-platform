@@ -1,0 +1,29 @@
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <div>
+      <p class="admin-kicker">Asset register</p>
+      <h2><%= assets.length %> registered image / video assets</h2>
+      <p class="admin-muted">Every product, detail, scene and video asset must have a source type and licence before it is published. This register is read-only; asset production remains a reviewed data task.</p>
+    </div>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr><th>Path</th><th>Kind</th><th>SKU / category</th><th>Source type</th><th>Licence</th><th>Product shown</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <% assets.forEach(function (asset) { %>
+        <tr>
+          <td><code><%= asset.path %></code></td>
+          <td><%= asset.kind %></td>
+          <td><%= asset.product_sku || asset.category_key || '—' %></td>
+          <td><%= asset.source_type %></td>
+          <td><%= asset.licence %></td>
+          <td><%= asset.shows_product ? 'yes' : 'no' %></td>
+          <td><span class="status status-<%= asset.status %>"><%= asset.status %></span></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="page-hero success-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= cc.kicker %></p>
+    <h1><%= cc.successTitle %></h1>
+    <p class="lede"><%= cc.successLede %></p>
+    <% if (reference) { %>
+    <div class="success-reference">
+      <span><%= cc.successReference %></span>
+      <strong data-customizer-reference><%= reference %></strong>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <% if (request) { %>
+    <dl class="success-summary">
+      <div><dt><%= cc.successType %></dt><dd><%= cc.customerTypes[request.customer_type] ? cc.customerTypes[request.customer_type].title : request.customer_type %></dd></div>
+      <div><dt><%= cc.successProducts %></dt><dd><%= request.products.length %></dd></div>
+      <div><dt><%= cc.successFiles %></dt><dd><%= request.files.length %></dd></div>
+      <div><dt><%= t('common.date') %></dt><dd><%= request.created_at.slice(0, 10) %></dd></div>
+    </dl>
+    <div class="notice-box"><%= cc.successNext %></div>
+    <% } else { %>
+    <div class="notice-box"><%= cc.formError %></div>
+    <% } %>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="<%= urlFor('products') %>"><%= cc.backProducts %></a>
+      <a class="btn btn-ghost" href="<%= urlFor('customization') %>"><%= cc.newRequest %></a>
+    </div>
+  </div>
+</section>

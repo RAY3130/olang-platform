@@ -1,0 +1,25 @@
+<section class="page-hero series-index-hero">
+  <div class="wrap">
+    <p class="eyebrow"><%= t('common.series') %> · <%= rows.length %></p>
+    <h1><%= locale === 'de' ? 'Serien für jede Badaufgabe.' : locale === 'ja' ? '浴室空間のためのシリーズ。' : 'A series for every bathroom brief.' %></h1>
+    <p class="lede"><%= locale === 'de' ? 'Sieben abgestimmte Serien mit gemeinsamen Oberflächen und technischen Unterlagen.' : locale === 'ja' ? '共通の仕上げと技術資料を持つ7つのシリーズ。' : 'Seven coordinated families, each with its own finish palette and technical documents.' %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="series-index-grid">
+      <% rows.forEach(function (row, index) { %>
+      <a class="series-index-card" href="<%= urlFor('series/' + seriesSlug(row.series)) %>">
+        <% if (row.reference) { %><%- include('../partials/reference-picture', { image: row.reference }) %><% } %>
+        <div class="series-index-body">
+          <span class="v3-card-index">0<%= index + 1 %></span>
+          <h2><%= localizedSeries(row.series) %></h2>
+          <p><%= row.count %> <%= t('common.models') %> · <%= row.finishCount %> <%= t('common.finish') %></p>
+          <span class="v3-text-arrow"><%= t('common.learnMore') %> →</span>
+        </div>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>

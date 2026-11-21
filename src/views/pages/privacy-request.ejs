@@ -1,0 +1,50 @@
+<section class="page-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.kicker %></p>
+    <h1><%= copy.requestFormTitle %></h1>
+    <p class="lede"><%= copy.requestFormIntro %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap form-layout">
+    <div>
+      <h2><%= copy.requestTitle %></h2>
+      <p><%= copy.requestText %></p>
+      <% if (reference) { %>
+      <div class="form-success" role="status">
+        <strong><%= t('common.reference') %>: <%= reference %></strong>
+        <p><%= t('pages.success.saved') %></p>
+      </div>
+      <% } %>
+      <div class="notice-box"><%= t('common.formSecureNote') %></div>
+    </div>
+    <form class="inquiry-form" method="post" action="/api/privacy-request" data-ajax-form data-form-type="privacy">
+      <div class="form-head">
+        <p class="eyebrow"><%= copy.kicker %></p>
+        <h2><%= copy.requestFormTitle %></h2>
+      </div>
+      <% if (formErrorCode) { %><div class="form-alert" role="alert"><strong><%= t('forms.errorTitle') %></strong><span><%= t('forms.errors.' + formErrorCode) %></span></div><% } %>
+      <div class="form-alert" data-form-alert role="alert" hidden></div>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="form_stamp" value="<%= formStamp %>">
+      <input type="hidden" name="market" value="<%= market.code %>">
+      <input type="hidden" name="return_to" value="<%= currentPath %>">
+      <div class="hp-field" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="form-grid">
+        <label><span><%= t('common.emailAddress') %> *</span><input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+        <label><span><%= t('forms.labels.privacyType') %> *</span>
+          <select name="request_type" required>
+            <option value="access"><%= locale === 'de' ? 'Auskunft' : locale === 'it' ? 'Accesso' : 'Access' %></option>
+            <option value="deletion"><%= locale === 'de' ? 'Löschung' : locale === 'it' ? 'Cancellazione' : 'Deletion' %></option>
+            <option value="correction"><%= locale === 'de' ? 'Berichtigung' : locale === 'it' ? 'Rettifica' : 'Correction' %></option>
+            <option value="objection"><%= locale === 'de' ? 'Widerspruch' : locale === 'it' ? 'Opposizione' : 'Objection' %></option>
+          </select>
+        </label>
+        <label class="full"><span><%= t('forms.labels.privacyDetails') %> *</span><textarea name="details" rows="5" maxlength="3000" required></textarea></label>
+      </div>
+      <p class="small-note"><%= t('pages.privacy.requestFormIntro') %></p>
+      <button class="btn btn-primary btn-full" type="submit"><%= t('common.submit') %></button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Localisation</p><h2>Market configuration and featured models</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/products">Products</a>
+</div>
+<p class="admin-form-note">Each edition can use a different unit system, quotation currency, accent colour, compliance prompt and set of featured models. Featured models are a merchandising selection, not a claim about sales or market share. Use the comma-separated SKU field; up to 12 SKUs.</p>
+
+<% markets.forEach(function (market) { %>
+<section class="admin-panel" style="margin-bottom:1.2rem">
+  <div class="admin-section-title">
+    <div><h2><%= market.name %> <span class="admin-code"><%= market.code %></span></h2><p class="admin-meta"><%= market.htmlLang %> · <%= market.title %></p></div>
+    <a class="text-link" href="/<%= market.prefix %>" target="_blank" rel="noopener">Open edition ↗</a>
+  </div>
+  <form method="post" action="/admin/markets/<%= market.code %>" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <div class="admin-form-grid">
+      <label>Unit system
+        <select name="unit_system">
+          <option value="metric"<%= market.unitSystem === 'metric' ? ' selected' : '' %>>Metric (mm / kg)</option>
+          <option value="imperial"<%= market.unitSystem === 'imperial' ? ' selected' : '' %>>Imperial (inch / lb)</option>
+        </select>
+      </label>
+      <label>Quotation currency
+        <select name="currency">
+          <% ['EUR','USD','AUD','GBP'].forEach(function (code) { %><option value="<%= code %>"<%= market.currencyCode === code ? ' selected' : '' %>><%= code %></option><% }); %>
+        </select>
+      </label>
+      <label>Market accent<input name="accent" value="<%= market.accent %>" maxlength="7" pattern="#[0-9A-Fa-f]{6}"></label>
+      <label>Soft accent<input name="accent_soft" value="<%= market.accentSoft %>" maxlength="7" pattern="#[0-9A-Fa-f]{6}"></label>
+      <label class="full" style="grid-column:1/-1">Compliance prompt — English<textarea name="compliance_en" rows="2" maxlength="800"><%= market.complianceByLocale.en || '' %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Compliance prompt — Deutsch<textarea name="compliance_de" rows="2" maxlength="800"><%= market.complianceByLocale.de || '' %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Compliance prompt — Italiano<textarea name="compliance_it" rows="2" maxlength="800"><%= market.complianceByLocale.it || '' %></textarea></label>
+      <label class="full" style="grid-column:1/-1">Featured SKUs
+        <textarea name="featured_skus" rows="3" maxlength="1200" placeholder="OL-1204, OL-1205, OL-1208"><%= featured[market.code].join(', ') %></textarea>
+      </label>
+    </div>
+    <div class="admin-form-actions">
+      <button class="btn btn-primary" type="submit">Save <%= market.short %> edition</button>
+    </div>
+  </form>
+</section>
+<% }); %>
+
+<section class="admin-panel">
+  <h3>Available models</h3>
+  <p class="admin-form-note">Copy model numbers into the featured field. The selection appears on the edition home page and is not presented as a bestseller claim.</p>
+  <div class="admin-tag-cloud">
+    <% products.forEach(function (product) { %><span class="admin-code"><%= product.sku %> · <%= product.category_name %></span><% }); %>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/towel-ring-ol-1205.jpg" alt="OL-1205 <%= t('common.product') %>" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="solution-grid">
+      <% items.forEach(function (item) { %>
+      <a class="solution-card" href="<%= item.href %>">
+        <span class="card-number"><%= item.code %></span>
+        <h2><%= item.title %></h2>
+        <p><%= item.summary %></p>
+        <div class="tag-row"><% item.categories.forEach(function (catKey) { const cat = categories.find(function (c) { return c.key === catKey; }); if (cat) { %><span class="tag"><%= cat.name %></span><% } }); %></div>
+        <span class="text-link"><%= t('common.learnMore') %> →</span>
+      </a>
+      <% }); %>
+    </div>
+    <div class="notice-box"><%= t('pages.solutions.noCaseClaim') %></div>
+  </div>
+</section>

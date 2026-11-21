@@ -1,0 +1,26 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Content management</p><h2>Editable page content</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/faqs">Manage FAQs</a>
+</div>
+<p class="admin-form-note">Content overrides are stored separately from the translation defaults. Choose a locale and, optionally, a market edition. Clearing an override restores the built-in default for that locale.</p>
+
+<div class="admin-grid admin-grid-2">
+  <section class="admin-panel">
+    <h3>Pages</h3>
+    <ul class="admin-list">
+      <% pages.forEach(function (page) { %>
+      <li><a href="/admin/content/<%= page.key %>"><strong><%= page.label %></strong></a><span class="admin-meta"> · <%= page.fields.length %> editable fields</span></li>
+      <% }); %>
+    </ul>
+  </section>
+  <section class="admin-panel">
+    <h3>Knowledge-base signals</h3>
+    <% if (assistantTop.length) { %>
+    <ul class="admin-list"><% assistantTop.forEach(function (row) { %><li><strong><%= row.question_redacted %></strong><br><span class="admin-meta"><%= row.matched_type %> · <%= row.count %> asks · <%= row.answered ? 'answered' : 'unanswered' %></span></li><% }); %></ul>
+    <% } else { %><div class="admin-empty">No assistant questions yet.</div><% } %>
+    <% if (assistantUnanswered.length) { %>
+    <h4>Recent unanswered</h4>
+    <ul class="admin-list"><% assistantUnanswered.forEach(function (row) { %><li><%= row.question_redacted %> <span class="admin-meta">(<%= row.market || '—' %>)</span></li><% }); %></ul>
+    <% } %>
+  </section>
+</div>

@@ -1,0 +1,132 @@
+﻿<%
+  const fb = typeof formBody !== 'undefined' && formBody ? formBody : null;
+  const field = function (name, fallback) {
+    if (fb && fb[name] !== undefined) return fb[name];
+    return fallback == null ? '' : fallback;
+  };
+  const isNew = !product;
+  const action = isNew ? '/admin/products/new' : ('/admin/products/' + product.id);
+  const publishedValue = fb ? Boolean(fb.published) : Boolean(product ? product.published : 1);
+%>
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Product record</p><h2><%= isNew ? 'Create product' : product.sku %></h2></div>
+  <div class="admin-actions"><a class="btn btn-ghost btn-small" href="/admin/products">Back to products</a><a class="btn btn-ghost btn-small" href="/admin/documents/new">New document</a></div>
+</div>
+<p class="admin-form-note">Only publish values that have a source. Material, MOQ, dimensions and compliance remain “on request” until verified. The public site will not invent values.</p>
+
+<form method="post" action="<%= action %>" enctype="multipart/form-data" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrf %>">
+  <section class="admin-panel">
+    <h3>Base record</h3>
+    <div class="admin-form-grid">
+      <label>SKU *<input name="sku" value="<%= field('sku', product ? product.sku : '') %>" maxlength="40" required></label>
+      <label>URL slug<input name="slug" value="<%= field('slug', product ? product.slug : '') %>" maxlength="120" placeholder="auto from name/SKU"></label>
+      <label>Category *
+        <select name="category_id" required>
+          <option value="">Select category</option>
+          <% categories.forEach(function (c) { %><option value="<%= c.id %>"<%= String(field('category_id', product ? product.category_id : '')) === String(c.id) ? ' selected' : '' %>><%= c.key %> (<%= c.slug %>)</option><% }); %>
+        </select>
+      </label>
+      <label>Series<input name="series" value="<%= field('series', product ? product.series : '') %>" maxlength="120"></label>
+      <label>Collection / group<input name="collection" value="<%= field('collection', product ? product.collection : '') %>" maxlength="80" placeholder="e.g. construction-hardware"></label>
+      <label>Sort order<input name="sort_order" type="number" min="0" max="100000" value="<%= field('sort_order', product ? product.sort_order : 100) %>"></label>
+      <label class="check"><input type="checkbox" name="published" value="1"<%= publishedValue ? ' checked' : '' %>> Published on the public site</label>
+      <label>Source URL<input name="source_url" value="<%= field('source_url', product ? product.source_url : '') %>" maxlength="500" placeholder="https://example.com/..."></label>
+      <label>Source checked date<input name="source_checked_at" type="date" value="<%= field('source_checked_at', product ? product.source_checked_at : '2026-11-07') %>"></label>
+      <label class="full" style="grid-column:1/-1">Internal source note<textarea name="source_note" rows="2" maxlength="2000"><%= field('source_note', product ? product.source_note : '') %></textarea></label>
+    </div>
+    <div class="admin-field" style="margin-top:.8rem">
+      <span>Image</span>
+      <% if (product && product.image_path) { %><img class="admin-file-preview" src="/<%= product.image_path.replace(/^\/+/, '') %>" alt=""><label class="check"><input type="checkbox" name="remove_image" value="1"> Remove this image</label><% } %>
+      <input type="file" name="image" accept=".png,.jpg,.jpeg">
+      <span class="admin-form-note">PNG/JPEG only, maximum 8 MB. Uploaded files are public assets. Do not upload unauthorized images.</span>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <h3>Translations</h3>
+    <p class="admin-form-note">English is the source. German and Italian records are translation drafts until a reviewer changes their status.</p>
+    <% ['en','de','it'].forEach(function (locale) { const tr = translations[locale] || {}; %>
+    <details class="admin-details"<%= locale === 'en' ? ' open' : '' %>>
+      <summary><%= locale === 'en' ? 'English' : locale === 'de' ? 'Deutsch' : 'Italiano' %> · <%= field('name_' + locale, tr.name) || 'Not translated' %></summary>
+      <div class="admin-details-body admin-form-grid">
+        <label>Name<input name="name_<%= locale %>" value="<%= field('name_' + locale, tr.name) %>" maxlength="200"<%= locale === 'en' ? ' required' : '' %>></label>
+        <label>Translation status
+          <select name="translation_status_<%= locale %>">
+            <% ['draft','ai_draft','reviewed','approved'].forEach(function (status) { %><option value="<%= status %>"<%= field('translation_status_' + locale, tr.translation_status || (locale === 'en' ? 'reviewed' : 'ai_draft')) === status ? ' selected' : '' %>><%= status %></option><% }); %>
+          </select>
+        </label>
+        <label style="grid-column:1/-1">Short description<textarea name="short_<%= locale %>" rows="2" maxlength="500"><%= field('short_' + locale, tr.short_description) %></textarea></label>
+        <label style="grid-column:1/-1">Full description<textarea name="description_<%= locale %>" rows="5" maxlength="6000"><%= field('description_' + locale, tr.description) %></textarea></label>
+        <label>SEO title<input name="seo_title_<%= locale %>" value="<%= field('seo_title_' + locale, tr.seo_title) %>" maxlength="200"></label>
+        <label>SEO description<input name="seo_description_<%= locale %>" value="<%= field('seo_description_' + locale, tr.seo_description) %>" maxlength="320"></label>
+      </div>
+    </details>
+    <% }); %>
+  </section>
+
+  <section class="admin-panel">
+    <h3>Procurement attributes</h3>
+    <p class="admin-form-note">Each field has its own customer-facing status. Enter dimensions in mm and weight in kg; the storefront converts them for imperial markets and offers a manual switch. Internal notes and source references are never shown to buyers.</p>
+    <div class="admin-table-wrap">
+      <table class="admin-attr-table admin-attr-table-wide">
+        <thead><tr><th>Field</th><th>Value</th><th>Unit</th><th>Status</th><th>Public</th><th>Source note</th><th>Data source</th><th>Verified</th><th>Internal note</th></tr></thead>
+        <tbody>
+          <% attrKeys.forEach(function (key) { const attr = attrMap[key] || {}; const visibleValue = fb ? /^(1|on|true|yes)$/i.test(String(fb['attr_' + key + '_visible'] || '')) : attr.visible_frontend !== 0; %>
+          <tr>
+            <td><%= attrLabels[key] %><small class="admin-meta"><%= key %></small></td>
+            <td><input name="attr_<%= key %>_value" value="<%= field('attr_' + key + '_value', attr.value) %>" maxlength="2000"></td>
+            <td><input name="attr_<%= key %>_unit" value="<%= field('attr_' + key + '_unit', attr.unit) %>" maxlength="30" style="width:70px"></td>
+            <td>
+              <select name="attr_<%= key %>_status">
+                <% ['verified','company_provided','confirmed','reference','pending_verification','available_on_request','not_applicable','customizable'].forEach(function (status) { %><option value="<%= status %>"<%= field('attr_' + key + '_status', attr.status || 'available_on_request') === status ? ' selected' : '' %>><%= status %></option><% }); %>
+              </select>
+            </td>
+            <td><label class="check"><input type="checkbox" name="attr_<%= key %>_visible" value="1"<%= visibleValue ? ' checked' : '' %>> Show</label></td>
+            <td><textarea name="attr_<%= key %>_note" rows="2" maxlength="2000"><%= field('attr_' + key + '_note', attr.source_note) %></textarea></td>
+            <td><input name="attr_<%= key %>_source" value="<%= field('attr_' + key + '_source', attr.data_source) %>" maxlength="500" placeholder="URL or document reference"></td>
+            <td><input name="attr_<%= key %>_verified_at" type="date" value="<%= field('attr_' + key + '_verified_at', attr.last_verified_at) %>"></td>
+            <td><textarea name="attr_<%= key %>_internal_note" rows="2" maxlength="2000"><%= field('attr_' + key + '_internal_note', attr.internal_note) %></textarea></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <h3>Published finish names</h3>
+    <p class="admin-form-note">Selecting a finish records a company-provided colour name. It is not evidence of coating thickness, corrosion performance or certification.</p>
+    <div class="admin-form-grid">
+      <% finishes.forEach(function (finish) { const checked = fb ? /^(1|on|true|yes)$/i.test(String(fb['finish_' + finish.code] || '')) : selectedFinishes.has(finish.code); %>
+      <label class="check"><input type="checkbox" name="finish_<%= finish.code %>" value="1"<%= checked ? ' checked' : '' %>><%= finish.name_en %> <span class="admin-meta">(<%= finish.code %>)</span></label>
+      <% }); %>
+    </div>
+  </section>
+
+  <div class="admin-form-actions">
+    <button class="btn btn-primary" type="submit"><%= isNew ? 'Create product' : 'Save product' %></button>
+    <a class="btn btn-ghost" href="/admin/products">Cancel</a>
+  </div>
+</form>
+
+<% if (product) { %>
+<section class="admin-panel" style="margin-top:1.2rem">
+  <h3>Linked documents</h3>
+  <% if (documents.length) { %>
+  <ul class="admin-list"><% documents.forEach(function (doc) { %><li><a href="/admin/documents/<%= doc.id %>"><%= doc.title %></a> <span class="admin-meta"><%= doc.visibility %> · <%= doc.status %> · <%= doc.version %></span></li><% }); %></ul>
+  <% } else { %><div class="admin-empty">No documents linked to this SKU.</div><% } %>
+  <a class="btn btn-ghost btn-small" href="/admin/documents/new">Create a linked document</a>
+</section>
+
+<div class="admin-danger">
+  <h3>Delete product</h3>
+  <p>This removes the product record, its translations, attributes and finish links. Inquiry items retain the SKU and product name snapshot but lose the product reference. Type <strong><%= product.sku %></strong> to confirm.</p>
+  <form method="post" action="/admin/products/<%= product.id %>/delete" class="admin-form" data-confirm="Delete this product permanently?">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <label>Confirmation<input name="confirm" required></label>
+    <button class="btn btn-ghost btn-small" type="submit">Delete product</button>
+  </form>
+</div>
+<% } %>
+

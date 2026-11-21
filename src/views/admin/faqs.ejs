@@ -1,0 +1,48 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Knowledge base</p><h2>Frequently asked questions</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/content">Back to content</a>
+</div>
+<p class="admin-form-note">Answers must be based on known evidence. Do not add certifications, MOQ, lead times or project claims that the company has not confirmed. English is required; German and Italian are drafts until reviewed.</p>
+
+<section class="admin-panel">
+  <h3>Add FAQ</h3>
+  <form method="post" action="/admin/faqs/new" class="admin-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <div class="admin-form-grid">
+      <label>Key<input name="key" required maxlength="80" placeholder="unique-key"></label>
+      <label>Sort order<input name="sort_order" type="number" min="0" max="1000" value="99"></label>
+      <label class="check"><input type="checkbox" name="published" value="1"> Publish immediately</label>
+    </div>
+    <% ['en','de','it'].forEach(function (locale) { %>
+    <div class="admin-form-grid">
+      <label><%= locale.toUpperCase() %> question<input name="question_<%= locale %>" maxlength="500"<%= locale === 'en' ? ' required' : '' %>></label>
+      <label><%= locale.toUpperCase() %> status<select name="status_<%= locale %>"><option value="draft">draft</option><option value="ai_draft"<%= locale !== 'en' ? ' selected' : '' %>>ai_draft</option><option value="reviewed"<%= locale === 'en' ? ' selected' : '' %>>reviewed</option><option value="approved">approved</option></select></label>
+      <label style="grid-column:1/-1"><%= locale.toUpperCase() %> answer<textarea name="answer_<%= locale %>" rows="4" maxlength="5000"<%= locale === 'en' ? ' required' : '' %>></textarea></label>
+    </div>
+    <% }); %>
+    <button class="btn btn-primary btn-small" type="submit">Add FAQ</button>
+  </form>
+</section>
+
+<% faqs.forEach(function (faq) { const tr = translations[faq.id] || {}; %>
+<details class="admin-details">
+  <summary><%= tr.en ? tr.en.question : faq.key %> <span class="admin-meta">· <%= faq.published ? 'published' : 'hidden' %> · sort <%= faq.sort_order %></span></summary>
+  <div class="admin-details-body">
+    <form method="post" action="/admin/faqs/<%= faq.id %>" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <div class="admin-form-grid">
+        <label>Sort order<input name="sort_order" type="number" min="0" max="1000" value="<%= faq.sort_order %>"></label>
+        <label class="check"><input type="checkbox" name="published" value="1"<%= faq.published ? ' checked' : '' %>> Published</label>
+      </div>
+      <% ['en','de','it'].forEach(function (locale) { const row = tr[locale] || {}; %>
+      <div class="admin-form-grid">
+        <label><%= locale.toUpperCase() %> question<input name="question_<%= locale %>" value="<%= row.question || '' %>" maxlength="500"<%= locale === 'en' ? ' required' : '' %>></label>
+        <label><%= locale.toUpperCase() %> status<select name="status_<%= locale %>"><% ['draft','ai_draft','reviewed','approved'].forEach(function (status) { %><option value="<%= status %>"<%= (row.status || 'ai_draft') === status ? ' selected' : '' %>><%= status %></option><% }); %></select></label>
+        <label style="grid-column:1/-1"><%= locale.toUpperCase() %> answer<textarea name="answer_<%= locale %>" rows="4" maxlength="5000"<%= locale === 'en' ? ' required' : '' %>><%= row.answer || '' %></textarea></label>
+      </div>
+      <% }); %>
+      <button class="btn btn-primary btn-small" type="submit">Save FAQ</button>
+    </form>
+  </div>
+</details>
+<% }); %>

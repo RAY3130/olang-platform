@@ -1,0 +1,65 @@
+<%
+  const queryFor = function (extra) {
+    const params = new URLSearchParams();
+    if (filters.q) params.set('q', filters.q);
+    if (filters.status) params.set('status', filters.status);
+    if (filters.type) params.set('type', filters.type);
+    if (filters.market) params.set('market', filters.market);
+    if (filters.country) params.set('country', filters.country);
+    if (filters.from) params.set('from', filters.from);
+    if (filters.to) params.set('to', filters.to);
+    Object.entries(extra || {}).forEach(function (entry) { if (entry[1]) params.set(entry[0], entry[1]); });
+    const text = params.toString();
+    return text ? '?' + text : '';
+  };
+%>
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Sales operations</p><h2><%= result.total %> inquiries</h2></div>
+  <div class="admin-actions">
+    <% if (adminUser.role === 'super_admin' || adminUser.role === 'sales_manager') { %><a class="btn btn-ghost btn-small" href="/admin/inquiries/export.csv<%= queryFor({}) %>">Export filtered CSV</a><% } %>
+    <% if (adminUser.role === 'super_admin' || adminUser.role === 'sales_manager') { %><a class="btn btn-ghost btn-small" href="/admin/outbox">Email outbox</a><% } %>
+  </div>
+</div>
+<% if (adminUser.role === 'sales_staff') { %><div class="admin-note">You can see inquiries assigned to you. A sales manager can assign new inquiries.</div><% } %>
+
+<section class="admin-panel">
+  <form method="get" action="/admin/inquiries" class="admin-form">
+    <div class="admin-form-grid">
+      <label>Search reference, name, company, email, country<input type="search" name="q" value="<%= filters.q %>" maxlength="120"></label>
+      <label>Status<select name="status"><option value="">All statuses</option><% statuses.forEach(function (status) { %><option value="<%= status %>"<%= filters.status === status ? ' selected' : '' %>><%= statusLabel(status) %></option><% }); %></select></label>
+      <label>Type<select name="type"><option value="">All types</option><% types.forEach(function (type) { %><option value="<%= type %>"<%= filters.type === type ? ' selected' : '' %>><%= type %></option><% }); %></select></label>
+      <label>Country<input type="text" name="country" value="<%= filters.country %>" maxlength="120"></label>
+      <label>Market<select name="market"><option value="">All markets</option><% markets.forEach(function (market) { %><option value="<%= market %>"<%= filters.market === market ? ' selected' : '' %>><%= market %></option><% }); %></select></label>
+      <label>From<input type="date" name="from" value="<%= filters.from %>"></label>
+      <label>To<input type="date" name="to" value="<%= filters.to %>"></label>
+    </div>
+    <div class="admin-form-actions"><button class="btn btn-ghost btn-small" type="submit">Apply filters</button><a class="btn btn-ghost btn-small" href="/admin/inquiries">Reset</a></div>
+  </form>
+</section>
+
+<div class="admin-table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Reference</th><th>Received</th><th>Type</th><th>Customer</th><th>Market</th><th>Items</th><th>Status</th><th>Assigned</th></tr></thead>
+    <tbody>
+      <% result.rows.forEach(function (row) { %>
+      <tr>
+        <td><a href="/admin/inquiries/<%= row.id %>"><strong><%= row.reference %></strong></a><small><%= row.source_path || '—' %></small></td>
+        <td><%= row.created_at.slice(0,16).replace('T',' ') %></td>
+        <td><%= row.type %></td>
+        <td><%= row.name %><% if (row.is_test) { %> <span class="status-pill">QA test</span><% } %><small><%= row.company || row.country %></small></td>
+        <td><%= row.market %></td>
+        <td><%= row.item_count %></td>
+        <td><span class="status-pill status-<%= row.status %>"><%= statusLabel(row.status) %></span></td>
+        <td><%= row.assignee_name || '—' %></td>
+      </tr>
+      <% }); %>
+      <% if (!result.rows.length) { %><tr><td colspan="8">No inquiries match those filters.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<div class="admin-pagination">
+  <span>Page <%= result.page %> of <%= Math.max(1, result.pages) %> · <%= result.total %> records</span>
+  <% if (result.page > 1) { %><a href="/admin/inquiries<%= queryFor({ page: String(result.page - 1) }) %>">Previous</a><% } %>
+  <% if (result.page < result.pages) { %><a href="/admin/inquiries<%= queryFor({ page: String(result.page + 1) }) %>">Next</a><% } %>
+</div>

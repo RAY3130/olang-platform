@@ -1,0 +1,45 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Customization pipeline</p><h2><%= result.total %> requests</h2></div>
+  <div class="admin-actions">
+    <% if (adminUser.role === 'super_admin' || adminUser.role === 'sales_manager') { %><a class="btn btn-ghost btn-small" href="/admin/customization/export.csv">Export CSV</a><% } %>
+  </div>
+</div>
+<div class="admin-note">Demo mode: records are stored in the local database. No SMTP, CRM or ERP delivery is configured and no response time is promised.</div>
+
+<section class="admin-panel">
+  <form method="get" action="/admin/customization" class="admin-form">
+    <div class="admin-form-grid">
+      <label>Search reference, name, company, email or country<input type="search" name="q" value="<%= filters.q %>" maxlength="120"></label>
+      <label>Market<select name="market"><option value="">All markets</option><option value="en-gb"<%= filters.market === 'en-gb' ? ' selected' : '' %>>en-gb</option><option value="de"<%= filters.market === 'de' ? ' selected' : '' %>>de</option><option value="ja-jp"<%= filters.market === 'ja-jp' ? ' selected' : '' %>>ja-jp</option></select></label>
+      <label>Buyer type<select name="customer_type"><option value="">All types</option><% customerTypes.forEach(function (type) { %><option value="<%= type %>"<%= filters.customer_type === type ? ' selected' : '' %>><%= type %></option><% }); %></select></label>
+      <label>Status<select name="status"><option value="">All statuses</option><% ['new','review','quoted','closed','archived'].forEach(function (status) { %><option value="<%= status %>"<%= filters.status === status ? ' selected' : '' %>><%= status %></option><% }); %></select></label>
+    </div>
+    <div class="admin-form-actions"><button class="btn btn-ghost btn-small" type="submit">Apply filters</button><a class="btn btn-ghost btn-small" href="/admin/customization">Reset</a></div>
+  </form>
+</section>
+
+<div class="admin-table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Reference</th><th>Received</th><th>Buyer type</th><th>Contact</th><th>Market</th><th>Products</th><th>Status</th></tr></thead>
+    <tbody>
+      <% result.rows.forEach(function (row) { %>
+      <tr>
+        <td><a href="/admin/customization/<%= row.id %>"><strong><%= row.reference %></strong></a><small><%= row.request_type %></small></td>
+        <td><%= row.created_at.slice(0,16).replace('T',' ') %></td>
+        <td><%= row.customer_type %></td>
+        <td><%= row.contact_name %><small><%= row.company || row.country %></small><small><%= row.email %></small></td>
+        <td><%= row.market %></td>
+        <td><%= row.products.length %><small><%= row.products.map(function (p) { return p.sku; }).join(', ') %></small></td>
+        <td><span class="status-pill status-<%= row.status %>"><%= row.status %></span></td>
+      </tr>
+      <% }); %>
+      <% if (!result.rows.length) { %><tr><td colspan="7">No customization requests match these filters.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<div class="admin-pagination">
+  <span>Page <%= result.page %> of <%= Math.max(1, result.pages) %> · <%= result.total %> records</span>
+  <% if (result.page > 1) { %><a href="/admin/customization?page=<%= result.page - 1 %>">Previous</a><% } %>
+  <% if (result.page < result.pages) { %><a href="/admin/customization?page=<%= result.page + 1 %>">Next</a><% } %>
+</div>

@@ -1,0 +1,3 @@
+﻿const {chromium}=require('playwright-core');const EP='C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';const BASE='http://127.0.0.1:4174';
+(async()=>{const b=await chromium.launch({headless:true,executablePath:EP});const c=await b.newContext({viewport:{width:1440,height:1000}});const p=await c.newPage();
+for(const [name,url] of [['home','/en'],['products','/en/products'],['product','/en/products/robe-hook-ol-1204'],['news','/en/news'],['projects','/en/projects'],['about','/en/about'],['honor','/en/about/honor'],['us','/en-us']]){await p.goto(BASE+url,{waitUntil:'networkidle'});await p.screenshot({path:`../analysis/upgrade-${name}.png`,fullPage:false});console.log(name,await p.title(),(await p.locator('body').innerText()).length);}await b.close();})();

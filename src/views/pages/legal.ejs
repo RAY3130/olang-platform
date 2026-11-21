@@ -1,0 +1,15 @@
+<section class="page-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.kicker %></p>
+    <h1><%= copy.title %></h1>
+    <p class="lede"><%= copy.lede %></p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap prose">
+    <% copy.sections.forEach(function (section) { %>
+    <section><h2><%= section.title %></h2><% section.paragraphs.forEach(function (p) { %><p><%= p %></p><% }); %></section>
+    <% }); %>
+    <p><a href="<%= urlFor('contact') %>"><%= copy.contactText %></a></p>
+  </div>
+</section>

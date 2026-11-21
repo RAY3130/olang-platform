@@ -1,0 +1,86 @@
+<section class="page-hero">
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= copy.title %></h1>
+      <p class="lede"><%= copy.lede %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= urlFor('contact') %>"><%= copy.contactCta %></a>
+        <a class="btn btn-ghost" href="<%= urlFor('resources') %>"><%= copy.documentsCta %></a>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <img src="/images/products/tumbler-holder-ol-6602.jpg" alt="OL-6602 <%= t('common.product') %>" width="900" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.profileKicker %></p><h2><%= copy.profileTitle %></h2><p class="section-lede"><%= copy.profileText %></p></div>
+    <div class="stat-grid">
+      <% stats.forEach(function (stat) { %><div><strong><%= stat.value %></strong><span><%= stat.label %></span></div><% }); %>
+    </div>
+    <p class="source-note"><%= t('pages.home.statSource') %></p>
+    <p class="small-note"><%= t('common.companyIllustrative') %></p>
+    <div class="detail-two-col">
+      <div>
+        <ul class="clean-list">
+          <% copy.profilePoints.forEach(function (point) { %><li><%= point %></li><% }); %>
+        </ul>
+      </div>
+      <div class="evidence-card">
+        <p class="eyebrow"><%= copy.evidenceKicker %></p>
+        <h3><%= copy.evidenceTitle %></h3>
+        <ul class="clean-list"><% copy.evidencePoints.forEach(function (point) { %><li><%= point %></li><% }); %></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow"><%= copy.manufacturingKicker %></p><h2><%= copy.manufacturingTitle %></h2><p class="section-lede"><%= copy.manufacturingText %></p></div>
+    <div class="check-grid">
+      <% copy.manufacturingCards.forEach(function (card, index) { %><div><span>0<%= index + 1 %></span><h3><%= card.title %></h3><p><%= card.text %></p></div><% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap detail-two-col">
+    <div>
+      <p class="eyebrow"><%= copy.processKicker %></p>
+      <h2><%= copy.processTitle %></h2>
+      <div class="timeline">
+        <% copy.process.forEach(function (step) { %><div><span><%= step.number %></span><div><strong><%= step.title %></strong><p><%= step.text %></p></div></div><% }); %>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow"><%= copy.qualityKicker %></p>
+      <h2><%= copy.qualityTitle %></h2>
+      <p><%= copy.qualityText %></p>
+      <div class="notice-box"><%= copy.exportText %></div>
+      <p class="small-note"><%= copy.developmentText %></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="wrap project-band">
+    <div>
+      <p class="eyebrow"><%= copy.contactKicker %></p>
+      <h2><%= copy.contactTitle %></h2>
+      <p class="lede"><%= copy.contactText %></p>
+      <div class="contact-mini">
+        <a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a>
+        <a href="tel:<%= site.contact.phoneHref %>"><%= site.contact.phone %></a>
+      </div>
+    </div>
+    <div class="evidence-card">
+      <h3><%= copy.developmentTitle %></h3>
+      <p><%= copy.developmentText %></p>
+      <a class="btn btn-ghost" href="<%= urlFor('contact') %>"><%= copy.contactCta %></a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6318 @@
+{
+  "generatedAt": "2026-11-17T08:19:54.519Z",
+  "tool": "platform/scripts/build-product-images.js",
+  "rule": {
+    "responsiveWidths": [
+      1600,
+      800
+    ],
+    "responsiveFit": "inside (bounding box on the long edge), no crop, no stretch",
+    "cardShortEdge": 900,
+    "cardCanvas": "900x675 (4:3), trimmed product with 5.5% safety margin, contain",
+    "cardTrimThreshold": 8,
+    "cardBackground": "paper #f7f4ef",
+    "frameBackground": "sampled median colour of the photograph border",
+    "ratioTolerance": 0.005,
+    "allowedRatioClasses": [
+      {
+        "className": "ratio-1x1",
+        "ratio": 1
+      },
+      {
+        "className": "ratio-4x3",
+        "ratio": 1.3333
+      },
+      {
+        "className": "ratio-3x2",
+        "ratio": 1.5
+      },
+      {
+        "className": "ratio-2x1",
+        "ratio": 2
+      },
+      {
+        "className": "ratio-3x4",
+        "ratio": 0.75
+      }
+    ]
+  },
+  "counts": {
+    "total": 123,
+    "distorted": 0
+  },
+  "items": [
+    {
+      "sku": "OL-11301",
+      "src": {
+        "path": "/images/products/official/OL-11301.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "4c295c2a6fd64d30fb58ed2908c4c734ba4e98624daf07d0bd7cb07a9b9d60fc"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11301-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11301-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11301.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.4462,
+          "trimWidth": 1572,
+          "trimHeight": 1087,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11301A",
+      "src": {
+        "path": "/images/products/official/OL-11301A.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "99a52dd78f4d4cb79d6d2b5d4e1a646bb7d39f0afd7e1676cfa913a5718911e7"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11301A-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11301A-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11301A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.9267,
+          "trimWidth": 1454,
+          "trimHeight": 1569,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11301B",
+      "src": {
+        "path": "/images/products/official/OL-11301B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "3e8c10e38c999f004e5341115f6b69d008e297f0ae5be1469b9700f9729d3282"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11301B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11301B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11301B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.0434,
+          "trimWidth": 1563,
+          "trimHeight": 1498,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11301B-A",
+      "src": {
+        "path": "/images/products/official/OL-11301B-A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "67e537925d129763d0a0cc8e1a2d0e58ef2d57aa09af493cfb67c04f2e709ae0"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11301B-A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11301B-A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11301B-A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.6038,
+          "trimWidth": 1283,
+          "trimHeight": 800,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11302",
+      "src": {
+        "path": "/images/products/official/OL-11302.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "2e0f49e1a1d8559949cdf6f688ea6f76bc8d68135995e221cd7cdb3615bd7ef4"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11302-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11302-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11302.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8812,
+          "trimWidth": 1520,
+          "trimHeight": 808,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11302A",
+      "src": {
+        "path": "/images/products/official/OL-11302A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "68698ede0cf029cefcdb3da00e68fa00630d5e30242b28ca2e91867e93e87c69"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11302A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11302A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11302A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9266,
+          "trimWidth": 1470,
+          "trimHeight": 763,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11302B",
+      "src": {
+        "path": "/images/products/official/OL-11302B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "a1adaaa8c1d0a9dac5d40696cfd0dde880b68bafcc6d6392d9ab1462debd648b"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11302B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11302B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11302B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.4609,
+          "trimWidth": 1569,
+          "trimHeight": 1074,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11303",
+      "src": {
+        "path": "/images/products/official/OL-11303.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "055f38955d8449caf89c771d569303d39f43a578c2623a7a668cba3d2164e761"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11303-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11303-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11303.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9694,
+          "trimWidth": 1481,
+          "trimHeight": 752,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11306",
+      "src": {
+        "path": "/images/products/official/OL-11306.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "27e6610ea75e45d283b8d853d2cc5612facb7e19b34d18e399ce026bb6fda7d1"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11306-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11306-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11306.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.9549,
+          "trimWidth": 1482,
+          "trimHeight": 1552,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11306B",
+      "src": {
+        "path": "/images/products/official/OL-11306B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "ccc1eff7659ce78fc7a923c14dcc682c7b790265cb0e1e7b9fbdf52026100318"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11306B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11306B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11306B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.1908,
+          "trimWidth": 1481,
+          "trimHeight": 676,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11309",
+      "src": {
+        "path": "/images/products/official/OL-11309.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "1c398faf1d5c98ba85e75324d67a8f61eabf7980c948650af7528ffdd97340eb"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11309-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11309-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11309.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.7197,
+          "trimWidth": 1405,
+          "trimHeight": 817,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11309A",
+      "src": {
+        "path": "/images/products/official/OL-11309A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "fce4df88318d4aeaf6d33df1ffc6ad671ded085c524b9e2d1487e48d01afa4fa"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11309A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11309A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11309A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.682,
+          "trimWidth": 1349,
+          "trimHeight": 802,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11309L",
+      "src": {
+        "path": "/images/products/official/OL-11309L.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3d01ec5d1cd4be2649b5169a108bb9cf0061242ee7bdae189bc087265d85d820"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11309L-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11309L-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11309L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.2997,
+          "trimWidth": 1032,
+          "trimHeight": 794,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11310A",
+      "src": {
+        "path": "/images/products/official/OL-11310A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "ee1e004984e347c5c2df9e0ce6a36b56955a09ee490f33123d5c3d5665f5bfa2"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11310A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11310A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11310A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.24,
+          "trimWidth": 1028,
+          "trimHeight": 829,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11312",
+      "src": {
+        "path": "/images/products/official/OL-11312.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "132b0b4d42f42e4379a0e573cdd9dbb5086ddd9b3236578c00f1bdc0ec0b5139"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11312-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11312-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11312.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.8301,
+          "trimWidth": 1466,
+          "trimHeight": 518,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11312A",
+      "src": {
+        "path": "/images/products/official/OL-11312A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "cb5db984878af1e7b0bcbf71365bf8ec40ea69c4f30fe6fdb4e5c549d6bf4baf"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11312A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11312A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11312A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.1921,
+          "trimWidth": 1446,
+          "trimHeight": 453,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11312L",
+      "src": {
+        "path": "/images/products/official/OL-11312L.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "71703aefef28f7962cb19722613aface48d67ecc00a14c19b05e860229eefe54"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11312L-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11312L-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11312L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.4224,
+          "trimWidth": 1081,
+          "trimHeight": 760,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11314",
+      "src": {
+        "path": "/images/products/official/OL-11314.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "7f09681c6061e2153809e65c34060a1b44d35c2939d35a64f417f9626fac099f"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11314-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11314-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11314.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.3977,
+          "trimWidth": 1465,
+          "trimHeight": 611,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11314A",
+      "src": {
+        "path": "/images/products/official/OL-11314A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "0e95f4a30f4b197693dc6823df2b6204ca82e3f4b7856c343238d363e46ad2f5"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11314A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11314A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11314A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5612,
+          "trimWidth": 1263,
+          "trimHeight": 809,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11314B",
+      "src": {
+        "path": "/images/products/official/OL-11314B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "06bc4e033706d2f8e1f14c5ceb7d9052b18fe9bea91a458d22fabe77b4048cc1"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11314B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11314B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11314B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5831,
+          "trimWidth": 1295,
+          "trimHeight": 818,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11314L",
+      "src": {
+        "path": "/images/products/official/OL-11314L.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "df283e98b18466d8170c70e6ffdc312e057c01882e4a90e78abaa1a91172a607"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11314L-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11314L-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11314L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3883,
+          "trimWidth": 1137,
+          "trimHeight": 819,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11315",
+      "src": {
+        "path": "/images/products/official/OL-11315.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "2ed1b37054770a88805987066786e5ba93cb6d0bc7c823a29d0fa57a52af7751"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11315-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11315-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11315.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8902,
+          "trimWidth": 1412,
+          "trimHeight": 747,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11315A",
+      "src": {
+        "path": "/images/products/official/OL-11315A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "8da28ec58934b9f7642cddb9251da1e95a066b0bb8b6637f1de183db930e4999"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11315A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11315A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11315A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.0095,
+          "trimWidth": 1479,
+          "trimHeight": 736,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11316",
+      "src": {
+        "path": "/images/products/official/OL-11316.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "a694d04334ffadd1482f6dbea196c49a72d56a1f67e16402dac2779970f0e805"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11316-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11316-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11316.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.2338,
+          "trimWidth": 1583,
+          "trimHeight": 1283,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11316A",
+      "src": {
+        "path": "/images/products/official/OL-11316A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "da797307f3c0e8fa9d571d351ee2d4c071e64716f4c1c2aeb0959a7b8780a4e3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11316A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11316A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11316A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.7358,
+          "trimWidth": 1373,
+          "trimHeight": 791,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11317",
+      "src": {
+        "path": "/images/products/official/OL-11317.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3dc909aef3756ff7cb903376f8cac3b6c895bdafcb429729124c7caa99613b82"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11317-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11317-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11317.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5813,
+          "trimWidth": 1254,
+          "trimHeight": 793,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11317A",
+      "src": {
+        "path": "/images/products/official/OL-11317A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "d0cfe08fde61f23e5a4365b4163ea804ae4027d9b0103ff4972715c0958eccaf"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11317A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11317A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11317A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.1864,
+          "trimWidth": 1478,
+          "trimHeight": 676,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11317L",
+      "src": {
+        "path": "/images/products/official/OL-11317L.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "c2e89315fe75d601137b72a6a49459af67aa013964a78912db7c82824bdc683a"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11317L-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11317L-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11317L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.0544,
+          "trimWidth": 1472,
+          "trimHeight": 1396,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11318L",
+      "src": {
+        "path": "/images/products/official/OL-11318L.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "2bd02631493f4dbcef271c6676f21abbae3c7607f2f95411ab65c44da97babf1"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11318L-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11318L-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11318L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.043,
+          "trimWidth": 1430,
+          "trimHeight": 1371,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11501",
+      "src": {
+        "path": "/images/products/official/OL-11501.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "ce57262288dd64fee249d4b8780dd6359e1d7f2109f10b50f774d4a179d2e3fe"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11501-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11501-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11501.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5133,
+          "trimWidth": 1247,
+          "trimHeight": 824,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11502",
+      "src": {
+        "path": "/images/products/official/OL-11502.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "2af543de5add68b7c5177d2c7de13958620fbca2e64185b250433a450063215e"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11502-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11502-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11502.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.0472,
+          "trimWidth": 1476,
+          "trimHeight": 721,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11502-1",
+      "src": {
+        "path": "/images/products/official/OL-11502-1.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "8c3d8220c103326e60c5861cd892c8ad590d632b60154b277fe558915e283a0d"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11502-1-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11502-1-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11502-1.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.5423,
+          "trimWidth": 1472,
+          "trimHeight": 579,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11502A",
+      "src": {
+        "path": "/images/products/official/OL-11502A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e6f51fb979b9766707acfc6179d6602341091f01ad20e7b2482f8c8b4892d502"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11502A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11502A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11502A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.7222,
+          "trimWidth": 1474,
+          "trimHeight": 396,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11502S",
+      "src": {
+        "path": "/images/products/official/OL-11502S.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "f72bd8817730983c36173bbbf548225469f24831c59106fef79382ca5644093e"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11502S-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11502S-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11502S.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.088,
+          "trimWidth": 1495,
+          "trimHeight": 716,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11503",
+      "src": {
+        "path": "/images/products/official/OL-11503.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "6ac950e9fd141247ab847d026a4cf1b8686aa7fd31f5fc688e66f415834c1787"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11503-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11503-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11503.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.6312,
+          "trimWidth": 1318,
+          "trimHeight": 808,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11601A",
+      "src": {
+        "path": "/images/products/official/OL-11601A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "faed100de6657d284532e6708d6bab058acd05cb9857e6fcc775d81dad1d480c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11601A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11601A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11601A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9472,
+          "trimWidth": 1474,
+          "trimHeight": 757,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11603A",
+      "src": {
+        "path": "/images/products/official/OL-11603A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "12679ca1e695f9d2773de46dde1ab3ca0340e61d92b9b6e23f9801b724b5e632"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11603A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11603A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11603A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3,
+          "trimWidth": 1066,
+          "trimHeight": 820,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11605",
+      "src": {
+        "path": "/images/products/official/OL-11605.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "8f42b976c13df0c1dfabf0f92342a5b583dcb6999874270a97517a7d3829f8ef"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11605-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11605-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11605.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3425,
+          "trimWidth": 1121,
+          "trimHeight": 835,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11605A",
+      "src": {
+        "path": "/images/products/official/OL-11605A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3b54e11283375bdd531f611ff50e927739bb97482933f1beab970b8e942f5e14"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11605A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11605A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11605A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3932,
+          "trimWidth": 1102,
+          "trimHeight": 791,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11605L",
+      "src": {
+        "path": "/images/products/official/OL-11605L.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "b637f7b1df64a50a8eee78b76aba6469c8fa934436f80b790e2805efdae27a50"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11605L-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11605L-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11605L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.7639,
+          "trimWidth": 1397,
+          "trimHeight": 792,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11606A",
+      "src": {
+        "path": "/images/products/official/OL-11606A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "5c6d125a2045be67b4206471a507a2c2b1fd669acb7872c0afcb063f0231dd3c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11606A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11606A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11606A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.6618,
+          "trimWidth": 1448,
+          "trimHeight": 544,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11606A-2A",
+      "src": {
+        "path": "/images/products/official/OL-11606A-2A.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "ead3adb6721c78064af8da6a66142fe25b53778bdc2460d8b5899f373fa6d9eb"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11606A-2A-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11606A-2A-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11606A-2A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.9106,
+          "trimWidth": 1314,
+          "trimHeight": 1443,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11608",
+      "src": {
+        "path": "/images/products/official/OL-11608.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "a86fccd36d1229eb93ce016305d6570f200f25058a9e213b04519cad04750c7e"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11608-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11608-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11608.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.3328,
+          "trimWidth": 1409,
+          "trimHeight": 604,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11608A",
+      "src": {
+        "path": "/images/products/official/OL-11608A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "4ada28696d63996735f0ed3b647425b02fd81d5fcb783c3231e2ec72ac4e7b84"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11608A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11608A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11608A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.1139,
+          "trimWidth": 1448,
+          "trimHeight": 685,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-11608L",
+      "src": {
+        "path": "/images/products/official/OL-11608L.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "1a35e6c7c0fb1b0e9740a6eaba7e16593f34690d29f770edf12a26851602f236"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-11608L-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-11608L-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-11608L.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.1741,
+          "trimWidth": 1443,
+          "trimHeight": 1229,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1204",
+      "src": {
+        "path": "/images/products/official/OL-1204.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "4c6a877c4650011ccd2a00d338be229c432a2e4d0fb19e7ec137cddba4720d91"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1204-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1204-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1204.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.0473,
+          "trimWidth": 1483,
+          "trimHeight": 1416,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1204B",
+      "src": {
+        "path": "/images/products/official/OL-1204B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "00313bcbda5a703c4a0205d38e010940ff16e52a71fc41e80f3d8b7eb8be07d8"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1204B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1204B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1204B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.282,
+          "trimWidth": 1491,
+          "trimHeight": 1163,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1205",
+      "src": {
+        "path": "/images/products/official/OL-1205.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e3fee9dcd1e790851a9b63f2703005ac0b90e354784ebb13fe07c4541ffdfa2f"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1205-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1205-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1205.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.0981,
+          "trimWidth": 1484,
+          "trimHeight": 479,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1207",
+      "src": {
+        "path": "/images/products/official/OL-1207.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "ed05fea08257eff762386f193dfa17c7bf13e58b416a987866faeb6fb5cd9c99"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1207-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1207-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1207.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.4199,
+          "trimWidth": 663,
+          "trimHeight": 1579,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1208",
+      "src": {
+        "path": "/images/products/official/OL-1208.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "05fba14ce04105873347b0ebfb297309e24e2a926d09abeec4b91461e02de7b3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1208-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1208-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1208.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 4.2085,
+          "trimWidth": 1494,
+          "trimHeight": 355,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1209",
+      "src": {
+        "path": "/images/products/official/OL-1209.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "ca3f8673a12620195e37c8a7ec7603074e43170806a04dbefe34f59ef2641030"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1209-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1209-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1209.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 4.8185,
+          "trimWidth": 1460,
+          "trimHeight": 303,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1211A",
+      "src": {
+        "path": "/images/products/official/OL-1211A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "2af268c055aa5467ada651199614f891d6d634193a02c84dee08e6c4143db3ba"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1211A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1211A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1211A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9089,
+          "trimWidth": 1718,
+          "trimHeight": 900,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1701B",
+      "src": {
+        "path": "/images/products/official/OL-1701B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "5020350458a253e35ebb1d22b21683e3f7302e5822cde1243317ec454619aebd"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1701B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1701B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1701B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.1237,
+          "trimWidth": 1490,
+          "trimHeight": 1326,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1702",
+      "src": {
+        "path": "/images/products/official/OL-1702.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "a6c7ccd60054d75827b109a5748b650236f81ee94a93e6b611285ff780112522"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1702-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1702-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1702.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.9784,
+          "trimWidth": 1405,
+          "trimHeight": 1436,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1704",
+      "src": {
+        "path": "/images/products/official/OL-1704.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "076ca32ab4b9753c57b4ec328f11c802139fa79a9761598a561cc3638c2eeff3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1704-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1704-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1704.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.4411,
+          "trimWidth": 1565,
+          "trimHeight": 1086,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1705",
+      "src": {
+        "path": "/images/products/official/OL-1705.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "85071223fb35b65db9330e6734aba695130e648dadcb887d75dca6a9973e993d"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1705-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1705-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1705.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5796,
+          "trimWidth": 1221,
+          "trimHeight": 773,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1706",
+      "src": {
+        "path": "/images/products/official/OL-1706.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "2dad878bc86108c8f89783acfa457f171bd42aacbe814e8767c4b52710e4cdad"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1706-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1706-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1706.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3285,
+          "trimWidth": 1557,
+          "trimHeight": 1172,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1706B",
+      "src": {
+        "path": "/images/products/official/OL-1706B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "3e2d7066bd907281c69a81a5bc2f9d94447b3ae6f7f5e053406a2fcc9dd8ba9c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1706B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1706B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1706B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5147,
+          "trimWidth": 1548,
+          "trimHeight": 1022,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1707",
+      "src": {
+        "path": "/images/products/official/OL-1707.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "5ff1e530b7cbd6927d74ed4edc7a38fc60f4530f1d4a90063f52fc384bc9fece"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1707-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1707-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1707.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.4299,
+          "trimWidth": 678,
+          "trimHeight": 1577,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1708",
+      "src": {
+        "path": "/images/products/official/OL-1708.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "0f19ca9e6585c8f7119458296f1e5e4b3ec9bb10c2f4ab3dc2f7a218efc508da"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1708-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1708-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1708.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 4.0867,
+          "trimWidth": 1508,
+          "trimHeight": 369,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-1711",
+      "src": {
+        "path": "/images/products/official/OL-1711.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "6173b9a970408209aa333b1ede734346b067089a36c81119622a683da37ddafb"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-1711-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-1711-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-1711.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9089,
+          "trimWidth": 1718,
+          "trimHeight": 900,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5201B",
+      "src": {
+        "path": "/images/products/official/OL-5201B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "769e0bd456ed8d8ef04f6a08cf41a0cdace3e8d1b136f8dff6e7ddbc6f93a00d"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5201B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5201B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5201B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4573,
+          "trimWidth": 1236,
+          "trimHeight": 503,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5208A",
+      "src": {
+        "path": "/images/products/official/OL-5208A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3711dd6150be7d43730fd90c8ece3bc53de263011d2a3dab06e31f006f9bbcf8"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5208A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5208A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5208A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.43,
+          "trimWidth": 1458,
+          "trimHeight": 600,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5209",
+      "src": {
+        "path": "/images/products/official/OL-5209.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e7fc2ce5d4ac3478718623cb6d4b4ccbd91e55e865bf21a25eaf81811846fe16"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5209-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5209-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5209.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 4.2738,
+          "trimWidth": 1436,
+          "trimHeight": 336,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5210A",
+      "src": {
+        "path": "/images/products/official/OL-5210A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "0d8bb3bf9359c707bfd87e1cf5a41fa6434846da1852323f022c2bacc183139f"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5210A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5210A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5210A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.7573,
+          "trimWidth": 1383,
+          "trimHeight": 787,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5216",
+      "src": {
+        "path": "/images/products/official/OL-5216.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "57e43ace61ce9906db07ba9b610c00f6ba0381150593caf493ad83602dae7141"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5216-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5216-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5216.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4086,
+          "trimWidth": 1238,
+          "trimHeight": 514,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5218B",
+      "src": {
+        "path": "/images/products/official/OL-5218B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "aa55bb91871115340017a25d45afeb9087c7eb274ddc8bed838f93c9e621a9b8"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5218B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5218B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5218B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8805,
+          "trimWidth": 1196,
+          "trimHeight": 636,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5218H",
+      "src": {
+        "path": "/images/products/official/OL-5218H.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "f4b7cf4a9b4dd42f257466761cf847e2a2b65ddaf281014524fd0b55ab935a0c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5218H-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5218H-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5218H.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9737,
+          "trimWidth": 1200,
+          "trimHeight": 608,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5219D",
+      "src": {
+        "path": "/images/products/official/OL-5219D.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "5c4861a909da1509ae77383c1edbb72fcd7a6b318b12a5430d0033f356ce6010"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5219D-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5219D-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5219D.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.0396,
+          "trimWidth": 1495,
+          "trimHeight": 733,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5219H",
+      "src": {
+        "path": "/images/products/official/OL-5219H.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "7164cd42cc342e897d93e0b616c0221d396a28a9bfb055d0cd0bdea827273acc"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5219H-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5219H-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5219H.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.721,
+          "trimWidth": 1363,
+          "trimHeight": 792,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5221",
+      "src": {
+        "path": "/images/products/official/OL-5221.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "af6f180e32f531dfc211bcd3254f8ebc525f28041403fb255f6aa6886f9e43c4"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5221-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5221-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5221.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.819,
+          "trimWidth": 1299,
+          "trimHeight": 1586,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5232",
+      "src": {
+        "path": "/images/products/official/OL-5232.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "a4a9d1c4a2b91b27ba2e8ed101b3b9975414f7bb663a66603da32cee3dacf671"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5232-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5232-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5232.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.0679,
+          "trimWidth": 1462,
+          "trimHeight": 707,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5234",
+      "src": {
+        "path": "/images/products/official/OL-5234.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "2ef03c8edae7968edaaf760694e2326d00b8c3d8b012d77da1491d782136a156"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5234-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5234-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5234.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.8323,
+          "trimWidth": 1285,
+          "trimHeight": 1544,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5235",
+      "src": {
+        "path": "/images/products/official/OL-5235.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "73b7268ba215e1b5d71cecb1ab51fbf20f7aabd7fa497a4da4d8e0611e6815a9"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5235-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5235-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5235.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8733,
+          "trimWidth": 1227,
+          "trimHeight": 655,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-5236",
+      "src": {
+        "path": "/images/products/official/OL-5236.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "e1983ffe7cff91f1c23dfbff0b1d5086bdcec804f313cb3cf1a0e7fbaf201032"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-5236-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-5236-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-5236.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.7811,
+          "trimWidth": 1292,
+          "trimHeight": 1654,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6601A",
+      "src": {
+        "path": "/images/products/official/OL-6601A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3dc61e9fd684804de20cdc61e5919913d69d270cf4276849a8976cf86245596c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6601A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6601A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6601A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.3718,
+          "trimWidth": 1378,
+          "trimHeight": 581,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6601B",
+      "src": {
+        "path": "/images/products/official/OL-6601B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "36129cc050ad68fc0355cd2502b6238159ab3fec7ca429f69e67bbe7b8cbc495"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6601B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6601B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6601B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.891,
+          "trimWidth": 1405,
+          "trimHeight": 743,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6601C",
+      "src": {
+        "path": "/images/products/official/OL-6601C.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "1157eac81b535bc0ad908ee7acee7401d6b2e946e387ab607dbdacd719171c12"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6601C-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6601C-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6601C.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.5793,
+          "trimWidth": 862,
+          "trimHeight": 1488,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6602",
+      "src": {
+        "path": "/images/products/official/OL-6602.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "65c337cec5fab0119885008ae8d6498da768805604fdee8a20372fc70e93d8d4"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6602-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6602-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6602.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.9236,
+          "trimWidth": 1402,
+          "trimHeight": 1518,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6604",
+      "src": {
+        "path": "/images/products/official/OL-6604.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "41300941789b509fb6b4697e8e1ee07a86e8ef32c92c84e8de1296c6a4ca0eae"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6604-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6604-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6604.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9071,
+          "trimWidth": 1560,
+          "trimHeight": 818,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6604A",
+      "src": {
+        "path": "/images/products/official/OL-6604A.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "9da9db86d96484496cfe3b8df67c5b2ea9fc88a46a3e96884888f3a7b1b9b1dc"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6604A-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6604A-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6604A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9266,
+          "trimWidth": 1549,
+          "trimHeight": 804,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6605",
+      "src": {
+        "path": "/images/products/official/OL-6605.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "82c78f424c41ed525e0ed710d9ee4b2cdbbe67c317af4d7c0f7768e11c3120d1"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6605-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6605-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6605.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8289,
+          "trimWidth": 1646,
+          "trimHeight": 900,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6606B",
+      "src": {
+        "path": "/images/products/official/OL-6606B.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "ce803e7fb3980684e9c3fe152a66624c244e09a198662c4d47283676dbddea7d"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6606B-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6606B-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6606B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.2863,
+          "trimWidth": 1577,
+          "trimHeight": 1226,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6606S",
+      "src": {
+        "path": "/images/products/official/OL-6606S.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "16b7d1da2b5658da5661a7f44306cd5ce65417988e27cde3254640d77b4b9791"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6606S-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6606S-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6606S.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.641,
+          "trimWidth": 1321,
+          "trimHeight": 805,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6607",
+      "src": {
+        "path": "/images/products/official/OL-6607.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "c40fdb21419b2f9b19174c5b306ba7abe3cc3d46dc6f84e7c13ada812527e552"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6607-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6607-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6607.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.5228,
+          "trimWidth": 941,
+          "trimHeight": 1800,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6608",
+      "src": {
+        "path": "/images/products/official/OL-6608.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "2425eacd5079151ff8e66ac470b076e75d21830e6f0cd34d592fd774866b09ed"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6608-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6608-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6608.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8144,
+          "trimWidth": 1633,
+          "trimHeight": 900,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6609",
+      "src": {
+        "path": "/images/products/official/OL-6609.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "150ec399e55f5d3068e6df6eed417603222f9a8ae53b8959f0918206181d2e34"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6609-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6609-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6609.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.9697,
+          "trimWidth": 1470,
+          "trimHeight": 495,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-6611",
+      "src": {
+        "path": "/images/products/official/OL-6611.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "0bad995f72a53959b10312544f7d2f411eec6c4a2cf048e61b8fdde788be3019"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-6611-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-6611-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-6611.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.1272,
+          "trimWidth": 1472,
+          "trimHeight": 692,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7201A",
+      "src": {
+        "path": "/images/products/official/OL-7201A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "6cba4946ebc33c64fb12e577bbcdceb812e1ab1b9ec89afda7d515ce87998127"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7201A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7201A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7201A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9118,
+          "trimWidth": 1388,
+          "trimHeight": 726,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7201B",
+      "src": {
+        "path": "/images/products/official/OL-7201B.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "f91f0b76e962269d370ccb424a3ec565f4e9380106d1320e4aa4420a6277ea13"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7201B-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7201B-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7201B.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5532,
+          "trimWidth": 1269,
+          "trimHeight": 817,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7202",
+      "src": {
+        "path": "/images/products/official/OL-7202.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "928f5e7c8b8e591532ec552ca8b21dc0cb43f73e0513d06fd0ce4d1738f87e99"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7202-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7202-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7202.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.939,
+          "trimWidth": 1400,
+          "trimHeight": 1491,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7203",
+      "src": {
+        "path": "/images/products/official/OL-7203.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "b2d1053d41d5f21cea4246d9e7d45bfe5b1e97fa0eab7be7ae7f2d84d8d7b8b0"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7203-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7203-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7203.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.1716,
+          "trimWidth": 1577,
+          "trimHeight": 1346,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7204",
+      "src": {
+        "path": "/images/products/official/OL-7204.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "daa2d246e94429bbf6031a7a76bb33e52deeffcfba50319c6352c2117b203961"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7204-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7204-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7204.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.3365,
+          "trimWidth": 1537,
+          "trimHeight": 1150,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7205",
+      "src": {
+        "path": "/images/products/official/OL-7205.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "db0f8b109d5b994eb87d7d69518c3a52682377ec2e98dcc9131c34e0cc436a28"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7205-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7205-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7205.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.6462,
+          "trimWidth": 1012,
+          "trimHeight": 1566,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7206",
+      "src": {
+        "path": "/images/products/official/OL-7206.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "eff7022aad9d5d6508b06e535148bf12f892d793a08ac4eff397fec69f69ab89"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7206-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7206-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7206.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.6581,
+          "trimWidth": 1295,
+          "trimHeight": 781,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7206A",
+      "src": {
+        "path": "/images/products/official/OL-7206A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e19f208170c800ced81db7836b1293904a2365fc5a7d547ab801ec5fb9a86eb0"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7206A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7206A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7206A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.1416,
+          "trimWidth": 1464,
+          "trimHeight": 466,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7207",
+      "src": {
+        "path": "/images/products/official/OL-7207.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "fdf67e78197584659bd6f64c26706cf875551b19bd93cdeb195ae012b1cb32ea"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7207-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7207-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7207.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.3504,
+          "trimWidth": 553,
+          "trimHeight": 1578,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7208",
+      "src": {
+        "path": "/images/products/official/OL-7208.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "90fea94fe74c8046a610e3c0ca2d9163ed2894b5ff277b51632e22716b4f4b89"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7208-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7208-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7208.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.9679,
+          "trimWidth": 1478,
+          "trimHeight": 498,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7209",
+      "src": {
+        "path": "/images/products/official/OL-7209.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3d53087b3422101e19c555de32cd79ca2b2823f4dec7edbd47654a51b1dfa80d"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7209-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7209-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7209.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8444,
+          "trimWidth": 1660,
+          "trimHeight": 900,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7211",
+      "src": {
+        "path": "/images/products/official/OL-7211.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "94b1acef1abe9d8f583e781a33ea318ddcd82f046f3b146d7df99a7e4acd5ad9"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7211-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7211-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7211.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.3088,
+          "trimWidth": 1473,
+          "trimHeight": 638,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7304A",
+      "src": {
+        "path": "/images/products/official/OL-7304A.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "b148b82077155a74ae8687d5209ec6d6ee157955710326f33f1bdb17c36e22b3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7304A-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7304A-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7304A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.5159,
+          "trimWidth": 1572,
+          "trimHeight": 1037,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7306",
+      "src": {
+        "path": "/images/products/official/OL-7306.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "9fc5ed89be5bd58e77e263ccf2af2a1bda7403c48cf3c37ec86e567e6e99dbdc"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7306-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7306-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7306.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8028,
+          "trimWidth": 1399,
+          "trimHeight": 776,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7306S",
+      "src": {
+        "path": "/images/products/official/OL-7306S.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e4736803c17054eebd5ce8edbabadd03bd83eb8b78de3d6578d72364efa58bc7"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7306S-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7306S-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7306S.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.0925,
+          "trimWidth": 1448,
+          "trimHeight": 692,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7307A",
+      "src": {
+        "path": "/images/products/official/OL-7307A.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "1d9e08db83a4ed7b0e005dd14debb64350ac71de18bb77022bd24770d0835073"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7307A-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7307A-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7307A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.3555,
+          "trimWidth": 561,
+          "trimHeight": 1578,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7308",
+      "src": {
+        "path": "/images/products/official/OL-7308.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "9a95120fbdbc5168e3e18d408c8dbc88810f15bc1d1be500dc8d0f14ab9b82fe"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7308-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7308-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7308.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.1996,
+          "trimWidth": 1491,
+          "trimHeight": 466,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7309A",
+      "src": {
+        "path": "/images/products/official/OL-7309A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "4fbd4727c6db14aab48ac7a3a0c9a5eb1ee5fbc6980e57b8a6132f927525d6c3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7309A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7309A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7309A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.2571,
+          "trimWidth": 1482,
+          "trimHeight": 455,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7311A",
+      "src": {
+        "path": "/images/products/official/OL-7311A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "ec749830e3859757b0adaca958e75d80c8b817d788b3b3d122f928e7ac48606c"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7311A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7311A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7311A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.5475,
+          "trimWidth": 1475,
+          "trimHeight": 579,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7604",
+      "src": {
+        "path": "/images/products/official/OL-7604.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "d318168e1f81a93292ac36cb62940c82279b585b2206a7c800d23e274d932ea6"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7604-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7604-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7604.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.1445,
+          "trimWidth": 1505,
+          "trimHeight": 1315,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7605",
+      "src": {
+        "path": "/images/products/official/OL-7605.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "9689e87530b79f43252d4eaae0df447e1fba2ee0231bb01db6a114e681db7a07"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7605-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7605-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7605.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4161,
+          "trimWidth": 1498,
+          "trimHeight": 620,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7606",
+      "src": {
+        "path": "/images/products/official/OL-7606.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "0b83fb8ddf2ceb6809dbd5a5d34d20761845d11217adac39693447997da72d00"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7606-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7606-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7606.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.2514,
+          "trimWidth": 1553,
+          "trimHeight": 1241,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7607",
+      "src": {
+        "path": "/images/products/official/OL-7607.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "3ec9de7701d14f76150327f2d2b71048ff0943f09ac86b5b9b793a5eaf00872e"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7607-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7607-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7607.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.4826,
+          "trimWidth": 761,
+          "trimHeight": 1577,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7608",
+      "src": {
+        "path": "/images/products/official/OL-7608.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "7ee1c5d13c4d49430d9b1ea99c9c7700bada1fdeb94e1eca3563644ebd580bc3"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7608-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7608-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7608.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4975,
+          "trimWidth": 1481,
+          "trimHeight": 593,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-7611",
+      "src": {
+        "path": "/images/products/official/OL-7611.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "7a88f353185a73b9aacb7edd07b53b3481bd3e56b2a7fecafc7d338570723be2"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-7611-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-7611-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-7611.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4915,
+          "trimWidth": 1460,
+          "trimHeight": 586,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9004",
+      "src": {
+        "path": "/images/products/official/OL-9004.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "f0d4099630e95d9eaf31dd4cebd5a919d6acd51cf6c3a6298dcc10aea555d000"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9004-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9004-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9004.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.8857,
+          "trimWidth": 1379,
+          "trimHeight": 1557,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9005",
+      "src": {
+        "path": "/images/products/official/OL-9005.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "99c652479973181e8dcbab0a8fd32c13ca30f39a61cabc965e66266a82174fd5"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9005-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9005-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9005.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.4858,
+          "trimWidth": 1489,
+          "trimHeight": 599,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9006",
+      "src": {
+        "path": "/images/products/official/OL-9006.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "203dc8afb664437942374929f7abb945b236b9938ef66107f44027de690da567"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9006-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9006-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9006.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.477,
+          "trimWidth": 1186,
+          "trimHeight": 803,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9006A",
+      "src": {
+        "path": "/images/products/official/OL-9006A.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "e06d6f91b647f290cf9926a167ebc07b129edd3bbf156e2def8dbeedcbe7c424"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9006A-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9006A-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9006A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.8721,
+          "trimWidth": 1434,
+          "trimHeight": 766,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9006S",
+      "src": {
+        "path": "/images/products/official/OL-9006S.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "b5ba145a2aa66813fe01a575b043e8b70aadc628bb3581410d109290ec0e6744"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9006S-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9006S-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9006S.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 1.9118,
+          "trimWidth": 1474,
+          "trimHeight": 771,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9007",
+      "src": {
+        "path": "/images/products/official/OL-9007.jpg",
+        "width": 4000,
+        "height": 4000,
+        "ratio": 1,
+        "sha256": "6e7dec207f3d850b2a8319287413942834954b87289660323128b23f2360d689"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "1x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9007-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9007-800.webp",
+          "width": 800,
+          "height": 800,
+          "ratio": 1,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9007.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 0.335,
+          "trimWidth": 528,
+          "trimHeight": 1576,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9008",
+      "src": {
+        "path": "/images/products/official/OL-9008.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "8131c1393d6c7ba7a5ebc8c7f658b9758f1eed1b6fd998652682c99ed51ede99"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9008-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9008-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9008.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.4273,
+          "trimWidth": 1484,
+          "trimHeight": 433,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9009",
+      "src": {
+        "path": "/images/products/official/OL-9009.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "3b2dd6464743fdea99292866c38db75a48a4551990e46644f71087d2800ccfe7"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9009-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9009-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9009.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 3.1926,
+          "trimWidth": 1475,
+          "trimHeight": 462,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9011",
+      "src": {
+        "path": "/images/products/official/OL-9011.jpg",
+        "width": 4000,
+        "height": 2000,
+        "ratio": 2,
+        "sha256": "a7433951f5e2d5b819fb9a36c4acccaa4384b3d634b846160b7f3631fba88839"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9011-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9011-800.webp",
+          "width": 800,
+          "height": 400,
+          "ratio": 2,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9011.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.6205,
+          "trimWidth": 1457,
+          "trimHeight": 556,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    },
+    {
+      "sku": "OL-9715A",
+      "src": {
+        "path": "/images/products/official/OL-9715A.jpg",
+        "width": 6270,
+        "height": 2846,
+        "ratio": 2.2031,
+        "sha256": "81d928ae32cb99732e95b4012483e31a48488f9c434cdf9d15ef1773594a61fd"
+      },
+      "background": {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        }
+      },
+      "ratioClass": "2x1",
+      "outputs": [
+        {
+          "role": "responsive-1600",
+          "path": "/images/products/official/responsive/OL-9715A-1600.webp",
+          "width": 1600,
+          "height": 726,
+          "ratio": 2.2039,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "responsive-800",
+          "path": "/images/products/official/responsive/OL-9715A-800.webp",
+          "width": 800,
+          "height": 363,
+          "ratio": 2.2039,
+          "tolerance": 0.005,
+          "distorted": false
+        },
+        {
+          "role": "card",
+          "path": "/images/products/official/cards/OL-9715A.jpg",
+          "width": 900,
+          "height": 675,
+          "ratio": 1.3333,
+          "trimRatio": 2.2003,
+          "trimWidth": 1637,
+          "trimHeight": 744,
+          "tolerance": 0.005,
+          "distorted": false
+        }
+      ]
+    }
+  ]
+}

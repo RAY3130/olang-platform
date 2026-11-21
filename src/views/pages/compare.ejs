@@ -1,0 +1,74 @@
+<section class="page-hero">
+  <div class="wrap narrow">
+    <p class="eyebrow"><%= copy.kicker %></p>
+    <h1><%= copy.title %></h1>
+    <p class="lede"><%= copy.lede %></p>
+    <div class="unit-switch" role="group" aria-label="<%= t('common.unitSwitch') %>">
+      <button type="button" class="unit-button" data-unit-toggle data-unit-current="<%= market.unitSystem %>">
+        <span data-unit-label><%= market.unitSystem === 'imperial' ? t('common.unitInch') : t('common.unitMm') %></span>
+        <span class="unit-arrow" aria-hidden="true">↔</span>
+        <span data-unit-target><%= market.unitSystem === 'imperial' ? t('common.unitMm') : t('common.unitInch') %></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" data-compare-page data-market-prefix="<%= market.prefix %>" data-initial-skus="<%= selectedSkus.join(',') %>">
+    <% if (products.length) { %>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th scope="col"><%= copy.field %></th>
+            <% products.forEach(function (product) { %>
+            <th scope="col">
+              <a href="<%= urlFor('products/' + product.slug) %>" class="compare-product-head">
+                <img src="/<%= product.image_path ? product.image_path.replace(/^\/+/, '') : 'assets/placeholder.svg' %>" alt="" width="180" height="180" loading="lazy">
+                <span><%= product.name %><small><%= product.sku %></small></span>
+              </a>
+              <a class="link-button" href="<%= urlFor('compare') %>?skus=<%= products.filter(function (p) { return p.sku !== product.sku; }).map(function (p) { return p.sku; }).join(',') %>" data-compare-remove="<%= product.sku %>"><%= copy.remove %></a>
+            </th>
+            <% }); %>
+          </tr>
+        </thead>
+        <tbody>
+          <% comparison[0].rows.forEach(function (row, rowIndex) { %>
+          <tr>
+            <th scope="row"><%= t(row.labelKey) %></th>
+            <% comparison.forEach(function (entry) { const current = entry.rows[rowIndex]; %>
+            <td data-spec-field="<%= row.key %>">
+              <% if (!current || !current.values.length) { %>
+                <span class="status status-<%= current ? current.status : 'available_on_request' %>"><%= t('status.' + (current ? current.status : 'available_on_request')) %></span>
+              <% } else { %>
+                <% current.values.forEach(function (value) { %>
+                <span class="compare-value">
+                  <% if (value.labelKey) { %><small><%= t(value.labelKey) %></small><% } %>
+                  <% if (value.value) { %>
+                  <span class="measure-value" data-metric="<%= value.metric %>" data-imperial="<%= value.imperial %>" data-convertible="<%= value.convertible ? '1' : '0' %>">
+                    <span data-measure-metric class="<%= market.unitSystem === 'metric' ? '' : 'measure-hidden' %>"><%= value.metric %></span>
+                    <span data-measure-imperial class="<%= market.unitSystem === 'imperial' ? '' : 'measure-hidden' %>"><%= value.imperial %></span>
+                  </span>
+                  <% } %>
+                  <small class="compare-status"><%= t('status.' + value.status) %></small>
+                </span>
+                <% }); %>
+              <% } %>
+            </td>
+            <% }); %>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <p class="small-note"><%= copy.statusIncluded %></p>
+    <div class="hero-actions"><a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= copy.addProducts %></a><button class="btn btn-ghost" type="button" data-compare-clear><%= t('common.clear') %></button></div>
+    <% } else { %>
+    <div class="empty-state" data-compare-empty>
+      <h2><%= copy.empty %></h2>
+      <p><%= copy.emptyHelp %></p>
+      <a class="btn btn-primary" href="<%= urlFor('products') %>"><%= copy.addProducts %></a>
+    </div>
+    <% } %>
+  </div>
+</section>

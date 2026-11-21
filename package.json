@@ -1,0 +1,47 @@
+{
+  "name": "olang-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OLANG international B2B website, inquiry platform and administration system",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "admin:reset": "node scripts/reset-admin.js",
+    "backup": "node scripts/backup.js",
+    "backup:full": "node scripts/backup.js --with-uploads",
+    "db:retention": "node scripts/retention.js",
+    "test": "node --test tests/unit/platform.unit.test.js tests/integration/platform.test.js",
+    "test:unit": "node --test tests/unit/platform.unit.test.js",
+    "test:integration": "node --test tests/integration/platform.test.js",
+    "test:e2e": "node tests/qa/site-audit.js",
+    "test:all": "node --test tests/unit/platform.unit.test.js tests/integration/platform.test.js && node tests/qa/site-audit.js && node tests/qa/assistant-test.js",
+    "qa:site": "node tests/qa/site-audit.js",
+    "qa:images": "node scripts/check-image-presentation.js",
+    "qa:i18n": "node scripts/check-i18n-keys.js",
+    "qa:assistant": "node tests/qa/assistant-test.js",
+    "qa:analytics": "node tests/qa/analyse-analytics.js",
+    "qa:old-new": "node tests/qa/old-new-tasks.js",
+    "export:products": "node tests/qa/export-product-library.js",
+    "qa:image-assistant": "node scripts/check-image-assistant.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "dotenv": "^18.0.9",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "multer": "^2.5.0",
+    "nodemailer": "^10.3.1"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "lighthouse": "^13.6.0",
+    "playwright-core": "^1.65.0"
+  }
+}

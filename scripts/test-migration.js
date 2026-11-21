@@ -1,0 +1,12 @@
+﻿process.env.DB_PATH='./storage/migration-test.sqlite';
+const {openDatabase,SCHEMA_VERSION}=require('../src/db');
+const db=openDatabase();
+console.log('version',SCHEMA_VERSION,db.prepare('SELECT MAX(version) v FROM schema_migrations').get());
+console.log('attrs',db.prepare("SELECT COUNT(*) c FROM product_attributes").get());
+console.log('attr cols',db.prepare('PRAGMA table_info(product_attributes)').all().map(x=>x.name));
+console.log('statuses',db.prepare('SELECT DISTINCT status FROM product_attributes').all());
+console.log('finish statuses',db.prepare('SELECT DISTINCT status FROM product_finishes').all());
+console.log('products cols',db.prepare('PRAGMA table_info(products)').all().map(x=>x.name));
+console.log('cases cols',db.prepare('PRAGMA table_info(case_studies)').all().map(x=>x.name));
+console.log('market tables',db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'market%'").all());
+console.log('news tables',db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'news%'").all());

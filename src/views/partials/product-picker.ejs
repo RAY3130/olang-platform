@@ -1,0 +1,23 @@
+<fieldset class="picker" data-picker>
+  <legend><%= t('pages.inquiry.tableProduct') %></legend>
+  <p class="small-note"><%= t('pages.products.listHelp') %> <%= t('pages.inquiry.maxItems') %></p>
+  <div class="picker-head" aria-hidden="true">
+    <span></span><span><%= t('common.product') %></span><span><%= t('common.quantity') %></span><span><%= t('common.notes') %></span>
+  </div>
+  <% pickerProducts.forEach(function (p, index) { %>
+  <div class="picker-row" data-picker-row data-sku="<%= p.sku %>" data-name="<%= p.name %>" data-url="<%= urlFor('products/' + p.slug) %>" data-image="<%= p.image_path ? '/' + p.image_path.replace(/^\/+/, '') : '' %>" data-category="<%= p.category_name %>">
+    <label class="picker-check">
+      <input type="checkbox" name="pick_<%= p.sku %>" value="1" data-picker-check>
+      <span class="sr-only"><%= p.name %> <%= p.sku %></span>
+    </label>
+    <div class="picker-product">
+      <span class="picker-thumb"><% if (p.image_path) { %><img src="/<%= p.image_path.replace(/^\/+/, '') %>" alt="" width="64" height="64" loading="lazy"><% } %></span>
+      <span><strong><%= p.name %></strong><small><%= p.sku %> · <%= p.category_name %></small></span>
+    </div>
+    <label class="sr-only" for="qty-<%= p.sku %>"><%= t('common.quantity') %> <%= p.sku %></label>
+    <input id="qty-<%= p.sku %>" type="number" name="qty_<%= p.sku %>" min="1" max="1000000" inputmode="numeric" placeholder="<%= t('forms.placeholders.quantity') %>" data-picker-qty>
+    <label class="sr-only" for="note-<%= p.sku %>"><%= t('common.notes') %> <%= p.sku %></label>
+    <input id="note-<%= p.sku %>" type="text" name="note_<%= p.sku %>" maxlength="500" placeholder="<%= t('forms.placeholders.itemNotes') %>" data-picker-note>
+  </div>
+  <% }); %>
+</fieldset>

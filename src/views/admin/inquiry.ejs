@@ -1,0 +1,96 @@
+<div class="admin-toolbar">
+  <div>
+    <p class="admin-kicker">Inquiry detail</p>
+    <h2><%= inquiry.reference %> <span class="status-pill status-<%= inquiry.status %>"><%= statusLabel(inquiry.status) %></span><% if (inquiry.is_test) { %> <span class="status-pill">QA test — not a customer inquiry</span><% } %></h2>
+    <p class="admin-meta"><%= inquiry.type %> · received <%= inquiry.created_at.slice(0,16).replace('T',' ') %> · <%= inquiry.market %> edition</p>
+  </div>
+  <a class="btn btn-ghost btn-small" href="/admin/inquiries">Back to inquiries</a>
+</div>
+
+<div class="admin-grid admin-grid-2">
+  <section class="admin-panel">
+    <h3>Customer</h3>
+    <ul class="admin-list">
+      <li><strong><%= inquiry.name %></strong> · <%= inquiry.company || 'No company' %></li>
+      <li><a href="mailto:<%= inquiry.email %>"><%= inquiry.email %></a> · <%= inquiry.phone || 'No phone' %></li>
+      <li><%= inquiry.country %></li>
+      <li>Source: <span class="admin-code"><%= inquiry.source_path || '—' %></span></li>
+      <li>Language: <%= inquiry.locale %> · Assigned to: <%= inquiry.assignee_name || 'Unassigned' %></li>
+    </ul>
+    <h3 style="margin-top:1rem">Request fields</h3>
+    <% if (inquiry.fields.length) { %>
+    <ul class="admin-list"><% inquiry.fields.forEach(function (field) { %><li><strong><%= field.field_key %></strong>: <%= field.value %></li><% }); %></ul>
+    <% } else { %><p class="admin-meta">No structured fields beyond the product list.</p><% } %>
+    <h3 style="margin-top:1rem">Requirements</h3>
+    <p class="admin-message"><%= inquiry.message %></p>
+  </section>
+  <div>
+    <section class="admin-panel">
+      <h3>Products</h3>
+      <% if (inquiry.items.length) { %>
+      <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>SKU</th><th>Name snapshot</th><th>Quantity</th><th>Notes</th></tr></thead><tbody>
+        <% inquiry.items.forEach(function (item) { %><tr><td><%= item.sku %></td><td><%= item.product_name %></td><td><%= item.quantity || '—' %></td><td><%= item.notes || '' %></td></tr><% }); %>
+      </tbody></table></div>
+      <% } else { %><p class="admin-meta">No product list attached.</p><% } %>
+    </section>
+    <section class="admin-panel">
+      <h3>Attachments</h3>
+      <% if (inquiry.attachments.length) { %>
+      <ul class="admin-list"><% inquiry.attachments.forEach(function (file) { %><li><a href="/admin/attachments/<%= file.id %>"><%= file.original_name %></a><small class="admin-meta"> <%= file.mime_type %> · <%= Math.round(file.size_bytes / 1024) %> KB · private download</small></li><% }); %></ul>
+      <% } else { %><p class="admin-meta">No attachments.</p><% } %>
+    </section>
+    <section class="admin-panel">
+      <h3>Email delivery</h3>
+      <% if (inquiry.emails.length) { %>
+      <ul class="admin-list"><% inquiry.emails.forEach(function (mail) { %><li><span class="status-pill"><%= mail.kind %>: <%= mail.status %></span> <span class="admin-meta"><%= mail.to_email %> · <%= mail.created_at.slice(0,16).replace('T',' ') %></span><% if (mail.error) { %><br><span class="admin-meta"><%= mail.error %></span><% } %></li><% }); %></ul>
+      <% } else { %><p class="admin-meta">No email records. Email delivery is not configured or no notification was generated.</p><% } %>
+    </section>
+  </div>
+</div>
+
+<div class="admin-grid admin-grid-2">
+  <section class="admin-panel">
+    <h3>Workflow</h3>
+    <% if (canUpdateStatus) { %>
+    <form method="post" action="/admin/inquiries/<%= inquiry.id %>/status" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <div class="admin-form-grid">
+        <label>Status<select name="status"><% statuses.forEach(function (status) { %><option value="<%= status %>"<%= inquiry.status === status ? ' selected' : '' %>><%= statusLabel(status) %></option><% }); %></select></label>
+        <% if (canAssign) { %>
+        <label>Assigned to<select name="assigned_to"><option value="">Unassigned</option><% assignees.forEach(function (user) { %><option value="<%= user.id %>"<%= inquiry.assigned_to === user.id ? ' selected' : '' %>><%= user.display_name %> (<%= user.role %>)</option><% }); %></select></label>
+        <% } %>
+      </div>
+      <button class="btn btn-primary btn-small" type="submit">Update workflow</button>
+    </form>
+    <% } else { %><p class="admin-meta">A sales manager manages assignment. You can add notes.</p><% } %>
+  </section>
+  <section class="admin-panel">
+    <h3>Internal notes</h3>
+    <form method="post" action="/admin/inquiries/<%= inquiry.id %>/note" class="admin-form">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <label>Note (visible to staff only)<textarea name="note" rows="3" maxlength="5000" required></textarea></label>
+      <button class="btn btn-ghost btn-small" type="submit">Add note</button>
+    </form>
+    <% if (inquiry.notes.length) { %>
+    <ul class="admin-list" style="margin-top:.8rem"><% inquiry.notes.forEach(function (note) { %><li><%= note.note %><br><span class="admin-meta"><%= note.author || 'Deleted user' %> · <%= note.created_at.slice(0,16).replace('T',' ') %></span></li><% }); %></ul>
+    <% } else { %><p class="admin-meta">No notes yet.</p><% } %>
+  </section>
+</div>
+
+<section class="admin-panel">
+  <h3>History</h3>
+  <ul class="admin-list"><% inquiry.events.forEach(function (event) { %><li><strong><%= event.event_type %></strong> <%= event.from_value || '' %> → <%= event.to_value || '' %> <span class="admin-meta"><%= event.author || 'System' %> · <%= event.created_at.slice(0,16).replace('T',' ') %></span></li><% }); %></ul>
+</section>
+
+<% if (canErase) { %>
+<div class="admin-danger">
+  <h3>Erase personal data</h3>
+  <p>This permanently deletes the inquiry, its attachments and related items. Audit logs retain the action and reference, not the message or contact details. Use only after verifying a data-subject request and internal retention obligations.</p>
+  <form method="post" action="/admin/inquiries/<%= inquiry.id %>/erase" class="admin-form" data-confirm="Erase this inquiry and all attachments permanently?">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <label>Type the reference <strong><%= inquiry.reference %></strong> to confirm<input name="confirm" required></label>
+    <button class="btn btn-ghost btn-small" type="submit">Erase inquiry</button>
+  </form>
+</div>
+<% } %>
+

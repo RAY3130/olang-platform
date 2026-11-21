@@ -1,0 +1,46 @@
+<article class="product-card" data-product-card data-sku="<%= product.sku %>" data-category="<%= product.category_key %>" data-ratio-class="ratio-<%= product.cardRatioClass || '4x3' %>">
+  <a class="product-card__media product-media ratio-<%= product.cardRatioClass || '4x3' %>" style="--frame-bg: var(--img-bg)" href="<%= urlFor('products/' + product.slug) %>" aria-label="<%= product.name %> <%= product.sku %>">
+    <% if (product.image_path) { %>
+    <img src="/images/products/official/cards/<%= product.sku %>.jpg" srcset="/images/products/official/cards/<%= product.sku %>-400.jpg 400w, /images/products/official/cards/<%= product.sku %>.jpg 900w" sizes="(max-width: 640px) 45vw, 300px" alt="<%= product.category_name %> <%= product.name %> <%= product.sku %><%= product.card_finish ? ' ' + product.card_finish : '' %>"<% if (product.imageNaturalWidth && product.imageNaturalHeight) { %> width="<%= product.imageNaturalWidth %>" height="<%= product.imageNaturalHeight %>"<% } %> loading="<%= typeof eager !== 'undefined' && eager ? 'eager' : 'lazy' %>" decoding="async">
+    <% } else { %>
+    <img src="/assets/placeholder.svg" alt="<%= pc.noImage %>" width="1" height="1" loading="lazy">
+    <% } %>
+  </a>
+  <div class="product-body">
+    <%
+    const cardSeries = localizedSeries(product.series);
+    const cardColors = (() => { try { return JSON.parse(product.colors_json || '[]'); } catch (_) { return []; } })();
+    const finishNames = cardColors.map(function (c) { return c.name; }).filter(Boolean);
+    const cardFinish = finishNames.length ? finishNames.slice(0, 3).join(' · ') : (product.card_finish || '');
+    const cardDimensions = product.card_dimensions || '';
+    const seriesHref = product.series ? urlFor('series/' + seriesSlug(product.series)) : '';
+    %>
+    <div class="product-kicker"><%= product.category_name %><%= cardSeries ? ' · ' + cardSeries : '' %></div>
+    <h3><a href="<%= urlFor('products/' + product.slug) %>"><%= product.name %></a></h3>
+    <p class="product-model"><strong><%= product.sku %></strong><% if (product.series) { %> · <% if (seriesHref) { %><a href="<%= seriesHref %>"><%= cardSeries %></a><% } else { %><%= cardSeries %><% } %><% } %></p>
+    <p class="product-short"><%= productUse(product.category_key) %></p>
+    <% if (cardColors.length) { %><div class="card-colors" aria-label="<%= t('photo.availableFinishes') %>"><% cardColors.slice(0, 6).forEach(function (c) { %><img src="<%= c.chip %>" alt="<%= c.name %>" title="<%= c.name %>" width="18" height="18" loading="lazy"><% }); %><% if (cardColors.length > 6) { %><span>+<%= cardColors.length - 6 %></span><% } %></div><% } %>
+    <dl class="product-specs">
+      <div><dt><%= t('proc.surfaceFinish') %></dt><dd><%= cardFinish || t('status.available_on_request') %></dd></div>
+      <div><dt><%= t('proc.dimensions') %></dt><dd><%= cardDimensions || t('status.available_on_request') %></dd></div>
+    </dl>
+    <div class="product-card-actions">
+      <div class="product-card-primary">
+        <a class="text-link" href="<%= urlFor('products/' + product.slug) %>#quote"><%= pc.requestQuote %> →</a>
+        <a class="product-card-series" href="<%= product.series ? urlFor('series/' + seriesSlug(product.series)) : urlFor('products') %>"><%= product.series ? pc.seriesLink : pc.allProducts %></a>
+      </div>
+      <div class="product-quick-actions">
+        <label class="mini-check">
+          <input type="checkbox" data-compare-sku="<%= product.sku %>" data-compare-name="<%= product.name %>">
+          <span><%= t('common.compare') %></span>
+        </label>
+        <button type="button" class="link-button" data-add-inquiry
+          data-sku="<%= product.sku %>"
+          data-name="<%= product.name %>"
+          data-url="<%= urlFor('products/' + product.slug) %>"
+          data-image="<%= product.image_path ? '/' + product.image_path.replace(/^\/+/, '') : '' %>"
+          data-category="<%= product.category_name %>"><%= pc.addToList %></button>
+      </div>
+    </div>
+  </div>
+</article>

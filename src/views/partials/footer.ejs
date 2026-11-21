@@ -1,0 +1,49 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand footer-brand-line" href="<%= urlFor('') %>"><span class="brand-ring" aria-hidden="true"></span><span class="brand-word">OLANG</span></a>
+      <p><%= t('footer.tagline') %></p>
+      <p class="footer-small"><%= t('footer.sourceNote') %></p>
+    </div>
+    <div>
+      <h2 class="footer-heading"><%= t('footer.explore') %></h2>
+      <a href="<%= urlFor('products') %>"><%= t('footer.catalogue') %></a>
+      <a href="<%= site.cataloguePath %>" data-catalogue-download="footer" data-catalogue-location="footer" download><%= t('common.catalogueDownload') %></a>
+      <a href="<%= urlFor('solutions') %>"><%= t('footer.solutions') %></a>
+      <a href="<%= urlFor('wholesale') %>"><%= t('footer.wholesale') %></a>
+      <a href="<%= urlFor('oem') %>"><%= t('footer.oem') %></a>
+      <a href="<%= urlFor('projects') %>"><%= t('footer.projects') %></a>
+      <a href="<%= urlFor('inquiry') %>"><%= t('common.inquiryList') %></a>
+    </div>
+    <div>
+      <h2 class="footer-heading"><%= t('footer.company') %></h2>
+      <a href="<%= urlFor('about') %>"><%= companyNav.about %></a>
+      <a href="<%= urlFor('about/culture') %>"><%= companyNav.culture %></a>
+      <a href="<%= urlFor('about/development') %>"><%= companyNav.development %></a>
+      <a href="<%= urlFor('about/honor') %>"><%= companyNav.honor %></a>
+      <a href="<%= urlFor('about/factory') %>"><%= companyNav.factory %></a>
+      <a href="<%= urlFor('about/quality') %>"><%= companyNav.quality %></a>
+      <a href="<%= urlFor('news') %>"><%= companyNav.news %></a>
+      <a href="<%= urlFor('resources') %>"><%= t('footer.resources') %></a>
+    </div>
+    <div>
+      <h2 class="footer-heading"><%= t('footer.contact') %></h2>
+      <a href="<%= urlFor('contact') %>"><%= t('footer.contact') %></a>
+      <a href="tel:<%= site.contact.phoneHref %>"><%= site.contact.phone %></a>
+      <a href="<%= site.whatsappUrl %>" target="_blank" rel="noopener nofollow" data-whatsapp-cta data-whatsapp-location="footer"><%= t('common.whatsapp') %></a>
+      <a href="<%= urlFor('contact') %>"><%= t('footer.contact') %></a>
+      <a href="<%= urlFor('privacy') %>"><%= t('footer.privacy') %></a>
+      <a href="<%= urlFor('legal') %>"><%= t('footer.legal') %></a>
+      <a href="/admin"><%= t('footer.admin') %></a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <%= currentYear %> <%= t('footer.copyright') %>.</span>
+    <span><%= t('footer.photoCredit') %></span>
+    <span class="footer-legal">
+      <a href="<%= urlFor('privacy') %>"><%= t('footer.privacy') %></a>
+      <a href="<%= urlFor('legal') %>"><%= t('footer.legal') %></a>
+      <button type="button" class="link-button" data-cookie-settings><%= t('common.cookieSettings') %></button>
+    </span>
+  </div>
+</footer>

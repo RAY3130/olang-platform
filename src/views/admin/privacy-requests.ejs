@@ -1,0 +1,31 @@
+<div class="admin-toolbar">
+  <div><p class="admin-kicker">Privacy operations</p><h2>Privacy requests</h2></div>
+  <a class="btn btn-ghost btn-small" href="/admin/inquiries">Inquiries</a>
+</div>
+<div class="admin-note">Verify identity before access, correction or deletion. A completed request must be recorded. Erasing an inquiry is available to a super administrator on the inquiry detail page.</div>
+
+<div class="admin-table-wrap" style="margin-top:1rem">
+  <table class="admin-table">
+    <thead><tr><th>Reference</th><th>Received</th><th>Email</th><th>Request</th><th>Status</th><th>Completed</th><th>Action</th></tr></thead>
+    <tbody>
+      <% rows.forEach(function (row) { %>
+      <tr>
+        <td><strong><%= row.reference %></strong></td>
+        <td><%= row.created_at.slice(0,16).replace('T',' ') %></td>
+        <td><%= row.email %><small><a href="/admin/inquiries?q=<%= encodeURIComponent(row.email) %>">Find inquiries</a></small></td>
+        <td><%= row.request_type %><small><%= row.details %></small></td>
+        <td><span class="status-pill"><%= row.status %></span></td>
+        <td><%= row.completed_at ? row.completed_at.slice(0,10) : '—' %></td>
+        <td>
+          <form method="post" action="/admin/privacy-requests/<%= row.id %>" class="admin-form">
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+            <select name="status"><% ['new','verifying','completed','rejected'].forEach(function (status) { %><option value="<%= status %>"<%= row.status === status ? ' selected' : '' %>><%= status %></option><% }); %></select>
+            <button class="btn btn-ghost btn-small" type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+      <% }); %>
+      <% if (!rows.length) { %><tr><td colspan="7">No privacy requests recorded.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>

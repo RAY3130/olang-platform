@@ -1,0 +1,192 @@
+<section class="page-hero<%= typeof categoryPage !== 'undefined' && categoryPage ? ' category-hero' : '' %>">
+  <div class="wrap">
+    <% if (typeof categoryPage !== 'undefined' && categoryPage && breadcrumbs.length) { %>
+    <nav class="breadcrumb category-breadcrumb" aria-label="Breadcrumb">
+      <% breadcrumbs.forEach(function (crumb, index) { %><% if (index < breadcrumbs.length - 1) { %><a href="<%= crumb.url %>"><%= crumb.name %></a><span aria-hidden="true">/</span><% } else { %><span aria-current="page"><%= crumb.name %></span><% } %><% }); %>
+    </nav>
+    <% } %>
+  </div>
+  <div class="wrap page-hero-grid">
+    <div>
+      <p class="eyebrow"><%= copy.kicker %></p>
+      <h1><%= typeof categoryPage !== 'undefined' && categoryPage ? categoryPage.name : pc.productsTitle %></h1>
+      <p class="lede"><%= pc.productsLede %></p>
+      <% if (typeof categoryPage !== 'undefined' && categoryPage) { %><p class="small-note"><%= copy.dataNote %></p><% } %>
+      <div class="hero-meta">
+        <div><strong><%= resultCount %></strong><span><%= t('common.product') %></span></div>
+        <div><strong><%= categories.length %></strong><span><%= t('common.category') %></span></div>
+        <div><strong><%= finishes.length %></strong><span><%= t('common.finish') %></span></div>
+      </div>
+    </div>
+    <div class="page-hero-media">
+      <% if (products[0] && products[0].image_path) { %>
+      <img src="/images/products/official/cards/<%= products[0].sku %>.jpg" alt="<%= products[0].category_name %> <%= products[0].name %> <%= products[0].sku %>" width="900" height="675" fetchpriority="high" decoding="async">
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<% if (typeof marketReference !== 'undefined' && marketReference) { %>
+<section class="market-reference-band">
+  <div class="wrap market-reference-grid">
+    <figure>
+      <%- include('../partials/reference-picture', { image: marketReference }) %>
+      <figcaption><%= pc.refCaption %></figcaption>
+    </figure>
+    <div class="market-reference-copy">
+      <p class="eyebrow"><%= pc.refCaption %></p>
+      <p><%= pc.productsLede %></p>
+      <a class="text-link" href="<%= urlFor('products') %>"><%= t('common.viewAll') %> →</a>
+    </div>
+    <% (referenceStrip || []).forEach(function (image) { %>
+    <figure class="market-reference-small">
+      <%- include('../partials/reference-picture', { image: image }) %>
+      <figcaption><%= pc.refDetailCaption %></figcaption>
+    </figure>
+    <% }); %>
+  </div>
+</section>
+<% } %>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="selection-paths">
+      <div class="selection-path-head">
+        <p class="eyebrow"><%= pc.pathKicker %></p>
+        <p class="small-note"><%= pc.localSignal %></p>
+      </div>
+      <div class="selection-path-grid">
+        <div class="selection-path">
+          <h2><%= pc.pathSpaceTitle %></h2>
+          <p><%= pc.pathSpaceText %></p>
+          <div class="path-pills">
+            <a href="<%= urlFor('solutions/hospitality-bathrooms') %>"><%= pc.spaceHospitality %></a>
+            <a href="<%= urlFor('solutions/residential-bathrooms') %>"><%= pc.spaceResidential %></a>
+            <a href="<%= urlFor('products') %>?category=grab-bars"><%= pc.spaceAccessible %></a>
+            <a href="<%= urlFor('solutions/commercial-washrooms') %>"><%= pc.spaceCommercial %></a>
+          </div>
+        </div>
+        <div class="selection-path">
+          <h2><%= pc.pathFinishTitle %></h2>
+          <p><%= pc.pathFinishText %></p>
+          <div class="finish-pills">
+            <% finishes.slice(0, 8).forEach(function (finish) { %>
+            <a href="<%= urlFor('products') %>?finish=<%= encodeURIComponent(finish.code) %>"><% if (finish.chip) { %><img src="<%= finish.chip %>" alt="" width="18" height="18" loading="lazy"><% } %><span><%= finish.name %></span></a>
+            <% }); %>
+          </div>
+        </div>
+        <div class="selection-path">
+          <h2><%= pc.pathSeriesTitle %></h2>
+          <p><%= pc.pathSeriesText %></p>
+          <div class="series-pills">
+            <% series.forEach(function (row) { %>
+            <a href="<%= urlFor('series/' + seriesSlug(row.series)) %>"><%= localizedSeries(row.series) %><small><%= row.count %></small></a>
+            <% }); %>
+          </div>
+        </div>
+      </div>
+      <div class="selection-selector-cta">
+        <a class="btn btn-primary" href="<%= urlFor('selector') %>"><%= pc.selectorCta %></a>
+        <span class="small-note"><%= pc.selectorNote %></span>
+      </div>
+    </div>
+
+    <form method="get" action="<%= urlFor('products') %>" class="filter-form" data-filter-form>
+      <div class="filter-main">
+        <label class="search-field"><span><%= copy.searchLabel %></span><input type="search" name="q" value="<%= filters.q %>" placeholder="<%= copy.searchPlaceholder %>" maxlength="120"></label>
+        <label><span><%= copy.filterCategory %></span>
+          <select name="category">
+            <option value=""><%= copy.categoryAll %></option>
+            <% categories.forEach(function (cat) { %><option value="<%= cat.slug %>"<%= filters.category === cat.slug ? ' selected' : '' %>><%= cat.name %> (<%= cat.product_count %>)</option><% }); %>
+          </select>
+        </label>
+        <label><span><%= copy.filterSeries %></span>
+          <select name="series">
+            <option value=""><%= copy.seriesAll %></option>
+            <% series.forEach(function (row) { %><option value="<%= row.series %>"<%= filters.series === row.series ? ' selected' : '' %>><%= localizedSeries(row.series) %> (<%= row.count %>)</option><% }); %>
+          </select>
+        </label>
+        <label><span><%= t('common.collection') %></span>
+          <select name="collection">
+            <option value=""><%= t('common.all') %></option>
+            <% collections.forEach(function (row) { %><option value="<%= row.collection %>"<%= filters.collection === row.collection ? ' selected' : '' %>><%= localizedSeries('Engineering Hardware') %> (<%= row.count %>)</option><% }); %>
+          </select>
+        </label>
+        <label><span><%= copy.filterFinish %></span>
+          <select name="finish">
+            <option value=""><%= copy.finishAll %></option>
+            <% finishes.forEach(function (row) { %><option value="<%= row.code %>"<%= filters.finish === row.code ? ' selected' : '' %>><%= row.name %> (<%= row.count %>)</option><% }); %>
+          </select>
+        </label>
+        <% if (materials.length) { %>
+        <label><span><%= copy.filterMaterial %></span>
+          <select name="material">
+            <option value=""><%= copy.materialAll %></option>
+            <% materials.forEach(function (row) { %><option value="<%= row.value %>"<%= filters.material === row.value ? ' selected' : '' %>><%= row.value %></option><% }); %>
+          </select>
+        </label>
+        <% } %>
+        <% if (applications.length) { %>
+        <label><span><%= t('attr.applicable_environment') %></span>
+          <select name="application">
+            <option value=""><%= t('common.all') %></option>
+            <% applications.forEach(function (row) { %><option value="<%= row.value %>"<%= filters.application === row.value ? ' selected' : '' %>><%= row.value %></option><% }); %>
+          </select>
+        </label>
+        <% } %>
+        <% if (oemFacet.length) { %>
+        <label><span><%= copy.filterOem %></span>
+          <select name="oem">
+            <option value=""><%= copy.categoryAll %></option>
+            <option value="yes"<%= filters.oem === 'yes' ? ' selected' : '' %>><%= t('common.yes') %></option>
+          </select>
+        </label>
+        <% } %>
+        <label><span><%= copy.sortLabel %></span>
+          <select name="sort">
+            <option value=""<%= !filters.sort ? ' selected' : '' %>><%= copy.sortDefault %></option>
+            <option value="sku"<%= filters.sort === 'sku' ? ' selected' : '' %>><%= copy.sortSku %></option>
+            <option value="name"<%= filters.sort === 'name' ? ' selected' : '' %>><%= copy.sortName %></option>
+            <option value="category"<%= filters.sort === 'category' ? ' selected' : '' %>><%= copy.sortCategory %></option>
+            <option value="newest"<%= filters.sort === 'newest' ? ' selected' : '' %>><%= copy.sortNewest %></option>
+          </select>
+        </label>
+      </div>
+      <div class="filter-actions">
+        <button type="submit" class="btn btn-primary"><%= t('common.apply') %></button>
+        <a class="btn btn-ghost" href="<%= urlFor('products') %>"><%= t('common.reset') %></a>
+      </div>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="result-count"><%= resultCount === 1 ? copy.resultsOne : copy.results.replace('{count}', resultCount) %></p>
+      <div class="catalog-tools">
+        <a class="text-link" href="<%= urlFor('compare') %>" data-compare-link><%= t('common.compareSelected') %> <span data-compare-count>0</span></a>
+        <a class="text-link" href="<%= urlFor('inquiry') %>"><%= t('pages.products.viewList') %> <span data-compare-list-count>0</span></a>
+      </div>
+    </div>
+
+    <% if (products.length) { %>
+    <div class="product-grid">
+      <% products.forEach(function (product) { %>
+      <%- include('../partials/product-card', { product: product }) %>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="empty-state">
+      <h2><%= copy.noResults %></h2>
+      <p><%= copy.noResultsHelp %></p>
+      <a class="btn btn-primary" href="<%= urlFor('products') %>"><%= copy.clearFilters %></a>
+    </div>
+    <% } %>
+
+    <p class="catalog-note"><%= copy.dataNote %></p>
+    <p class="small-note"><%= copy.filterNote %></p>
+  </div>
+</section>
+
+<div class="compare-bar" data-compare-bar hidden>
+  <span><strong data-compare-count>0</strong> <%= t('common.selected') %></span>
+  <a class="btn btn-primary" href="<%= urlFor('compare') %>" data-compare-link><%= t('common.compareSelected') %></a>
+  <button type="button" class="link-button" data-compare-clear><%= t('common.clear') %></button>
+</div>
